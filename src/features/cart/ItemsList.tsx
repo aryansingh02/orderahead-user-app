@@ -1,20 +1,26 @@
 //
-import React, {Fragment} from "react";
+import React, { Fragment } from 'react';
+import styled from 'styled-components';
 import {
   FindMenuItem,
   GenerateCurrencyNumber,
   CalculateLineItemTotal,
-} from "../../utils";
-import styled from "styled-components";
+} from '../../utils';
+import { HistoryType, ICart, ILineItems, IStall } from '../../types';
+import { CommonP, defaultFlex } from '../../commonStyles';
 
-interface IProps{
-  lineItems:
+interface IProps {
+  lineItems: ILineItems;
+  stall: IStall;
+  page: string;
+  history: HistoryType;
+  cart: ICart;
 }
 
-const ItemsList = (props) => {
-  let itemsArr = [];
+const ItemsList = (props: IProps) => {
+  const itemsArr = [];
   for (const lineItem of props.lineItems) {
-    const cartItem = lineItem.cartItem;
+    const { cartItem } = lineItem;
     const item = FindMenuItem(props.stall.menu, cartItem.itemId);
     if (item) {
       itemsArr.push(
@@ -31,7 +37,7 @@ const ItemsList = (props) => {
           <div className="col-9 overflow-auto">
             <div className="col">
               <ItemName>{item.name}</ItemName>
-              {props.page === "cart" && (
+              {props.page === 'cart' && (
                 <EditText
                   data-testid={`${lineItem._id}_edit`}
                   onClick={() => {
@@ -51,6 +57,7 @@ const ItemsList = (props) => {
             `}
           >
             <CurrencyP>
+              {/* @ts-ignore */}
               {GenerateCurrencyNumber(CalculateLineItemTotal(cartItem))}
             </CurrencyP>
           </div>
@@ -58,7 +65,7 @@ const ItemsList = (props) => {
       );
     }
   }
-  return <Fragment>{itemsArr}</Fragment>;
+  return <>{itemsArr}</>;
 };
 
 export default ItemsList;

@@ -1,12 +1,22 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 import Switch from "react-switch";
-import {IconContext} from "react-icons";
-import {IoIosCheckmarkCircle, IoIosCloseCircle} from "react-icons/all";
+import { IconContext } from "react-icons";
+import { IoIosCheckmarkCircle, IoIosCloseCircle } from "react-icons/all";
 import styled from "styled-components";
-import {CommonP} from "../../styles/CommonStyles";
 import get from "lodash/get";
+import { ICart, IInvoice } from '../../types';
+import { CommonP } from '../../commonStyles';
 
-export const CutleryCoupon = (props) => {
+interface IProps{
+  cutlerySwitch: boolean;
+  invoice: IInvoice;
+  cart: ICart;
+  setCouponCode: (coupon: string) => void;
+  updateNote: (note: string) => void;
+  updateState: ({ cutlerySwitch }:{cutlerySwitch: boolean}) => void;
+}
+
+export const CutleryCoupon = (props:IProps) => {
   const {
     cutlerySwitch,
     updateState,
@@ -24,7 +34,7 @@ export const CutleryCoupon = (props) => {
     return "";
   };
   return (
-    <Fragment>
+    <>
       <CutleryRow className="row p-0">
         <div className="col-3 m-0 p-0 text-left">
           <img src="/img/leaf.png" alt="surge fee" width="16px" height="16px" />
@@ -37,8 +47,8 @@ export const CutleryCoupon = (props) => {
         </div>
         <div className="col-3 text-right m-0 p-0">
           <Switch
-            onChange={(checked) => {
-              updateState({cutlerySwitch: checked});
+            onChange={(checked:boolean) => {
+              updateState({ cutlerySwitch: checked });
               let note;
               if (checked) {
                 note = "Utensils, straws, etc to be added in this order.";
@@ -91,7 +101,7 @@ export const CutleryCoupon = (props) => {
           )}
         </CheckDiv>
       </CouponRow>
-    </Fragment>
+    </>
   );
 };
 

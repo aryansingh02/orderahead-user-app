@@ -1,13 +1,20 @@
-import React from "react";
-import {GenerateCurrencyNumber} from "../../util";
-import config from "react-global-configuration";
-import get from "lodash/get";
-import styled from "styled-components";
-import {CommonP, defaultFlex, flexColumnDiv} from "../../styles/CommonStyles";
+import React from 'react';
+import config from 'react-global-configuration';
+import get from 'lodash/get';
+import styled from 'styled-components';
+import { GenerateCurrencyNumber } from '../../utils';
+import { ICart, IInvoice } from '../../types';
 
-export const Invoice = (props) => {
-  const {invoice, cart, setRequestedTipPercent} = props;
-  return invoice ? (
+interface IProps {
+  invoice: IInvoice;
+  cart: ICart;
+  setRequestedTipPercent: (num: number) => void;
+}
+
+
+export const Invoice = (props: IProps) => {
+  const { invoice, cart, setRequestedTipPercent } = props;
+  return (
     <CostContainer className="row">
       <div className="col-12 p-0 text-left">
         <div className="container-fluid p-0 ">
@@ -25,7 +32,7 @@ export const Invoice = (props) => {
               </PriceValue>
             </div>
           ) : (
-            ""
+            ''
           )}
           {invoice.serviceFee && invoice.serviceFee.amount > 0 ? (
             <div className="row m-0">
@@ -35,7 +42,7 @@ export const Invoice = (props) => {
               </PriceValue>
             </div>
           ) : (
-            ""
+            ''
           )}
           {invoice.tax && invoice.tax.amount > 0 ? (
             <div className="row m-0">
@@ -45,16 +52,16 @@ export const Invoice = (props) => {
               </PriceValue>
             </div>
           ) : (
-            ""
+            ''
           )}
-          {config.get("enable_tipping") ? (
+          {config.get('enable_tipping') ? (
             <div className="row m-0">
               <PriceLabel className="col">Tip</PriceLabel>
               <div className="col-7 text-right p-0 text-right">
                 <button
                   type="button"
-                  className={"tipButton ".concat(
-                    cart.requestedTipPercent === 0 ? "tipButtonSelected" : ""
+                  className={'tipButton '.concat(
+                    cart.requestedTipPercent === 0 ? 'tipButtonSelected' : ''
                   )}
                   onClick={() => setRequestedTipPercent(0)}
                 >
@@ -62,8 +69,8 @@ export const Invoice = (props) => {
                 </button>
                 <button
                   type="button"
-                  className={"tipButton ".concat(
-                    cart.requestedTipPercent === 10 ? "tipButtonSelected" : ""
+                  className={'tipButton '.concat(
+                    cart.requestedTipPercent === 10 ? 'tipButtonSelected' : ''
                   )}
                   onClick={() => setRequestedTipPercent(10)}
                 >
@@ -71,8 +78,8 @@ export const Invoice = (props) => {
                 </button>
                 <button
                   type="button"
-                  className={"tipButton ".concat(
-                    cart.requestedTipPercent === 15 ? "tipButtonSelected" : ""
+                  className={'tipButton '.concat(
+                    cart.requestedTipPercent === 15 ? 'tipButtonSelected' : ''
                   )}
                   onClick={() => setRequestedTipPercent(15)}
                 >
@@ -80,8 +87,8 @@ export const Invoice = (props) => {
                 </button>
                 <button
                   type="button"
-                  className={"tipButton ".concat(
-                    cart.requestedTipPercent === 20 ? "tipButtonSelected" : ""
+                  className={'tipButton '.concat(
+                    cart.requestedTipPercent === 20 ? 'tipButtonSelected' : ''
                   )}
                   onClick={() => setRequestedTipPercent(20)}
                 >
@@ -93,9 +100,9 @@ export const Invoice = (props) => {
               </PriceValue>
             </div>
           ) : (
-            ""
+            ''
           )}
-          {get(invoice, "discount.amount") !== 0 ? (
+          {get(invoice, 'discount.amount') !== 0 ? (
             <div className="row m-0">
               <DiscountLabel className="col">Discount</DiscountLabel>
               <DiscountValue className="col text-right">
@@ -103,7 +110,7 @@ export const Invoice = (props) => {
               </DiscountValue>
             </div>
           ) : (
-            ""
+            ''
           )}
           <div className="row m-0 font-weight-bold">
             <TotalLabel className="col-9">Total</TotalLabel>
@@ -114,8 +121,6 @@ export const Invoice = (props) => {
         </div>
       </div>
     </CostContainer>
-  ) : (
-    ""
   );
 };
 

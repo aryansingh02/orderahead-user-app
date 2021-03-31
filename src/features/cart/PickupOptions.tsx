@@ -1,14 +1,38 @@
-import React, {Fragment} from "react";
-import config from "react-global-configuration";
-import {GenerateCurrencyNumber, GenerateEpochDate} from "../../util";
-import {format} from "date-fns";
-import {IconContext} from "react-icons";
-import {MdModeEdit} from "react-icons/all";
-import styled from "styled-components";
-import {CommonP} from "../../styles/CommonStyles";
-import {FullfilmentModeType, zeroFee} from "./Cart";
+import React, { Fragment } from 'react';
+import config from 'react-global-configuration';
+import { format } from 'date-fns';
+import { IconContext } from 'react-icons';
+import { MdModeEdit } from 'react-icons/all';
+import styled from 'styled-components';
+import { GenerateCurrencyNumber, GenerateEpochDate } from '../../utils';
+import { FullfilmentModeType, zeroFee } from './Cart';
+import { IPrice } from '../../types';
+import { CommonP } from '../../commonStyles';
 
-export const PickupOptions = (props) => {
+interface IProps {
+  enableSurgeFee: boolean;
+  dynamicEta: number;
+  dynamicFee: IPrice;
+  handleClose: (dynamicFee: IPrice, dynamicEta: number) => void;
+  updateState: ({
+    mode,
+    dateModal,
+    pickupSlot,
+    pickup,
+  }: {
+    mode?: string;
+    dateModal?: boolean;
+    pickupSlot?: Date;
+    pickup?: Date;
+  }) => void;
+  itemEta: number;
+  dateModal: boolean;
+  pickupSlot?: Date;
+  mode: string;
+  pickup?: Date | number;
+}
+
+export const PickupOptions = (props: IProps) => {
   const {
     enableSurgeFee,
     dynamicEta,
@@ -19,25 +43,27 @@ export const PickupOptions = (props) => {
     dateModal,
     pickupSlot,
     mode,
-    pickup
+    pickup,
   } = props;
+  // @ts-ignore
   return (
-    (enableSurgeFee || config.get("schedule_payment")) && (
+    (enableSurgeFee || config.get('schedule_payment')) && (
       <PickupRow className="row">
         <PickupHeadline data-testid="pickup_heading" className="col-12">
           Pickup
         </PickupHeadline>
         <PickupContainer className="container-fluid">
           {enableSurgeFee && (
-            <Fragment>
+            <>
               <AsapRadio
                 className="row align-items-center"
+                // @ts-ignore
                 active={mode === FullfilmentModeType.SKIP_THE_LINE}
                 onClick={() => {
                   handleClose(dynamicFee, dynamicEta);
                   updateState({
                     mode: FullfilmentModeType.SKIP_THE_LINE,
-                    pickupSlot: 0,
+                    pickupSlot: undefined,
                   });
                 }}
                 data-testid="dynamic_radio_wrapper"
@@ -59,16 +85,17 @@ export const PickupOptions = (props) => {
                   <RadioPrice>{GenerateCurrencyNumber(dynamicFee)}</RadioPrice>
                 </div>
               </AsapRadio>
-            </Fragment>
+            </>
           )}
           <NormalRadio
             className="row align-items-center"
+            // @ts-ignore
             active={mode === FullfilmentModeType.FREE_PICKUP}
             onClick={() => {
               handleClose(zeroFee, itemEta);
               updateState({
                 mode: FullfilmentModeType.FREE_PICKUP,
-                pickupSlot: 0,
+                pickupSlot: undefined,
               });
             }}
           >
@@ -89,15 +116,17 @@ export const PickupOptions = (props) => {
               <RadioPrice>$0.00</RadioPrice>
             </div>
           </NormalRadio>
-          {config.get("schedule_payment") && (
+          {config.get('schedule_payment') && (
             <ScheduleRadio
               className="row align-items-center"
+              // @ts-ignore
               active={mode === FullfilmentModeType.SCHEDULED_PICKUP}
               onClick={() => {
                 handleClose(zeroFee, itemEta);
                 updateState({
                   mode: FullfilmentModeType.SCHEDULED_PICKUP,
                   dateModal: true,
+                  // @ts-ignore
                   pickup: GenerateEpochDate(new Date()),
                 });
               }}
@@ -123,20 +152,22 @@ export const PickupOptions = (props) => {
                       onClick={() => {
                         updateState({
                           dateModal: true,
+                          // @ts-ignore
                           pickup: GenerateEpochDate(new Date(pickupSlot)),
                         });
                       }}
                     >
                       <DateText>
                         {pickupSlot
-                          ? format(new Date(pickupSlot), "PPp")
-                          : format(new Date(pickup), "PP")}
+                          ? format(new Date(pickupSlot), 'PPp')
+                          : // @ts-ignore
+                          format(new Date(pickup), 'PP')}
                         <EditTimeSpan>
                           <IconContext.Provider
                             value={{
-                              color: "#00ADF6",
-                              className: "global-class-name",
-                              size: "14px",
+                              color: '#00ADF6',
+                              className: 'global-class-name',
+                              size: '14px',
                             }}
                           >
                             <MdModeEdit />
@@ -174,17 +205,24 @@ const AsapRadio = styled.div`
   padding: 0 15px;
   margin: 20px 0 0 0;
   border-color: ${(props) =>
-  props.active ? "rgba(0, 173, 246, 0.05)" : "#E1E1E1"};
+    //@ts-ignore
+    props.active ? 'rgba(0, 173, 246, 0.05)' : '#E1E1E1'};
   background: ${(props) =>
-  props.active ? "rgba(0, 173, 246, 0.05)" : "#FFFFFF"};
+  //@ts-ignore
+
+    props.active ? 'rgba(0, 173, 246, 0.05)' : '#FFFFFF'};
 `;
 
 const NormalRadio = styled(AsapRadio)`
   margin: 10px 0 15px 0;
   background: ${(props) =>
-  props.active ? "rgba(0, 173, 246, 0.05)" : "#FFFFFF"};
+  //@ts-ignore
+
+    props.active ? 'rgba(0, 173, 246, 0.05)' : '#FFFFFF'};
   border-color: ${(props) =>
-  props.active ? "rgba(0, 173, 246, 0.05)" : "#E1E1E1"};
+  //@ts-ignore
+
+    props.active ? 'rgba(0, 173, 246, 0.05)' : '#E1E1E1'};
 `;
 
 const ScheduleRadio = styled(NormalRadio)`

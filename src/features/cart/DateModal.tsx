@@ -1,12 +1,31 @@
-import React, {Fragment} from "react";
-import {Modal} from "react-bootstrap";
-import SlotModal from "../store/SlotModal";
-import styled from "styled-components";
-import {DatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
-import {GenerateEpochDate} from "../../util";
+import React, { Fragment } from 'react';
+import { Modal } from 'react-bootstrap';
+import styled from 'styled-components';
+import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
+import SlotModal from './SlotModal';
+import { GenerateEpochDate } from '../../utils';
+import { appConfig } from '../../data/testData';
 
-export const DateModal = (props) => {
+interface IProps {
+  dateModal: boolean;
+  pickup?: Date;
+  pickupSlot: Date;
+  itemEta: number;
+  onSlotClick: (slot: Date) => void;
+  rhState: typeof appConfig.rhState;
+  updateState: ({
+    dateModal,
+    pickupSlot,
+    pickup,
+  }: {
+    dateModal?: boolean;
+    pickupSlot?: Date;
+    pickup?: Date;
+  }) => void;
+}
+
+export const DateModal = (props: IProps) => {
   const {
     dateModal,
     pickup,
@@ -17,44 +36,44 @@ export const DateModal = (props) => {
     updateState,
   } = props;
 
-  const renderDatePicker = () => {
-    return (
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <DatePicker
-          variant="static"
-          initialFocusedDate={null}
-          value={
-            new Date(
-              // $FlowFixMe
-              pickup ? pickup : Date.parse(new Date())
-            )
-          }
-          onChange={(dt) => {
-            updateState({pickup: GenerateEpochDate(dt), pickupSlot: null});
-          }}
-          disablePast
-          open={dateModal}
-          onClose={() => {
-            updateState({dateModal: false});
-          }}
-          onOpen={() => {
-            updateState({dateModal: true});
-          }}
-          minutesStep={1}
-          minDate={new Date()}
-        />
-      </MuiPickersUtilsProvider>
-    );
-  };
+  const renderDatePicker = () => (
+    <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <DatePicker
+        variant="static"
+        initialFocusedDate={null}
+        value={
+          new Date(
+            //@ts-ignore
+            pickup || Date.parse(new Date())
+          )
+        }
+        onChange={(dt) => {
+          // @ts-ignore
+          updateState({ pickup: GenerateEpochDate(dt), pickupSlot: undefined });
+        }}
+        disablePast
+        open={dateModal}
+        onClose={() => {
+          updateState({ dateModal: false });
+        }}
+        onOpen={() => {
+          updateState({ dateModal: true });
+        }}
+        //@ts-ignore
+        minutesStep={1}
+        minDate={new Date()}
+      />
+    </MuiPickersUtilsProvider>
+  );
   return (
-    <Fragment>
+    <>
       <Modal
         show={dateModal}
         aria-labelledby="contained-modal-title-vcenter"
         centered
         className="rounded-0 "
         onHide={() => {
-          updateState({dateModal: false, pickUp: 0});
+          updateState({ dateModal: false, pickup: undefined });
         }}
       >
         <Modal.Body className="rounded-0 date-modal">
@@ -65,6 +84,7 @@ export const DateModal = (props) => {
                 <SlotModal
                   pickup={pickup}
                   pickupSlot={pickupSlot}
+                  //@ts-ignore
                   clickHandler={onSlotClick}
                   itemEta={itemEta}
                 />
@@ -73,7 +93,7 @@ export const DateModal = (props) => {
           </div>
         </Modal.Body>
       </Modal>
-    </Fragment>
+    </>
   );
 };
 

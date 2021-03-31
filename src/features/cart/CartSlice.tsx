@@ -1,29 +1,21 @@
 //
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import {DeleteLineItemFromCart, FindLineItem, UpdateItemInCart} from "../../utils";
+import { DeleteLineItemFromCart, FindLineItem, UpdateItemInCart } from "../../utils";
+import { cart } from '../../data/testData';
+import { RootState } from '../../types';
 
-let initialState = {
-  lineItems: [],
-  stallId: "",
-  storeId: "",
-  note: "",
-  requestedEta: 0,
-  requestedDynamicFee: {amount: 0, currency: "USD"},
-  pickupTime: 0,
-  requestedTipPercent: 15,
-  couponCode: "",
-};
+const initialState = cart;
 
 const shoppingCart = createSlice({
-  name: "shoppingCart",
+  name: "cart",
   initialState,
   reducers: {
     resetCart(state, action) {
       state.lineItems = [];
       state.storeId = action.payload.storeId;
       state.stallId = action.payload.stallId;
-      state.requestedDynamicFee = {amount: 0, currency: "USD"};
+      state.requestedDynamicFee = { amount: 0, currency: "USD" };
       state.requestedEta = 10; // 10 min as the default wait time.
       state.requestedTipPercent = 15.0;
       state.pickupTime = 0;
@@ -51,7 +43,7 @@ const shoppingCart = createSlice({
     },
     modifyItemFromCart(state, action) {
       const lineItemBeingModified = action.payload;
-      let lineItem = FindLineItem(state, lineItemBeingModified._id);
+      const lineItem = FindLineItem(state, lineItemBeingModified._id);
       if (lineItem) {
         UpdateItemInCart(state, lineItemBeingModified);
       } else {
@@ -60,7 +52,7 @@ const shoppingCart = createSlice({
     },
   },
 });
-export const createShoppingCart = (state) => state.shoppingCart;
+export const createShoppingCart = (state:RootState) => state.cart;
 
 export const {
   resetCart,

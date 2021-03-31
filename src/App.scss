@@ -1,36 +1,7 @@
 
-.endJustifiedFlex {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+body,
+html {
+  background-color: #f7f8fb;
 }
-
-.startJustifiedFlex {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+.App {
 }
-
-.CommonP p{
-  margin: 0;
-  padding: 0
-          }
-
-.flexRowDiv{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.defaultFlex{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.flexColumnDiv{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-

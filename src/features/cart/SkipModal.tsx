@@ -1,11 +1,21 @@
-import React, {Fragment} from "react";
-import {Modal} from "react-bootstrap";
-import {GenerateCurrencyNumber} from "../../util";
-import {FullfilmentModeType, zeroFee} from "./Cart";
+import React, { Fragment } from "react";
+import { Modal } from "react-bootstrap";
 import styled from "styled-components";
-import {CommonP, defaultFlex, flexColumnDiv} from "../../styles/CommonStyles";
+import { GenerateCurrencyNumber } from "../../utils";
+import { FullfilmentModeType, zeroFee } from "./Cart";
+import { IPrice } from '../../types';
+import { CommonP, flexColumnDiv, defaultFlex } from '../../commonStyles';
 
-export const SkipModal = (props) => {
+interface IProps {
+  showModal: boolean;
+  itemEta: number;
+  handleClose: (zeroFee: IPrice, itemEta: number) => void;
+  updateState: ({ mode }: {mode: string}) => void;
+  dynamicEta: number;
+  dynamicFee: IPrice;
+}
+
+export const SkipModal = (props:IProps) => {
   const {
     showModal,
     itemEta,
@@ -15,7 +25,7 @@ export const SkipModal = (props) => {
     dynamicFee,
   } = props;
   return (
-    <Fragment>
+    <>
       <Modal
         show={showModal}
         // onHide={handleClose}
@@ -24,7 +34,7 @@ export const SkipModal = (props) => {
         className="rounded-0"
         onHide={() => {
           handleClose(zeroFee, itemEta);
-          updateState({mode: FullfilmentModeType.FREE_PICKUP});
+          updateState({ mode: FullfilmentModeType.FREE_PICKUP });
         }}
       >
         <Modal.Body className="rounded-0">
@@ -59,7 +69,7 @@ export const SkipModal = (props) => {
                 <NoThanksButton
                   onClick={() => {
                     handleClose(zeroFee, itemEta);
-                    updateState({mode: FullfilmentModeType.FREE_PICKUP});
+                    updateState({ mode: FullfilmentModeType.FREE_PICKUP });
                   }}
                 >
                   <NoThanksText>No, Thanks</NoThanksText>
@@ -92,7 +102,7 @@ export const SkipModal = (props) => {
           )}
         </Modal.Body>
       </Modal>
-    </Fragment>
+    </>
   );
 };
 

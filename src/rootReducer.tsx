@@ -1,4 +1,3 @@
-// @flow
 import { AnyAction, combineReducers } from 'redux';
 import EventReducer from './features/event/EventSlice';
 import CartReducer from './features/cart/CartSlice';
