@@ -6,6 +6,9 @@ export const price = {
 export const cartItem = {
   itemId: '5f35c4dbec0310b4ce8bf3da',
   name: 'Parmesan Bread Twists',
+  image:
+    'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
+
   selectedVariation: {
     name: 'Parmesan Bread Twists',
     price: {
@@ -14,7 +17,20 @@ export const cartItem = {
     },
     _id: '5f35c4dbec031029738bf3cd',
   },
-  modifiers: [],
+  modifiers: [
+    {
+      name: 'Crust',
+      chosenValue: [
+        {
+          name: 'Hand Tossed',
+          price: {
+            amount: 100,
+            currency: 'USD',
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export const cart = {
@@ -22,6 +38,8 @@ export const cart = {
     {
       cartItem: {
         itemId: '5f9c3121e3c8569b33c4c0d2',
+        image:
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
         name: 'Build your own Pizza',
         selectedVariation: {
           name: 'Build your own Pizza Medium',
@@ -87,6 +105,9 @@ export const cart = {
     {
       cartItem: {
         itemId: '5f35c4dbec0310b4ce8bf3da',
+        image:
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
+
         name: 'Parmesan Bread Twists',
         selectedVariation: {
           name: 'Parmesan Bread Twists',
@@ -109,6 +130,9 @@ export const cart = {
       cartItem: {
         itemId: '5f35c4dbec0310375f8bf3db',
         name: 'Garlic Bread Twists',
+        image:
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
+
         selectedVariation: {
           name: 'Garlic Bread Twists',
           price: {
@@ -130,6 +154,9 @@ export const cart = {
       cartItem: {
         itemId: '5f9c3121e3c8569b33c4c0d2',
         name: 'Build your own Pizza',
+        image:
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
+
         selectedVariation: {
           name: 'Build your own Pizza Small',
           price: {
@@ -5028,7 +5055,6 @@ export const stall4 = {
   },
   businessHours: {},
 };
-
 
 export const home = {
   isLoading: true,

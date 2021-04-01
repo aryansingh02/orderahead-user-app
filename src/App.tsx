@@ -10,7 +10,7 @@ import Cart from './features/cart/Cart';
 import configuration from "./config";
 
 
-config.set(configuration);
+config.set(configuration, { assign: false, freeze: false });
 
 const styles = (theme: typeof Theme) =>
   createStyles({

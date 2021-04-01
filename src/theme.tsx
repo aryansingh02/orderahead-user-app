@@ -55,19 +55,22 @@ export const theme = createMuiTheme({
       fontFamily: 'GT-Walsheim',
       fontWeight: 'bold',
     },
-
     h2: {
       fontFamily: 'GT-Walsheim',
       fontWeight: 'bold',
     },
-
-    h4: {
+    h3: {
       fontFamily: 'GT-Walsheim, Roboto',
       fontWeight: 'bold',
       fontSize: '20px',
       lineHeight: '23px',
     },
-
+    h4: {
+      fontFamily: 'GT-Walsheim, Roboto',
+      fontWeight: 'bold',
+      fontSize: '18px',
+      lineHeight: '21px',
+    },
     h5: {
       fontFamily: 'GT-Walsheim, Roboto',
       fontWeight: 'bold',

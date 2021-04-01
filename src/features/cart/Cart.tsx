@@ -5,7 +5,7 @@ import config from 'react-global-configuration';
 import { Redirect, RouteComponentProps } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { createStyles, WithStyles } from '@material-ui/core';
+import { createStyles, WithStyles, Grid } from '@material-ui/core';
 import {
   createShoppingCart,
   setCouponCode,
@@ -37,6 +37,8 @@ import {
 import { AppDispatch } from '../../store';
 import { theme as Theme } from '../../theme';
 import { CommonP } from '../../commonStyles';
+import CartHeader from './CartHeader';
+import Typography from '../../Typography';
 
 export const FullfilmentModeType = {
   FREE_PICKUP: 'FREE_PICKUP',
@@ -245,41 +247,51 @@ class Cart extends React.Component<IProps, IState> {
           <meta charSet="utf-8" />
           <title>{stall.name} Cart</title>
         </Helmet>
+        <Grid container direction="row" justify="center">
+          <Grid item xs={10}>
+            <CartHeader
+              history={this.props.history}
+              match={this.props.match}
+              location={this.props.location}
+            />
+          </Grid>
+          <Grid item xs={10} className='startJustifiedFlex'>
+            <Typography roboto={true} variant="h4">
+              My Order
+            </Typography>
+          </Grid>
+          <Grid item xs={10}>
+            <ItemsList
+              cart={cart}
+              lineItems={cart.lineItems}
+              stall={stall}
+              page="cart"
+              history={props.history}
+            />
+          </Grid>
+          <Grid item xs={10}>
+            <PickupOptions
+              enableSurgeFee={this.enableSurgeFee}
+              mode={mode}
+              dynamicFee={dynamicFee}
+              dynamicEta={dynamicEta}
+              handleClose={this.handleClose}
+              updateState={(data) => this.setState(data)}
+              itemEta={itemEta}
+              dateModal={dateModal}
+              pickup={pickup}
+              pickupSlot={pickupSlot}
+            />
+          </Grid>
+        </Grid>
+
         <Wrapper className="container-fluid">
           <div
             ref={this.bodyWrapper}
             className="row cartRow align-align-center text-center m-0"
           />
-          <div className="row m-0">
-            <div className="col-12 p-0 cartSummarySubHeadline text-left">
-              <ItemListText>Items</ItemListText>
-            </div>
-          </div>
-          <div className="row m-0">
-            <div className="col-12 p-0">
-              <div className="container-fluid p-0 m-0 text-left">
-                <ItemsList
-                  cart={cart}
-                  lineItems={cart.lineItems}
-                  stall={stall}
-                  page="cart"
-                  history={props.history}
-                />
-              </div>
-            </div>
-          </div>
-          <PickupOptions
-            enableSurgeFee={this.enableSurgeFee}
-            mode={mode}
-            dynamicFee={dynamicFee}
-            dynamicEta={dynamicEta}
-            handleClose={this.handleClose}
-            updateState={(data) => this.setState(data)}
-            itemEta={itemEta}
-            dateModal={dateModal}
-            pickup={pickup}
-            pickupSlot={pickupSlot}
-          />
+
+
           <CutleryCoupon
             cutlerySwitch={cutlerySwitch}
             updateState={(data) => this.setState(data)}
