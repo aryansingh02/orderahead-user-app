@@ -1,12 +1,8 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import ExploreIcon from '@material-ui/icons/Explore';
-import PieChartIcon from '@material-ui/icons/PieChart';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import { HistoryType } from '../types';
+
 
 const useStyles = makeStyles({
   root: {

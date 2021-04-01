@@ -45,7 +45,6 @@ const styles = (theme: typeof Theme) =>
   });
 
 interface IProps extends WithStyles<typeof styles> {
-  eventRef: React.RefObject<HTMLInputElement>;
 }
 
 interface IState {
@@ -67,7 +66,7 @@ class CategoriesScroll extends React.Component<IProps, IState> {
   };
 
   render() {
-    const { classes, eventRef } = this.props;
+    const { classes } = this.props;
     const { value } = this.state;
     return (
       <div className={classes.root}>
@@ -119,35 +118,4 @@ class CategoriesScroll extends React.Component<IProps, IState> {
 }
 
 export default withStyles(styles)(CategoriesScroll);
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
 
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`scrollable-auto-tabpanel-${index}`}
-      aria-labelledby={`scrollable-auto-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-function a11yProps(index: number) {
-  return {
-    id: `scrollable-auto-tab-${index}`,
-    'aria-controls': `scrollable-auto-tabpanel-${index}`,
-  };
-}

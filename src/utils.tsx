@@ -1,8 +1,8 @@
 import React from 'react';
 import NumberFormat from "react-number-format";
 import getSymbolFromCurrency from "currency-symbol-map";
-import { ICart, ICartItem, ILineItem, IMenu, IPrice, IStall } from './types';
-import { appConfig, invoice, menu as Menu, stall } from './data/testData';
+import { ICart, ICartItem, ILineItem, IMenu, IPrice } from './types';
+import { appConfig, invoice, stall } from './data/testData';
 
 
 

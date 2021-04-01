@@ -100,7 +100,7 @@ class DemoEvent extends React.Component<IProps, IState> {
               <SearchBar />
             </Grid>
             <Grid item xs={12}>
-              <CategoriesScroll eventRef={this.eventContainerRef} />
+              <CategoriesScroll />
             </Grid>
             <Grid item xs={10}>
               <PlacesFilter />

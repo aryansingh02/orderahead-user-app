@@ -86,18 +86,6 @@ const useStyles = makeStyles((theme: typeof Theme) =>
 
 export default function DesktopHeader() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [
-    mobileMoreAnchorEl,
-    setMobileMoreAnchorEl,
-  ] = React.useState<null | HTMLElement>(null);
-
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-
-
   const mobileMenuId = 'primary-search-account-menu-mobile';
 
 
@@ -134,7 +122,7 @@ export default function DesktopHeader() {
               aria-label="show more"
               aria-controls={mobileMenuId}
               aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
+              // onClick={handleMobileMenuOpen}
               color="inherit"
             >
               <MoreIcon />

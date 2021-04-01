@@ -8,7 +8,7 @@ import { GenerateEpochDate } from '../../utils';
 import { appConfig } from '../../data/testData';
 
 interface IProps {
-  dateModal: boolean;
+  dateModal?: boolean;
   pickup?: Date;
   pickupSlot: Date;
   itemEta: number;

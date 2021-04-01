@@ -128,7 +128,7 @@ class StallCard extends React.Component<IProps, IState> {
                 <img src="/img/coffee.png" className={classes.coffeeIcon} />
               </Box>
               <Box>
-                <img src="/img/distance.svg" className={classes.distanceIcon} />
+                <img src="/img/distance.svg" className={classes.distanceIcon}  />
                 <Typography roboto={true} variant="body2" display="inline">
                   30ft
                 </Typography>

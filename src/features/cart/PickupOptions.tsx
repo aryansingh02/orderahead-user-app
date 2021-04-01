@@ -26,9 +26,9 @@ interface IProps {
     pickup?: Date;
   }) => void;
   itemEta: number;
-  dateModal: boolean;
+  dateModal?: boolean;
   pickupSlot?: Date;
-  mode: string;
+  mode?: string;
   pickup?: Date | number;
 }
 
@@ -149,6 +149,15 @@ export const PickupOptions = (props: IProps) => {
                   <ScheduleText>Schedule Pickup</ScheduleText>
                   {mode === FullfilmentModeType.SCHEDULED_PICKUP && !dateModal && (
                     <div
+                      tabIndex={0}
+                      role="button"
+                      onKeyDown={() => {
+                        updateState({
+                          dateModal: true,
+                          // @ts-ignore
+                          pickup: GenerateEpochDate(new Date(pickupSlot)),
+                        });
+                      }}
                       onClick={() => {
                         updateState({
                           dateModal: true,

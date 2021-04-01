@@ -1,11 +1,10 @@
-import React, { Component, Dispatch, Fragment, LegacyRef } from 'react';
+/* eslint no-param-reassign: 0 */ // --> OFF
+import React, { LegacyRef } from 'react';
 import { connect } from 'react-redux';
 import config from 'react-global-configuration';
 import { Redirect, RouteComponentProps } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { Modal } from 'react-bootstrap';
 import styled from 'styled-components';
-import get from 'lodash/get';
 import { createStyles, WithStyles } from '@material-ui/core';
 import {
   createShoppingCart,
@@ -46,10 +45,6 @@ export const FullfilmentModeType = {
 };
 
 export const zeroFee = { amount: 0, currency: 'USD' };
-
-// rhState: createAppConfigState(),
-//   stall: createStallState(),
-//   cart: createShoppingCart(state),
 
 const styles = (theme: typeof Theme) =>
   createStyles({
@@ -98,7 +93,7 @@ interface IProps extends WithStyles<typeof styles>, RouteComponentProps {
 interface IState {
   mode?: string;
   showModal: boolean;
-  dateModal: boolean;
+  dateModal?: boolean;
   itemEta: number;
   dynamicEta: number;
   dynamicFee: IPrice;
@@ -110,6 +105,14 @@ interface IState {
 
 class Cart extends React.Component<IProps, IState> {
   private bodyWrapper: LegacyRef<HTMLDivElement>;
+
+  // enableSurgeFee = true;
+  enableSurgeFee =
+  config.get('enable_surge_fee') ||
+    (this.props.stall &&
+      config
+        .get('surge_fee_enabled_stall_whitelist')
+        .findIndex((x: string) => x === this.props.stall._id) !== -1);
 
   constructor(props: IProps) {
     super(props);
@@ -146,13 +149,6 @@ class Cart extends React.Component<IProps, IState> {
     }
   }
 
-  enableSurgeFee =
-  config.get('enable_surge_fee') ||
-    (this.props.stall &&
-      config
-        .get('surge_fee_enabled_stall_whitelist')
-        .findIndex((x: string) => x === this.props.stall._id) !== -1);
-
   updateInvoice = async () => {
     const { cart, stall } = this.props;
     CalculateInvoice(cart).then((data) => {
@@ -165,7 +161,7 @@ class Cart extends React.Component<IProps, IState> {
     const { stall } = this.props;
 
     const response = await fetch(
-      `${config.get('backend')  }/stall/${stall._id}/wait-time`
+      `${config.get('backend')}/stall/${stall._id}/wait-time`
     );
     let time = await response.json();
     time = GenerateWaitTime(time.waitTime);
@@ -190,7 +186,7 @@ class Cart extends React.Component<IProps, IState> {
       return;
     }
 
-    fetch(`${config.get('backend')  }/surge-fee`, {
+    fetch(`${config.get('backend')}/surge-fee`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -211,7 +207,7 @@ class Cart extends React.Component<IProps, IState> {
       })
       .catch((error) => {
         // TODO: show error to user
-        console.log(`SurgeFee API failed ${  error}`);
+        console.log(`SurgeFee API failed ${error}`);
         this.setState({ showModal: false });
       });
   };
@@ -239,10 +235,9 @@ class Cart extends React.Component<IProps, IState> {
     if (cart.lineItems.length === 0) {
       // Redirect to store homepage if no item left in cart.
       if (cart.stallId) {
-        return <Redirect to={`/stall/${  cart.stallId}`} />;
-      } 
+        return <Redirect to={`/stall/${cart.stallId}`} />;
+      }
       return <Redirect to="/home" />;
-      
     }
     return (
       <>
@@ -337,11 +332,11 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({
   setCouponCode: (code: string) => {
     dispatch(setCouponCode(code));
   },
-  setRequestedTipPercent: (percent: number | string) => {
+  setRequestedTipPercent: (percent: number) => {
     dispatch(setRequestedTipPercent(percent));
   },
   setPickupTime: (data: number) => {
-    dispatch(setPickupTime(data));
+    dispatch(setPickupTime({ pickupTime: data }));
   },
 });
 
@@ -351,6 +346,7 @@ const mapStateToProps = (state: RootState) => ({
   cart: createShoppingCart(state),
 });
 
+// @ts-ignore
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
 
 const Wrapper = styled.div`

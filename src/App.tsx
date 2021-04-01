@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import config from "react-global-configuration";
 import { SnackbarProvider } from 'notistack';
 import { WithStyles, withStyles, createStyles } from '@material-ui/core';
 import { theme as Theme } from './theme';
 import DemoEvent from './features/event/DemoEvent';
 import Cart from './features/cart/Cart';
+import configuration from "./config";
 
+
+config.set(configuration);
 
 const styles = (theme: typeof Theme) =>
   createStyles({
@@ -34,6 +38,7 @@ const styles = (theme: typeof Theme) =>
 
 interface IState {}
 interface IProps extends WithStyles<typeof styles> {}
+
 
 class App extends Component<IProps, IState> {
   constructor(props: IProps) {
