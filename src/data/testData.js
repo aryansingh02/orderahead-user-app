@@ -5552,7 +5552,7 @@ export const invoice = {
     currency: 'USD',
   },
   tip: {
-    amount: 0,
+    amount: 100,
     currency: 'USD',
   },
   tax: {

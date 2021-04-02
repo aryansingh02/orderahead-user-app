@@ -2,8 +2,12 @@ import React from 'react';
 import config from 'react-global-configuration';
 import get from 'lodash/get';
 import styled from 'styled-components';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { Button, Grid } from '@material-ui/core';
+import Divider from '@material-ui/core/Divider';
 import { GenerateCurrencyNumber } from '../../utils';
 import { ICart, IInvoice } from '../../types';
+import Typography from '../../Typography';
 
 interface IProps {
   invoice: IInvoice;
@@ -11,116 +15,120 @@ interface IProps {
   setRequestedTipPercent: (num: number) => void;
 }
 
+const useStyles = makeStyles((theme: Theme) => createStyles({
+  invoiceRoot: {
+
+  },
+  divider: {
+    color: '#E3E3E3',
+    width: '100%',
+    marginTop: '10px',
+    marginBottom: '10px'
+  },
+  boldFont: {
+    fontWeight: 'bold'
+  },
+  checkoutButton: {
+    height: '48px',
+    borderRadius: '24px'
+  }
+}));
 
 export const Invoice = (props: IProps) => {
+  const classes = useStyles();
+
   const { invoice, cart, setRequestedTipPercent } = props;
   return (
-    <CostContainer className="row">
-      <div className="col-12 p-0 text-left">
-        <div className="container-fluid p-0 ">
-          <div className="row m-0">
-            <PriceLabel className="col-9">Subtotal</PriceLabel>
-            <PriceValue className="col-3 text-right">
-              {GenerateCurrencyNumber(invoice.subTotal)}
-            </PriceValue>
-          </div>
-          {invoice.surgeFee && invoice.surgeFee.amount > 0 ? (
-            <div className="row m-0">
-              <PriceLabel className="col-9">Surge Fee</PriceLabel>
-              <PriceValue className="col-3 text-right">
-                {GenerateCurrencyNumber(invoice.surgeFee)}
-              </PriceValue>
-            </div>
-          ) : (
-            ''
-          )}
-          {invoice.serviceFee && invoice.serviceFee.amount > 0 ? (
-            <div className="row m-0">
-              <PriceLabel className="col-9">Service Fee</PriceLabel>
-              <PriceValue className="col-3 text-right">
-                {GenerateCurrencyNumber(invoice.serviceFee)}
-              </PriceValue>
-            </div>
-          ) : (
-            ''
-          )}
-          {invoice.tax && invoice.tax.amount > 0 ? (
-            <div className="row m-0">
-              <PriceLabel className="col-9">Tax</PriceLabel>
-              <PriceValue className="col-3 text-right">
-                {GenerateCurrencyNumber(invoice.tax)}
-              </PriceValue>
-            </div>
-          ) : (
-            ''
-          )}
-          {config.get('enable_tipping') ? (
-            <div className="row m-0">
-              <PriceLabel className="col">Tip</PriceLabel>
-              <div className="col-7 text-right p-0 text-right">
-                <button
-                  type="button"
-                  className={'tipButton '.concat(
-                    cart.requestedTipPercent === 0 ? 'tipButtonSelected' : ''
-                  )}
-                  onClick={() => setRequestedTipPercent(0)}
-                >
-                  0%
-                </button>
-                <button
-                  type="button"
-                  className={'tipButton '.concat(
-                    cart.requestedTipPercent === 10 ? 'tipButtonSelected' : ''
-                  )}
-                  onClick={() => setRequestedTipPercent(10)}
-                >
-                  10%
-                </button>
-                <button
-                  type="button"
-                  className={'tipButton '.concat(
-                    cart.requestedTipPercent === 15 ? 'tipButtonSelected' : ''
-                  )}
-                  onClick={() => setRequestedTipPercent(15)}
-                >
-                  15%
-                </button>
-                <button
-                  type="button"
-                  className={'tipButton '.concat(
-                    cart.requestedTipPercent === 20 ? 'tipButtonSelected' : ''
-                  )}
-                  onClick={() => setRequestedTipPercent(20)}
-                >
-                  20%
-                </button>
-              </div>
-              <PriceValue className="col text-right">
-                {GenerateCurrencyNumber(invoice.tip)}
-              </PriceValue>
-            </div>
-          ) : (
-            ''
-          )}
-          {get(invoice, 'discount.amount') !== 0 ? (
-            <div className="row m-0">
-              <DiscountLabel className="col">Discount</DiscountLabel>
-              <DiscountValue className="col text-right">
-                {GenerateCurrencyNumber(invoice.discount)}
-              </DiscountValue>
-            </div>
-          ) : (
-            ''
-          )}
-          <div className="row m-0 font-weight-bold">
-            <TotalLabel className="col-9">Total</TotalLabel>
-            <TotalValue className="col-3 text-right justify-content-end">
-              {GenerateCurrencyNumber(invoice.total)}
-            </TotalValue>
-          </div>
-        </div>
-      </div>
-    </CostContainer>
+    <Grid container direction="column" className={classes.invoiceRoot}>
+      <Grid item xs={12} container>
+        <Grid item xs={6}>
+          <Typography roboto={true} variant="body2">
+            Subtotal
+          </Typography>
+        </Grid>
+        <Grid item xs={6} className="endJustifiedFlex">
+          <Typography roboto={true} variant="body2">
+            {GenerateCurrencyNumber(invoice.subTotal)}
+          </Typography>
+        </Grid>
+      </Grid>
+      {invoice.surgeFee && invoice.surgeFee.amount > 0 ? (
+        <Grid item xs={12} container>
+          <Grid item xs={6}>
+            <Typography roboto={true} variant="body2">
+              Surge Fee
+            </Typography>
+          </Grid>
+          <Grid item xs={6} className="endJustifiedFlex">
+            <Typography roboto={true} variant="body2">
+              {' '}
+              {GenerateCurrencyNumber(invoice.surgeFee)}
+            </Typography>
+          </Grid>
+        </Grid>
+      ) : (
+        ''
+      )}
+      {invoice.serviceFee && invoice.serviceFee.amount ? (
+        <Grid item xs={12} container>
+          <Grid item xs={6}>
+            <Typography roboto={true} variant="body2">
+              Service Fee
+            </Typography>
+          </Grid>
+          <Grid item xs={6} className="endJustifiedFlex">
+            <Typography roboto={true} variant="body2">
+              {GenerateCurrencyNumber(invoice.serviceFee)}
+            </Typography>
+          </Grid>
+        </Grid>
+      ) : (
+        ''
+      )}
+      {invoice.tax && invoice.tax.amount && (
+        <Grid item xs={12} container>
+          <Grid item xs={6}>
+            <Typography roboto={true} variant="body2">
+              Tax
+            </Typography>
+          </Grid>
+          <Grid item xs={6} className="endJustifiedFlex">
+            <Typography roboto={true} variant="body2">
+              {GenerateCurrencyNumber(invoice.tax)}
+            </Typography>
+          </Grid>
+        </Grid>
+      )}
+      {get(invoice, "discount.amount") !== 0 ? (
+        <Grid item xs={12} container>
+          <Grid item xs={6}>
+            <Typography roboto={true} variant="body2">
+              Discount
+            </Typography>
+          </Grid>
+          <Grid item xs={6} className="endJustifiedFlex">
+            <Typography roboto={true} variant="body2">
+              {GenerateCurrencyNumber(invoice.discount)}
+            </Typography>
+          </Grid>
+        </Grid>
+      ) : (
+        ""
+      )}
+      <Divider className={classes.divider}/>
+      <Grid item xs={12} container>
+        <Grid item xs={6}>
+          <Typography roboto={true} variant="body1" className={classes.boldFont}>
+            Total
+          </Typography>
+        </Grid>
+        <Grid item xs={6} className="endJustifiedFlex">
+          <Typography roboto={true} variant="body1" className={classes.boldFont}>
+            {GenerateCurrencyNumber(invoice.total)}
+          </Typography>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 

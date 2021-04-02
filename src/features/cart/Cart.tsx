@@ -1,11 +1,18 @@
 /* eslint no-param-reassign: 0 */ // --> OFF
-import React, { LegacyRef } from 'react';
+import React, { LegacyRef, RefObject } from 'react';
 import { connect } from 'react-redux';
 import config from 'react-global-configuration';
 import { Redirect, RouteComponentProps } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { createStyles, WithStyles, Grid } from '@material-ui/core';
+import RootRef from '@material-ui/core/RootRef';
+import {
+  createStyles,
+  WithStyles,
+  Grid,
+  withStyles,
+  Button,
+} from '@material-ui/core';
 import {
   createShoppingCart,
   setCouponCode,
@@ -39,6 +46,7 @@ import { theme as Theme } from '../../theme';
 import { CommonP } from '../../commonStyles';
 import CartHeader from './CartHeader';
 import Typography from '../../Typography';
+import ChooseTip from './ChooseTip';
 
 export const FullfilmentModeType = {
   FREE_PICKUP: 'FREE_PICKUP',
@@ -80,6 +88,16 @@ const styles = (theme: typeof Theme) =>
     tabRoot: {
       fontFamily: 'Roboto',
     },
+    cutleryRow: {
+      marginTop: '20px',
+    },
+    invoiceRow: {},
+    checkoutButton: {
+      height: '48px',
+      borderRadius: '24px',
+      position: 'fixed',
+      bottom: '35px',
+    },
   });
 
 interface IProps extends WithStyles<typeof styles>, RouteComponentProps {
@@ -106,11 +124,12 @@ interface IState {
 }
 
 class Cart extends React.Component<IProps, IState> {
-  private bodyWrapper: LegacyRef<HTMLDivElement>;
+  //
+  private bodyWrapper: RefObject<HTMLDivElement> | undefined;
 
   // enableSurgeFee = true;
   enableSurgeFee =
-  config.get('enable_surge_fee') ||
+    config.get('enable_surge_fee') ||
     (this.props.stall &&
       config
         .get('surge_fee_enabled_stall_whitelist')
@@ -219,7 +238,7 @@ class Cart extends React.Component<IProps, IState> {
   };
 
   render() {
-    const { stall, cart } = this.props;
+    const { stall, cart, classes } = this.props;
     const { props } = this;
     const {
       mode,
@@ -248,14 +267,17 @@ class Cart extends React.Component<IProps, IState> {
           <title>{stall.name} Cart</title>
         </Helmet>
         <Grid container direction="row" justify="center">
-          <Grid item xs={10}>
-            <CartHeader
-              history={this.props.history}
-              match={this.props.match}
-              location={this.props.location}
-            />
-          </Grid>
-          <Grid item xs={10} className='startJustifiedFlex'>
+          {/* @ts-ignore */}
+          <RootRef rootRef={this.bodyWrapper}>
+            <Grid item xs={10}>
+              <CartHeader
+                history={this.props.history}
+                match={this.props.match}
+                location={this.props.location}
+              />
+            </Grid>
+          </RootRef>
+          <Grid item xs={10} className="startJustifiedFlex">
             <Typography roboto={true} variant="h4">
               My Order
             </Typography>
@@ -269,6 +291,17 @@ class Cart extends React.Component<IProps, IState> {
               history={props.history}
             />
           </Grid>
+          {invoice && (
+            <Grid item xs={10}>
+              {/* @ts-ignore */}
+              <ChooseTip
+                invoice={invoice}
+                setRequestedTipPercent={setRequestedTipPercent}
+                cart={cart}
+              />
+            </Grid>
+          )}
+
           <Grid item xs={10}>
             <PickupOptions
               enableSurgeFee={this.enableSurgeFee}
@@ -283,32 +316,36 @@ class Cart extends React.Component<IProps, IState> {
               pickupSlot={pickupSlot}
             />
           </Grid>
-        </Grid>
-
-        <Wrapper className="container-fluid">
-          <div
-            ref={this.bodyWrapper}
-            className="row cartRow align-align-center text-center m-0"
-          />
-
-
-          <CutleryCoupon
-            cutlerySwitch={cutlerySwitch}
-            updateState={(data) => this.setState(data)}
-            updateNote={this.props.updateNote}
-            setCouponCode={this.props.setCouponCode}
-            // @ts-ignore
-            invoice={invoice}
-            cart={cart}
-          />
-          {invoice && (
-            <Invoice
+          <Grid item xs={10} className={classes.cutleryRow}>
+            <CutleryCoupon
+              cutlerySwitch={cutlerySwitch}
+              updateState={(data) => this.setState(data)}
+              updateNote={this.props.updateNote}
+              setCouponCode={this.props.setCouponCode}
+              // @ts-ignore
               invoice={invoice}
               cart={cart}
-              setRequestedTipPercent={this.props.setRequestedTipPercent}
             />
+          </Grid>
+          {invoice && (
+            <Grid item xs={10} className={classes.invoiceRow}>
+              <Invoice
+                invoice={invoice}
+                cart={cart}
+                setRequestedTipPercent={this.props.setRequestedTipPercent}
+              />
+            </Grid>
           )}
-        </Wrapper>
+          <Button
+            color="primary"
+            variant="contained"
+            className={classes.checkoutButton}
+            style={{ width: this.bodyWrapper?.current?.offsetWidth }}
+          >
+            <Typography roboto={true}>Proceed to Checkout</Typography>
+          </Button>
+        </Grid>
+
         <SkipModal
           showModal={showModal}
           itemEta={itemEta}
@@ -359,16 +396,14 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 // @ts-ignore
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+  // @ts-ignore
+)(withStyles(styles)(Cart));
 
 const Wrapper = styled.div`
   padding-bottom: 90px;
-`;
-
-const Button = styled.div`
-  position: fixed;
-  bottom: 20px;
-  background: #ffffff;
 `;
 
 const ItemListText = styled(CommonP)`

@@ -1,13 +1,18 @@
 import React, { Fragment } from 'react';
+import Radio from '@material-ui/core/Radio';
 import config from 'react-global-configuration';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { Grid } from '@material-ui/core';
 import { format } from 'date-fns';
 import { IconContext } from 'react-icons';
-import { MdModeEdit } from 'react-icons/all';
+import { IoFlashSharp, MdModeEdit } from 'react-icons/all';
+import PeopleIcon from '@material-ui/icons/People';
 import styled from 'styled-components';
 import { GenerateCurrencyNumber, GenerateEpochDate } from '../../utils';
 import { FullfilmentModeType, zeroFee } from './Cart';
 import { IPrice } from '../../types';
-import { CommonP } from '../../commonStyles';
+import Typography from '../../Typography';
+import { theme as customTheme } from '../../theme';
 
 interface IProps {
   enableSurgeFee: boolean;
@@ -32,6 +37,46 @@ interface IProps {
   pickup?: Date | number;
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    pickupIcon: {
+      paddingRight: theme.spacing(1.25),
+    },
+    pickupText: {
+      marginTop: '20px',
+      marginBottom:'20px'
+    },
+    pickupRow: {
+      padding: '10px',
+      marginBottom: '5px',
+      border: '1px solid',
+      borderRadius: '6px',
+    },
+    pickupRoot: {
+      paddingBottom: '10px',
+      borderBottom: 'solid 1px #E3E3E3'
+    },
+    skipRow: (props) => ({
+      // @ts-ignore
+      borderColor: props.skipActive
+        ? theme.palette.primary.main
+        : 'transparent',
+    }),
+    freeRow: (props) => ({
+      // @ts-ignore
+      borderColor: props.freeActive
+        ? theme.palette.primary.main
+        : 'transparent',
+    }),
+    scheduledRow: (props) => ({
+      // @ts-ignore
+      borderColor: props.scheduledActive
+        ? theme.palette.primary.main
+        : 'transparent',
+    }),
+  })
+);
+
 export const PickupOptions = (props: IProps) => {
   const {
     enableSurgeFee,
@@ -46,51 +91,95 @@ export const PickupOptions = (props: IProps) => {
     pickup,
   } = props;
   // @ts-ignore
+  const styleProps = {
+    scheduleActive: mode === FullfilmentModeType.SCHEDULED_PICKUP,
+    skipActive: mode === FullfilmentModeType.SKIP_THE_LINE,
+    freeActive: mode === FullfilmentModeType.FREE_PICKUP,
+  };
+  const classes = useStyles(styleProps);
+
   return (
     (enableSurgeFee || config.get('schedule_payment')) && (
-      <PickupRow className="row">
-        <PickupHeadline data-testid="pickup_heading" className="col-12">
-          Pickup
-        </PickupHeadline>
-        <PickupContainer className="container-fluid">
-          {enableSurgeFee && (
-            <>
-              <AsapRadio
-                className="row align-items-center"
-                // @ts-ignore
-                active={mode === FullfilmentModeType.SKIP_THE_LINE}
-                onClick={() => {
-                  handleClose(dynamicFee, dynamicEta);
-                  updateState({
-                    mode: FullfilmentModeType.SKIP_THE_LINE,
-                    pickupSlot: undefined,
-                  });
-                }}
-                data-testid="dynamic_radio_wrapper"
+      <Grid container direction="row" className={classes.pickupRoot}>
+        <Grid item xs={12} className={classes.pickupText}>
+          <Typography variant="h4" roboto={true}>
+            Pickup
+          </Typography>
+        </Grid>
+        {enableSurgeFee && (
+          <Grid
+            className={`${classes.pickupRow} ${classes.skipRow}`}
+            item
+            container
+            xs={12}
+            direction="row"
+            alignItems="center"
+          >
+            <Grid
+              item
+              xs={2}
+              onClick={() => {
+                handleClose(dynamicFee, dynamicEta);
+                updateState({
+                  mode: FullfilmentModeType.SKIP_THE_LINE,
+                  pickupSlot: undefined,
+                });
+              }}
+            >
+              <Radio
+                checked={mode === FullfilmentModeType.SKIP_THE_LINE}
+                onChange={() => {}}
+                value="dymaic radio"
+                name="dynamic radio"
+                inputProps={{ 'aria-label': 'A' }}
+                color="primary"
+              />
+            </Grid>
+            <Grid item xs={7} container direction="column">
+              <Typography
+                variant="body2"
+                style={{ fontWeight: 'bold' }}
+                roboto={true}
               >
-                <div className="col-2 p-0 text-left">
-                  <RadioInput
-                    type="radio"
-                    id="dynamic"
-                    name="dynamicRadio"
-                    data-testid="dynamic_radio"
-                    checked={mode === FullfilmentModeType.SKIP_THE_LINE}
-                    onChange={() => {}}
-                  />
-                </div>
-                <div className="col-8 p-0 text-left">
-                  <RadioText>Pickup in {dynamicEta} mins</RadioText>
-                </div>
-                <div className="col-2 p-0 text-right">
-                  <RadioPrice>{GenerateCurrencyNumber(dynamicFee)}</RadioPrice>
-                </div>
-              </AsapRadio>
-            </>
-          )}
-          <NormalRadio
-            className="row align-items-center"
-            // @ts-ignore
-            active={mode === FullfilmentModeType.FREE_PICKUP}
+                Queue 2min
+              </Typography>
+              <Typography variant="overline" roboto={true}>
+                Skip the line
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={3}
+              container
+              direction="row"
+              className="endJustifiedFlex"
+              style={{ alignItems: 'center' }}
+            >
+              <IconContext.Provider
+                value={{
+                  color: customTheme.palette.primary.main,
+                  className: 'global-class-name',
+                }}
+              >
+                <IoFlashSharp className={classes.pickupIcon} />
+              </IconContext.Provider>
+              <Typography variant="body1" roboto={true}>
+                {GenerateCurrencyNumber(dynamicFee)}
+              </Typography>
+            </Grid>
+          </Grid>
+        )}
+        <Grid
+          className={`${classes.pickupRow} ${classes.freeRow}`}
+          item
+          container
+          xs={12}
+          direction="row"
+          alignItems="center"
+        >
+          <Grid
+            item
+            xs={2}
             onClick={() => {
               handleClose(zeroFee, itemEta);
               updateState({
@@ -99,28 +188,66 @@ export const PickupOptions = (props: IProps) => {
               });
             }}
           >
-            <div className="col-2 text-left p-0">
-              <RadioInput
-                type="radio"
-                id="regular"
-                name="normalRadio"
-                data-testid="normal_radio"
-                checked={mode === FullfilmentModeType.FREE_PICKUP}
-                onChange={() => {}}
-              />
-            </div>
-            <div className="col-8 text-left p-0">
-              <RadioText>Pickup in {itemEta} mins</RadioText>
-            </div>
-            <div className="col-2 text-right p-0">
-              <RadioPrice>$0.00</RadioPrice>
-            </div>
-          </NormalRadio>
-          {config.get('schedule_payment') && (
-            <ScheduleRadio
-              className="row align-items-center"
-              // @ts-ignore
-              active={mode === FullfilmentModeType.SCHEDULED_PICKUP}
+            <Radio
+              checked={mode === FullfilmentModeType.FREE_PICKUP}
+              onChange={() => {}}
+              value="free radio"
+              name="free radio"
+              inputProps={{ 'aria-label': 'A' }}
+              color="primary"
+            />
+          </Grid>
+          <Grid item xs={7} container direction="column">
+            <Grid item container direction="row">
+              <Typography
+                variant="body2"
+                style={{ fontWeight: 'bold' }}
+                roboto={true}
+              >
+                Queue
+              </Typography>
+              <Typography
+                variant="body2"
+                style={{
+                  fontWeight: 'bold',
+                  color: customTheme.palette.error.main,
+                  marginLeft: '2px',
+                }}
+              >
+                {itemEta} minutes
+              </Typography>
+            </Grid>
+
+            <Typography variant="overline" roboto={true}>
+              Standard Line
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            xs={3}
+            container
+            direction="row"
+            className="endJustifiedFlex"
+            style={{ alignItems: 'center' }}
+          >
+            <PeopleIcon color="error" className={`${classes.pickupIcon}`} />
+            <Typography variant="body1" roboto={true}>
+              {GenerateCurrencyNumber(dynamicFee)}
+            </Typography>
+          </Grid>
+        </Grid>
+        {config.get('schedule_payment') && (
+          <Grid
+            className={`${classes.pickupRow} ${classes.scheduledRow}`}
+            item
+            container
+            xs={12}
+            direction="row"
+            alignItems="center"
+          >
+            <Grid
+              item
+              xs={2}
               onClick={() => {
                 handleClose(zeroFee, itemEta);
                 updateState({
@@ -131,161 +258,42 @@ export const PickupOptions = (props: IProps) => {
                 });
               }}
             >
-              <div className="col-2 text-left p-0">
-                <RadioInput
-                  name="scheduleRadio"
-                  type="radio"
-                  id="schedule"
-                  checked={mode === FullfilmentModeType.SCHEDULED_PICKUP}
-                  data-testid="schedule_radio"
-                  onChange={() => {}}
-                />
-              </div>
-              <div className="col-8 text-left p-0">
-                <div
-                  className="col-12 p-0 text-left"
-                  // onClick={() => openScheduleModal()}
-                >
-                  <ScheduleText>Schedule Pickup</ScheduleText>
-                  {mode === FullfilmentModeType.SCHEDULED_PICKUP && !dateModal && (
-                    <div
-                      tabIndex={0}
-                      role="button"
-                      onKeyDown={() => {
-                        updateState({
-                          dateModal: true,
-                          // @ts-ignore
-                          pickup: GenerateEpochDate(new Date(pickupSlot)),
-                        });
-                      }}
-                      onClick={() => {
-                        updateState({
-                          dateModal: true,
-                          // @ts-ignore
-                          pickup: GenerateEpochDate(new Date(pickupSlot)),
-                        });
-                      }}
-                    >
-                      <DateText>
-                        {pickupSlot
-                          ? format(new Date(pickupSlot), 'PPp')
-                          : // @ts-ignore
-                          format(new Date(pickup), 'PP')}
-                        <EditTimeSpan>
-                          <IconContext.Provider
-                            value={{
-                              color: '#00ADF6',
-                              className: 'global-class-name',
-                              size: '14px',
-                            }}
-                          >
-                            <MdModeEdit />
-                          </IconContext.Provider>
-                          {/*{format(new Date(pickup), 'MM/dd/yyyy')}*/}
-                        </EditTimeSpan>
-                      </DateText>
-                    </div>
-                  )}
-                </div>
-              </div>
-              <div className="col-2 text-right p-0">
-                <RadioPrice>$0.00</RadioPrice>
-              </div>
-            </ScheduleRadio>
-          )}
-        </PickupContainer>
-      </PickupRow>
+              <Radio
+                checked={mode === FullfilmentModeType.SCHEDULED_PICKUP}
+                onChange={() => {}}
+                value="scheduled radio"
+                name="scheduled radio"
+                inputProps={{ 'aria-label': 'A' }}
+                color="primary"
+              />
+            </Grid>
+            <Grid item xs={7} container direction="column">
+              <Typography
+                variant="body2"
+                style={{ fontWeight: 'bold' }}
+                roboto={true}
+              >
+                Schedule Pickup
+              </Typography>
+            </Grid>
+            <Grid
+              item
+              xs={3}
+              container
+              direction="row"
+              className="endJustifiedFlex"
+              style={{ alignItems: 'center' }}
+            >
+              <Typography variant="body1" roboto={true}>
+                $0.00
+              </Typography>
+            </Grid>
+          </Grid>
+        )}
+      </Grid>
     )
   );
 };
 
-const PickupContainer = styled.div`
-  padding: 0 15px;
-  border: 1px solid #eeeeee;
-  box-sizing: border-box;
-  border-top: solid 4px #00adf6;
-`;
 
-const AsapRadio = styled.div`
-  height: 48px;
-  border: 1px solid;
-  box-sizing: border-box;
-  border-radius: 6px;
-  padding: 0 15px;
-  margin: 20px 0 0 0;
-  border-color: ${(props) =>
-    //@ts-ignore
-    props.active ? 'rgba(0, 173, 246, 0.05)' : '#E1E1E1'};
-  background: ${(props) =>
-  //@ts-ignore
 
-    props.active ? 'rgba(0, 173, 246, 0.05)' : '#FFFFFF'};
-`;
-
-const NormalRadio = styled(AsapRadio)`
-  margin: 10px 0 15px 0;
-  background: ${(props) =>
-  //@ts-ignore
-
-    props.active ? 'rgba(0, 173, 246, 0.05)' : '#FFFFFF'};
-  border-color: ${(props) =>
-  //@ts-ignore
-
-    props.active ? 'rgba(0, 173, 246, 0.05)' : '#E1E1E1'};
-`;
-
-const ScheduleRadio = styled(NormalRadio)`
-  padding: 10px 15px;
-  height: auto;
-`;
-
-const ScheduleText = styled(CommonP)`
-  font-family: NationalRegular;
-  font-size: 16px;
-  line-height: 24px;
-  color: #444444;
-  cursor: pointer;
-`;
-
-const PickupHeadline = styled.div`
-  font-family: NationalBold;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #00adf6;
-`;
-
-const PickupRow = styled.div`
-  margin: 30px 0 0 0;
-`;
-
-const RadioInput = styled.input`
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
-  transform: scale(1.5);
-`;
-
-const RadioText = styled(CommonP)`
-  font-family: NationalMedium;
-  font-size: 16px;
-  line-height: 24px;
-  color: #444444;
-`;
-
-const DateText = styled(RadioText)`
-  font-size: 14px;
-`;
-
-const RadioPrice = styled(CommonP)`
-  font-family: PlatformRegular;
-  font-size: 14px;
-  line-height: 22px;
-  letter-spacing: 1px;
-
-  color: #444444;
-`;
-const EditTimeSpan = styled.span`
-  margin-left: 5px;
-`;

@@ -94,7 +94,8 @@
     "import/extensions": "off",
     "react/static-property-placement": "off",
     "react/prefer-stateless-function": "off",
-    "react/no-unused-prop-types": "off"
+    "react/no-unused-prop-types": "off",
+    "@typescript-eslint/indent": "off"
   }
 }
 // no undersocre dangle had to be turned off because _id of business needed to be accessed which was throwing errors

@@ -1,22 +1,28 @@
-import React, { Fragment } from "react";
-import Switch from "react-switch";
-import { IconContext } from "react-icons";
-import { IoIosCheckmarkCircle, IoIosCloseCircle } from "react-icons/all";
-import styled from "styled-components";
-import get from "lodash/get";
+import React, { Fragment } from 'react';
+import Switch from 'react-switch';
+import { IconContext } from 'react-icons';
+import { Grid } from '@material-ui/core';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/all';
+import Checkbox from '@material-ui/core/Checkbox';
+import styled from 'styled-components';
+import get from 'lodash/get';
 import { ICart, IInvoice } from '../../types';
 import { CommonP } from '../../commonStyles';
+import Typography from '../../Typography';
 
-interface IProps{
+interface IProps {
   cutlerySwitch: boolean;
   invoice: IInvoice;
   cart: ICart;
   setCouponCode: (coupon: string) => void;
   updateNote: (note: string) => void;
-  updateState: ({ cutlerySwitch }:{cutlerySwitch: boolean}) => void;
+  updateState: ({ cutlerySwitch }: { cutlerySwitch: boolean }) => void;
 }
 
-export const CutleryCoupon = (props:IProps) => {
+const useStyles = makeStyles((theme: Theme) => createStyles({}));
+
+export const CutleryCoupon = (props: IProps) => {
   const {
     cutlerySwitch,
     updateState,
@@ -25,92 +31,88 @@ export const CutleryCoupon = (props:IProps) => {
     invoice,
     cart,
   } = props;
+  const classes = useStyles();
+
   const getCouponClass = () => {
     if (cart.couponCode) {
-      return get(invoice, "discount.amount") === 0
-        ? "invalidCoupon"
-        : "validCoupon";
+      return get(invoice, 'discount.amount') === 0
+        ? 'invalidCoupon'
+        : 'validCoupon';
     }
-    return "";
+    return '';
   };
   return (
-    <>
-      <CutleryRow className="row p-0">
-        <div className="col-3 m-0 p-0 text-left">
-          <img src="/img/leaf.png" alt="surge fee" width="16px" height="16px" />
-        </div>
-        <div className="col-6 m-0 p-0">
-          <CutleryTextHeading>Utensils, straws, etc..</CutleryTextHeading>
-          <CutleryTextContent>
-            These items won't be added unless you ask
-          </CutleryTextContent>
-        </div>
-        <div className="col-3 text-right m-0 p-0">
-          <Switch
-            onChange={(checked:boolean) => {
-              updateState({ cutlerySwitch: checked });
+    <Grid container>
+      <Grid container direction="row" alignItems="center">
+        <Grid item xs={2}>
+          <Checkbox
+            checked={cutlerySwitch}
+            onChange={(evt) => {
+              updateState({ cutlerySwitch: evt.target.checked });
               let note;
-              if (checked) {
-                note = "Utensils, straws, etc to be added in this order.";
+              if (evt.target.checked) {
+                note = 'Utensils, straws, etc to be added in this order.';
               } else {
-                note = "";
+                note = '';
               }
               updateNote(note);
             }}
-            checked={cutlerySwitch}
-            className="react-switch"
-            uncheckedIcon={false}
-            checkedIcon={false}
-            width={40}
-            height={20}
-            onColor="#00ADF6"
+            color="primary"
+            inputProps={{ 'aria-label': 'primary checkbox' }}
           />
-        </div>
-      </CutleryRow>
-      <CouponRow>
-        <Input
-          placeholder="Enter your coupon or promo code"
-          className={getCouponClass()}
-          value={cart.couponCode}
-          onChange={(evt) => {
-            setCouponCode(evt.target.value);
-          }}
-        />
-        <CheckDiv className="pointer">
-          {getCouponClass() === "validCoupon" && (
-            <IconContext.Provider
-              value={{
-                color: "rgba(28,189,142,1)",
-                className: "global-class-name",
-                size: "16px",
-              }}
-            >
-              <IoIosCheckmarkCircle />
-            </IconContext.Provider>
-          )}
-          {getCouponClass() === "invalidCoupon" && (
-            <IconContext.Provider
-              value={{
-                color: "rgba(255, 81, 81, 1)",
-                className: "global-class-name",
-                size: "16px",
-              }}
-            >
-              <IoIosCloseCircle />
-            </IconContext.Provider>
-          )}
-        </CheckDiv>
-      </CouponRow>
-    </>
+        </Grid>
+        <Grid item xs={7} container direction="column">
+          <Typography variant="body2" roboto={true}>
+            Utensils, straws, etc..
+          </Typography>
+          <Typography variant="overline" roboto={true}>
+            These items won't be added unless you ask
+          </Typography>
+        </Grid>
+        <Grid item xs={3} container className="endJustifiedFlex">
+          <img src="/img/leaf.png" alt="surge fee" width="16px" height="16px" />
+        </Grid>
+      </Grid>
+      <Grid item xs={12}>
+        <CouponRow>
+          <Input
+            placeholder="Enter your coupon or promo code"
+            className={getCouponClass()}
+            value={cart.couponCode}
+            onChange={(evt) => {
+              setCouponCode(evt.target.value);
+            }}
+          />
+          <CheckDiv className="pointer">
+            {getCouponClass() === 'validCoupon' && (
+              <IconContext.Provider
+                value={{
+                  color: 'rgba(28,189,142,1)',
+                  className: 'global-class-name',
+                  size: '16px',
+                }}
+              >
+                <IoIosCheckmarkCircle />
+              </IconContext.Provider>
+            )}
+            {getCouponClass() === 'invalidCoupon' && (
+              <IconContext.Provider
+                value={{
+                  color: 'rgba(255, 81, 81, 1)',
+                  className: 'global-class-name',
+                  size: '16px',
+                }}
+              >
+                <IoIosCloseCircle />
+              </IconContext.Provider>
+            )}
+          </CheckDiv>
+        </CouponRow>
+      </Grid>
+    </Grid>
   );
 };
 
-const CutleryRow = styled.div`
-  margin-top: 20px;
-  margin-left: 0;
-  margin-right: 0;
-  padding: 10px 0;
-`;
 
 const CouponRow = styled.div`
   margin-top: 24px;
@@ -118,30 +120,18 @@ const CouponRow = styled.div`
   position: relative;
 `;
 
-const CutleryTextHeading = styled(CommonP)`
-  font-family: NationalBold;
-  font-size: 16px;
-  line-height: 24px;
-  color: #000000;
-`;
 
-const CutleryTextContent = styled(CommonP)`
-  font-family: NationalRegular;
-  font-size: 14px;
-  line-height: 20px;
-  color: #444444;
-`;
 
 const Input = styled.input`
   border: 1px solid #e6e6e6;
   box-sizing: border-box;
-  border-radius: 4px;
-  height: 38px;
+  border-radius: 8px;
+  height: 51px;
   width: 100%;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 14px;
   padding-left: 10px;
   color: #979797;

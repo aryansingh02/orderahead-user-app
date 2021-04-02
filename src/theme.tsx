@@ -104,6 +104,14 @@ export const theme = createMuiTheme({
       lineHeight: '16px',
       color: 'rgba(151, 151, 151, 1)',
     },
+    overline: {
+      fontFamily: 'GT-Walsheim, roboto',
+      fontWeight: 'normal',
+      fontSize: '11px',
+      lineHeight: '13px',
+      color: 'rgba(38, 50, 56, 0.8)',
+      textTransform: 'capitalize'
+    },
   },
 
   overrides: {
