@@ -98,6 +98,9 @@ const styles = (theme: typeof Theme) =>
       position: 'fixed',
       bottom: '35px',
     },
+    cartRoot: {
+      paddingBottom: '100px'
+    }
   });
 
 interface IProps extends WithStyles<typeof styles>, RouteComponentProps {
@@ -261,7 +264,7 @@ class Cart extends React.Component<IProps, IState> {
       return <Redirect to="/home" />;
     }
     return (
-      <>
+      <Grid container className={classes.cartRoot}>
         <Helmet>
           <meta charSet="utf-8" />
           <title>{stall.name} Cart</title>
@@ -366,7 +369,7 @@ class Cart extends React.Component<IProps, IState> {
           pickupSlot={pickupSlot}
           onSlotClick={this.onSlotClick}
         />
-      </>
+      </Grid>
     );
   }
 }
