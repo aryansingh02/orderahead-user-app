@@ -7,11 +7,29 @@ import { appConfig, invoice, stall } from './data/testData';
 
 
 const greyedDollar = () => (
-  <span style={{ display: 'inline', color: '#979797' }}>$</span>
+  <span
+    style={{
+      display: 'inline',
+      color: '#979797',
+      fontFamily: 'Roboto',
+      fontSize: '14px',
+    }}
+  >
+    $
+  </span>
 );
 
 const normalDollar = () => (
-  <span style={{ display: 'inline', color: '#263238' }}>$</span>
+  <span
+    style={{
+      display: 'inline',
+      color: '#263238',
+      fontFamily: 'Roboto',
+      fontSize: '14px',
+    }}
+  >
+    $
+  </span>
 );
 
 export const GenerateExpenseLevel = (expenseLevel: number) => {
@@ -127,3 +145,4 @@ export const GenerateWaitTime = (time: number) => Math.round(time / (1000 * 60))
 
 export const createStallState = () => stall;
 export const createAppConfigState = () => appConfig;
+export const isDesktop = () => window.innerWidth > 1280;

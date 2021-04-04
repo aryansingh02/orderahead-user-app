@@ -1,5 +1,6 @@
 import React from 'react';
 import { fade, makeStyles, createStyles } from '@material-ui/core/styles';
+import DehazeIcon from '@material-ui/icons/Dehaze';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -57,7 +58,6 @@ const useStyles = makeStyles((theme: typeof Theme) =>
       right: theme.spacing(3.75),
       top: '50%',
       transform: 'translate(0, -50%)',
-
     },
     sectionMobile: {
       display: 'flex',
@@ -68,7 +68,7 @@ const useStyles = makeStyles((theme: typeof Theme) =>
     appBarRoot: {
       background: '#FFFFFF',
       position: 'relative',
-      height: '87px'
+      height: '87px',
     },
     cartImg: {
       height: '23px',
@@ -79,15 +79,14 @@ const useStyles = makeStyles((theme: typeof Theme) =>
       width: '23px',
     },
     toolbarRoot: {
-      height: '100%'
-    }
+      height: '100%',
+    },
   })
 );
 
 export default function DesktopHeader() {
   const classes = useStyles();
   const mobileMenuId = 'primary-search-account-menu-mobile';
-
 
   return (
     <div className={classes.grow}>
@@ -115,6 +114,9 @@ export default function DesktopHeader() {
             </IconButton>
             <IconButton color="inherit">
               <img src="/img/cart.svg" className={classes.cartImg} />
+            </IconButton>
+            <IconButton color="inherit">
+              <DehazeIcon style={{ color: '#979797' }} />
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>

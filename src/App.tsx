@@ -5,9 +5,9 @@ import config from "react-global-configuration";
 import { SnackbarProvider } from 'notistack';
 import { WithStyles, withStyles, createStyles } from '@material-ui/core';
 import { theme as Theme } from './theme';
-import DemoEvent from './features/event/DemoEvent';
 import Cart from './features/cart/Cart';
 import configuration from "./config";
+import Event from './features/event/Event';
 
 
 config.set(configuration, { assign: false, freeze: false });
@@ -39,7 +39,6 @@ const styles = (theme: typeof Theme) =>
 interface IState {}
 interface IProps extends WithStyles<typeof styles> {}
 
-
 class App extends Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
@@ -63,9 +62,9 @@ class App extends Component<IProps, IState> {
 
           <Router>
             <Switch>
-              <Route exact path="/demo_event" component={DemoEvent} />
               <Route exact path="/cart" component={Cart} />
-              <Route path="/" component={DemoEvent} />
+              <Route exact path="/event" component={Event} />
+              <Route path="/" component={Event} />
             </Switch>
           </Router>
         </div>

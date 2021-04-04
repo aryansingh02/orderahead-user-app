@@ -1,11 +1,11 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import { WithStyles, withStyles, createStyles } from '@material-ui/core';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import Typography from '../../Typography';
 
 import { theme as Theme } from '../../theme';
 
@@ -31,6 +31,9 @@ const styles = (theme: typeof Theme) =>
     formControl: {
       width: '150px',
     },
+    rootSelect:{
+      textAlign: 'right'
+    }
   });
 
 interface IProps extends WithStyles<typeof styles> {}
@@ -72,19 +75,20 @@ class PlacesFilter extends React.Component<IProps, IState> {
                   this.setPlace(evt.target.value as string)
                 }
                 disableUnderline={true}
+                className={classes.rootSelect}
               >
                 <MenuItem value="distance">
-                  <Typography variant="body2" display="inline">
+                  <Typography roboto={true} variant="subtitle1" display="inline">
                     Sort by Distance
                   </Typography>
                 </MenuItem>
                 <MenuItem value="ratings">
-                  <Typography variant="body2" display="inline">
+                  <Typography roboto={true} variant="subtitle1" display="inline">
                     Sort by Ratings
                   </Typography>
                 </MenuItem>
                 <MenuItem value="quality">
-                  <Typography variant="body2" display="inline">
+                  <Typography roboto={true} variant="subtitle1" display="inline">
                     Sort by Quality
                   </Typography>
                 </MenuItem>

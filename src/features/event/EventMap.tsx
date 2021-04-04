@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { createStyles, withStyles, WithStyles } from '@material-ui/core';
 import { theme as Theme } from '../../theme';
-
+import config from '../../config';
 
 interface IAny {
   text: string;
@@ -47,20 +47,18 @@ interface IState {}
 
 class EventMap extends React.Component<IProps, IState> {
   public static defaultProps = {
-    center: { lat: 59.95, lng: 30.33 },
-    zoom: 11,
+    center: { lat: 37.7739, lng: -122.4312 },
+    zoom: 14,
   };
 
   render() {
     return (
       <GoogleMapReact
-        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_KEY || '' }}
+        bootstrapURLKeys={{ key: config.REACT_APP_GOOGLE_API_KEY || '' }}
         defaultCenter={this.props.center}
         defaultZoom={this.props.zoom}
       >
-        <AnyReactComponent
-          text='Kreyser Avrora'
-        />
+        {/*<AnyReactComponent text="Kreyser Avrora" />*/}
       </GoogleMapReact>
     );
   }

@@ -112,6 +112,13 @@ export const theme = createMuiTheme({
       color: 'rgba(38, 50, 56, 0.8)',
       textTransform: 'capitalize'
     },
+    subtitle1: {
+      fontFamily: 'GT-Walsheim, roboto',
+      fontWeight: 500,
+      fontSize: '12px',
+      lineHeight: '14px',
+      color: '#263238'
+    },
   },
 
   overrides: {
@@ -147,6 +154,11 @@ export const theme = createMuiTheme({
     MuiBottomNavigationAction: {
       root: {
         maxWidth: '33%',
+      },
+    },
+    MuiTab: {
+      root: {
+        width: '90px !important',
       },
     },
     MuiChip: {
