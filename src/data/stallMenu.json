@@ -1,0 +1,156 @@
+{
+  "_id": "5fac8025a96d3651162d9913",
+  "name": "Demo Dominos",
+  "storeId": "5f32de50598d1fb09b91692e",
+  "menu": {
+    "_id": "5f7c883784f0ca012c6f17bd",
+    "name": "demo_dominos_square_06_oct_2020_15_07_35",
+    "menuItems": [
+      {
+        "name": "Bacon Lover Grilled Cheese",
+        "description": "[score: 0.75] Melted cheddar, bacon, and avocado between two slices of buttery grilled bread.",
+        "variations": [
+          {
+            "name": "Parmesan Bread Twists",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0ca28be6f179d",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "L3VM2XOUHW5FX3IXDL2KUJHG" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0caecdd6f17aa",
+        "applicableTaxKeys": [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "KRIASHUGDDYTP4IUJUU5K77V" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/r61roa3d1x4cvueszupr"
+        ]
+      },
+      {
+        "name": "Quesadilla",
+        "description": "[score: 0.707] Served with housemade chips, Bournvita milk and cookie.",
+        "variations": [
+          {
+            "name": "Garlic Bread Twists",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0ca6ee36f179e",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "CRRLH33PASZEWDTQLI2KPACA" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca39626f17ab",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "3VXGBHB3TCMB5LFJGHKE2MC4" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/txoclcy8q6s5trrhlrhk"
+        ]
+      },
+      {
+        "name": "Buffalo Chicken Quesadilla",
+        "description": "[score: 0.816] 1/4 lb. of our all-natural, rotisserie-style chicken covered with melted pepper jack cheese, and drizzled with Frank’s famous RedHot® Buffalo Sauce and creamy Ranch dressing.",
+        "variations": [
+          {
+            "name": "Stuffed Cheesy Bread",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0ca19516f179f",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "3Y52GMKWZSUAVQXCT53GOC7S" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca39cb6f17ac",
+        "applicableTaxKeys": [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "G4NFXDVY4V7LC3E4D53O4K7Y" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/ktzz07l2yzcp47blknpp"
+        ]
+      },
+      {
+        "name": "Hollywood Square",
+        "description": "[score: 0.5] Flybird lettuce, blue cheese, avocado, hard boiled egg, corn, tomato, red wine vinaigrette.",
+        "variations": [
+          {
+            "name": "Stuffed Cheesy Bread with Spinach & Feta",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0ca4fdd6f17a0",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "H4J2RFBSVBEQWKXA4DZ73IMI" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca17a66f17ad",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "3TUZQJQBE5LNENDTMRBSE4PD" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/ijsb9j5l80rbypbfqlx1"
+        ]
+      }
+    ]
+  },
+  "description": "menu based on Dominos",
+  "tag": [],
+  "expenseLevel": 2,
+  "reviews": 20,
+  "rating": 4.5,
+  "pointOfSaleInfo": {
+    "type": "SQUARE",
+    "pointOfSaleAuthInfoId": "5f32ddfe598d1fb09b91641a",
+    "squareInfo": { "locationId": "GPQDQYYHBQ0G3" }
+  },
+  "businessHours": {
+    "businessHoursPeriod": [
+      { "dayOfTheWeek": "MON", "startTime": "09:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "TUE", "startTime": "09:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "WED", "startTime": "09:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "THU", "startTime": "09:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "FRI", "startTime": "11:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "SAT", "startTime": "09:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "SUN", "startTime": "09:00:00", "endTime": "17:00:00" }
+    ]
+  }
+}

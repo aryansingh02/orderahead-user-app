@@ -18,6 +18,25 @@
     {
       "name": "Hot Dog",
       "image": "/img/hot_dog.png"
+    },
+    {"name":  "coffee",
+      "image": "/img/coffee.png"
+    },
+    {
+      "name": "savory",
+      "image": "/img/savory.png"
+    },
+    {
+      "name": "pizza",
+      "image": "/img/pizza.png"
+    },
+    {
+      "name": "burgers",
+      "image": "/img/burgers.png"
+    },
+    {
+      "name": "Hot Dog",
+      "image": "/img/hot_dog.png"
     }
   ]
 }

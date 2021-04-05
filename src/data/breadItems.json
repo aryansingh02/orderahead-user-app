@@ -1,0 +1,121 @@
+{
+  "category": "Bread",
+  "items": [
+    {
+      "name": "Bacon Lover Grilled Cheese",
+      "description": "Melted cheddar, bacon, and avocado between two slices of buttery grilled bread.",
+      "variations": [
+        {
+          "name": "Parmesan Bread Twists",
+          "price": { "amount": 649, "currency": "USD" },
+          "_id": "5f7c883784f0ca28be6f179d",
+          "status": "IN_STOCK",
+          "pointOfSaleInfo": {
+            "type": "SQUARE",
+            "squareInfo": { "inventoryItemId": "L3VM2XOUHW5FX3IXDL2KUJHG" }
+          }
+        }
+      ],
+      "categories": ["Bread"],
+      "modifier": [],
+      "status": "IN_STOCK",
+      "_id": "5f7c883784f0caecdd6f17aa",
+      "applicableTaxKeys": [
+        "2T3SOH5TRFWQTR5FBPH233P4",
+        "N4ACVVQXWUBXLN4MEE52TQEV"
+      ],
+      "pointOfSaleInfo": {
+        "type": "SQUARE",
+        "squareInfo": { "inventoryItemId": "KRIASHUGDDYTP4IUJUU5K77V" }
+      },
+      "imagePaths": ["/img/Photo0.png"]
+    },
+    {
+      "name": "Quesadilla",
+      "description": " Served with housemade chips, Bournvita milk and cookie.",
+      "variations": [
+        {
+          "name": "Garlic Bread Twists",
+          "price": { "amount": 649, "currency": "USD" },
+          "_id": "5f7c883784f0ca6ee36f179e",
+          "status": "IN_STOCK",
+          "pointOfSaleInfo": {
+            "type": "SQUARE",
+            "squareInfo": { "inventoryItemId": "CRRLH33PASZEWDTQLI2KPACA" }
+          }
+        }
+      ],
+      "categories": ["Bread"],
+      "modifier": [],
+      "status": "IN_STOCK",
+      "_id": "5f7c883784f0ca39626f17ab",
+      "applicableTaxKeys": [
+        "N4ACVVQXWUBXLN4MEE52TQEV",
+        "2T3SOH5TRFWQTR5FBPH233P4"
+      ],
+      "pointOfSaleInfo": {
+        "type": "SQUARE",
+        "squareInfo": { "inventoryItemId": "3VXGBHB3TCMB5LFJGHKE2MC4" }
+      },
+      "imagePaths": ["/img/Photo1.png"]
+    },
+    {
+      "name": "Buffalo Chicken Quesadilla",
+      "description": " 1/4 lb. of our all-natural, rotisserie-style chicken covered with melted pepper jack cheese, and drizzled with Frank’s famous RedHot® Buffalo Sauce and creamy Ranch dressing.",
+      "variations": [
+        {
+          "name": "Stuffed Cheesy Bread",
+          "price": { "amount": 649, "currency": "USD" },
+          "_id": "5f7c883784f0ca19516f179f",
+          "status": "IN_STOCK",
+          "pointOfSaleInfo": {
+            "type": "SQUARE",
+            "squareInfo": { "inventoryItemId": "3Y52GMKWZSUAVQXCT53GOC7S" }
+          }
+        }
+      ],
+      "categories": ["Bread"],
+      "modifier": [],
+      "status": "IN_STOCK",
+      "_id": "5f7c883784f0ca39cb6f17ac",
+      "applicableTaxKeys": [
+        "2T3SOH5TRFWQTR5FBPH233P4",
+        "N4ACVVQXWUBXLN4MEE52TQEV"
+      ],
+      "pointOfSaleInfo": {
+        "type": "SQUARE",
+        "squareInfo": { "inventoryItemId": "G4NFXDVY4V7LC3E4D53O4K7Y" }
+      },
+      "imagePaths": ["/img/Photo3.png"]
+    },
+    {
+      "name": "Hollywood Square",
+      "description": "Flybird lettuce, blue cheese, avocado, hard boiled egg, corn, tomato, red wine vinaigrette.",
+      "variations": [
+        {
+          "name": "Stuffed Cheesy Bread with Spinach & Feta",
+          "price": { "amount": 649, "currency": "USD" },
+          "_id": "5f7c883784f0ca4fdd6f17a0",
+          "status": "IN_STOCK",
+          "pointOfSaleInfo": {
+            "type": "SQUARE",
+            "squareInfo": { "inventoryItemId": "H4J2RFBSVBEQWKXA4DZ73IMI" }
+          }
+        }
+      ],
+      "categories": ["Bread"],
+      "modifier": [],
+      "status": "IN_STOCK",
+      "_id": "5f7c883784f0ca17a66f17ad",
+      "applicableTaxKeys": [
+        "N4ACVVQXWUBXLN4MEE52TQEV",
+        "2T3SOH5TRFWQTR5FBPH233P4"
+      ],
+      "pointOfSaleInfo": {
+        "type": "SQUARE",
+        "squareInfo": { "inventoryItemId": "3TUZQJQBE5LNENDTMRBSE4PD" }
+      },
+      "imagePaths": ["/img/Photo3.png"]
+    }
+  ]
+}

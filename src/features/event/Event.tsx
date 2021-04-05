@@ -15,6 +15,7 @@ import StallCard from './StallCard';
 import WithNavigation from '../../components/BottomNavigationHoc';
 import EventMap from './EventMap';
 import DesktopHeader from './DesktopHeader';
+import { isDesktop } from '../../utils';
 
 const styles = (theme: typeof Theme) =>
   createStyles({
@@ -23,6 +24,7 @@ const styles = (theme: typeof Theme) =>
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      paddingBottom: isDesktop()? theme.spacing(2): 0
     },
     headingRow: {},
     accountHeading: {},

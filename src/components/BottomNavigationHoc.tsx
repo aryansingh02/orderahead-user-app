@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import BottomNavigationBar from './BottomNavigationBar';
 import { theme } from '../theme';
-import {isDesktop} from '../utils';
+import { isDesktop } from '../utils';
 
 export default function WithNavigation<T>(Component: React.ComponentType<T>) {
   return (props: T) => (

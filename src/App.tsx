@@ -9,6 +9,9 @@ import Cart from './features/cart/Cart';
 import configuration from "./config";
 import Event from './features/event/Event';
 
+import { StallMenu } from './features/stall/StallMenu';
+import AddedToCart from './features/stall/AddedToCart';
+import OrderSent from './features/stall/OrderSent';
 
 config.set(configuration, { assign: false, freeze: false });
 
@@ -62,8 +65,11 @@ class App extends Component<IProps, IState> {
 
           <Router>
             <Switch>
-              <Route exact path="/cart" component={Cart} />
               <Route exact path="/event" component={Event} />
+              <Route exact path="/stall/menu" component={StallMenu} />
+              <Route exact path="/stall/cart/added" component={AddedToCart} />
+              <Route exact path="/stall/order/sent" component={OrderSent} />
+              <Route exact path="/cart" component={Cart} />
               <Route path="/" component={Event} />
             </Switch>
           </Router>

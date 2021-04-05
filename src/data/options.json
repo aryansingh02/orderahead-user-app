@@ -1,0 +1,1349 @@
+{
+  "_id": "5fac8025a96d3651162d9913",
+  "name": "Demo Dominos",
+  "storeId": "5f32de50598d1fb09b91692e",
+  "menu": {
+    "_id": "5f7c883784f0ca012c6f17bd",
+    "name": "demo_dominos_square_06_oct_2020_15_07_35",
+    "menuItems": [
+      {
+        "name": "Bacon Lover Grilled Cheese",
+        "description": "[score: 0.75] Melted cheddar, bacon, and avocado between two slices of buttery grilled bread.",
+        "variations": [
+          {
+            "name": "Parmesan Bread Twists",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0ca28be6f179d",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "L3VM2XOUHW5FX3IXDL2KUJHG" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0caecdd6f17aa",
+        "applicableTaxKeys": [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "KRIASHUGDDYTP4IUJUU5K77V" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/r61roa3d1x4cvueszupr"
+        ]
+      },
+      {
+        "name": "Quesadilla",
+        "description": "[score: 0.707] Served with housemade chips, Bournvita milk and cookie.",
+        "variations": [
+          {
+            "name": "Garlic Bread Twists",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0ca6ee36f179e",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "CRRLH33PASZEWDTQLI2KPACA" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca39626f17ab",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "3VXGBHB3TCMB5LFJGHKE2MC4" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/txoclcy8q6s5trrhlrhk"
+        ]
+      },
+      {
+        "name": "Buffalo Chicken Quesadilla",
+        "description": "[score: 0.816] 1/4 lb. of our all-natural, rotisserie-style chicken covered with melted pepper jack cheese, and drizzled with Frank’s famous RedHot® Buffalo Sauce and creamy Ranch dressing.",
+        "variations": [
+          {
+            "name": "Stuffed Cheesy Bread",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0ca19516f179f",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "3Y52GMKWZSUAVQXCT53GOC7S" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca39cb6f17ac",
+        "applicableTaxKeys": [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "G4NFXDVY4V7LC3E4D53O4K7Y" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/ktzz07l2yzcp47blknpp"
+        ]
+      },
+      {
+        "name": "Hollywood Square",
+        "description": "[score: 0.5] Flybird lettuce, blue cheese, avocado, hard boiled egg, corn, tomato, red wine vinaigrette.",
+        "variations": [
+          {
+            "name": "Stuffed Cheesy Bread with Spinach & Feta",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0ca4fdd6f17a0",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "H4J2RFBSVBEQWKXA4DZ73IMI" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca17a66f17ad",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "3TUZQJQBE5LNENDTMRBSE4PD" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/ijsb9j5l80rbypbfqlx1"
+        ]
+      },
+      {
+        "name": "Mona Lisa",
+        "description": " ",
+        "variations": [
+          {
+            "name": "Parmesan Bread Bites",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0ca25fb6f17a1",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "XGDIN3UMNV2RWMCBSXDBCKB3" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca583d6f17ae",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "EEQH54SZEAATARWNLJSVKIF3" }
+        }
+      },
+      {
+        "name": "3-pack Roll Ups",
+        "description": "[score: 0.408] 230 calories.\n\n*We are required by the Health Department to inform you that consuming raw or undercooked meats, poultry, seafood, shellfish or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions.",
+        "variations": [
+          {
+            "name": "Cinnamon Bread Twists",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0ca98886f17a2",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "CHJFVUTBM2ZZ4UXF737ARWVG" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0cafb2c6f17af",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "BBIVXTGOMROYOWQOGRVEVDLO" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/lxuhhtugwhneuovoqxbx"
+        ]
+      },
+      {
+        "name": "Hot Dog",
+        "description": "[score: 1.0] Charbroiled Butterflied hotdog with freshly sliced mayo mustard lettuce tomatoe and onion in a toasted bun",
+        "variations": [
+          {
+            "name": "Stuffed Cheesy Bread with Bacon & Jalapeno",
+            "price": { "amount": 649, "currency": "USD" },
+            "_id": "5f7c883784f0cabf786f17a3",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "BYDKZFEYGQVIOZ6WUL5CBSUG" }
+            }
+          }
+        ],
+        "categories": ["Bread"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca1a016f17b0",
+        "applicableTaxKeys": [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "Y2GYZTUV5QLGXA6NNGJMY7DA" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/x63k4axd4xluzallcoi9"
+        ]
+      },
+      {
+        "name": "Cheese Burger",
+        "description": "[score: 0.816] 1/2 lb all natural Angus chuck, American cheese, tomatoes, lettuce and red onions on a grilled sesame bun.   Served with French Fries and Pickle Wedge.  ",
+        "variations": [
+          {
+            "name": "Coke 20Oz Bottle",
+            "price": { "amount": 229, "currency": "USD" },
+            "_id": "5f7c883784f0ca0b096f17a4",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "K77XYVT7CTNCF5VDQ2PBY63G" }
+            }
+          },
+          {
+            "name": "Coke 2-Liter Bottle",
+            "price": { "amount": 349, "currency": "USD" },
+            "_id": "5f7c883784f0ca674f6f17a5",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "6U7MKV3DCYKLXLOBMG4IOYGW" }
+            }
+          }
+        ],
+        "categories": ["Drinks"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca767c6f17b1",
+        "applicableTaxKeys": [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "Q5LR35JZBAVXEOLNQFLXCNCJ" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/sskgbbxpseyttdh5vuqj"
+        ]
+      },
+      {
+        "name": "Classic-1/2 Soup Combo",
+        "description": "[score: 0.775] Classic grilled cheese & a bowl of creamy tomato soup.",
+        "variations": [
+          {
+            "name": "Coca Cola Zero Sugar 20Oz Bottle",
+            "price": { "amount": 229, "currency": "USD" },
+            "_id": "5f7c883784f0ca57986f17a6",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "RBGPGLRUMZBDCWFF62ACY34U" }
+            }
+          },
+          {
+            "name": "Coca Cola Zero Sugar 2-Liter Bottle",
+            "price": { "amount": 349, "currency": "USD" },
+            "_id": "5f7c883784f0caa9b46f17a7",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "7OKYCGDW3QY42VEQUCORXYDG" }
+            }
+          }
+        ],
+        "categories": ["Drinks"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca484e6f17b2",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "PVM7S3CNMG4Y626O6KEJVIH4" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/q9zh4psizqq7tbxe7vzu"
+        ]
+      },
+      {
+        "name": "Breakfast Sandwich",
+        "description": "[score: 0.816] 2 fried eggs, 2 slices of ham, 2 slices of American cheese and 4 half-strips of bacon on a buttery bakery bun ",
+        "variations": [
+          {
+            "name": "Diet Coke 20Oz Bottle",
+            "price": { "amount": 229, "currency": "USD" },
+            "_id": "5f7c883784f0ca360b6f17a8",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "EKA5TPJKFQ6NR6XL3LPXZYXA" }
+            }
+          },
+          {
+            "name": "Diet Coke 2-Liter Bottle",
+            "price": { "amount": 349, "currency": "USD" },
+            "_id": "5f7c883784f0ca3a396f17a9",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "VPSFPTUHIGYW45CSO5PVCDRW" }
+            }
+          }
+        ],
+        "categories": ["Drinks"],
+        "modifier": [],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca80e66f17b3",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "SX7OTFMUVIKVGUK5WG6KALB3" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/mobh9kwehkbo2o1dyx2z"
+        ]
+      },
+      {
+        "name": "Cheese Fries",
+        "description": "[score: 1.0] Melted cheddar and Jack cheeses, diced bacon and jalapenos. Served with a side of ranch dressing.",
+        "variations": [
+          {
+            "name": "Extravaganza Small",
+            "price": { "amount": 1399, "currency": "USD" },
+            "_id": "5f7c883784f0cadb9c6f1789",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "N7M7XZ2BP37YZJUDEPMSWWD5" }
+            }
+          },
+          {
+            "name": "Extravaganza Medium",
+            "price": { "amount": 1699, "currency": "USD" },
+            "_id": "5f7c883784f0ca1d2e6f178a",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "H4F3KV2W4RD5DLYTBJSM5GZW" }
+            }
+          },
+          {
+            "name": "Extravaganza Large",
+            "price": { "amount": 2099, "currency": "USD" },
+            "_id": "5f7c883784f0caed3c6f178b",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "FBZ5JZ35HQ5AXRBUCCSG7CSH" }
+            }
+          },
+          {
+            "name": "Extravaganza X-Large",
+            "price": { "amount": 2399, "currency": "USD" },
+            "_id": "5f7c883784f0ca18516f178c",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "AQAUXYON7PMZ3XIFNUYJTJXO" }
+            }
+          }
+        ],
+        "categories": ["Speciality Pizza"],
+        "modifier": [
+          {
+            "name": "Cheese",
+            "options": [
+              { "name": "None", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Thin", "price": { "amount": 100, "currency": "USD" } },
+              {
+                "name": "Normal",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              { "name": "Extra", "price": { "amount": 300, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Toppings",
+            "options": [
+              {
+                "name": "Pineapple",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "Garlic",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Olives",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Cheese portion",
+            "options": [
+              { "name": "Left", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Right", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "All", "price": { "amount": 0, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Crust",
+            "options": [
+              {
+                "name": "Hand Tossed",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Brooklyn style",
+                "price": { "amount": 200, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Sauce",
+            "options": [
+              {
+                "name": "Tomato Sauce",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Marinara Sauce",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "BBQ Sauce",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          }
+        ],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca345e6f17b4",
+        "applicableTaxKeys": ["2T3SOH5TRFWQTR5FBPH233P4"],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "46PHTDR3MQQNDYPRASJJ3Y5V" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/hxgdbv1rcmtcwt9yzuov"
+        ]
+      },
+      {
+        "name": "Regular Fries",
+        "description": "[score: 1.0] With our signature \"Guylic\" seasoning.\n",
+        "variations": [
+          {
+            "name": "Build your own Pizza Medium",
+            "price": { "amount": 1323, "currency": "USD" },
+            "_id": "5f7c883784f0ca43056f178d",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "3Q6V4AZUAQLZZ6NEEYLIQOJ4" }
+            }
+          },
+          {
+            "name": "Build your own Pizza Large",
+            "price": { "amount": 1523, "currency": "USD" },
+            "_id": "5f7c883784f0ca7d986f178e",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "PFFLFUA2H5N2HOKM5RKTND5O" }
+            }
+          },
+          {
+            "name": "Build your own Pizza X-Large",
+            "price": { "amount": 1723, "currency": "USD" },
+            "_id": "5f7c883784f0ca311d6f178f",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "ETOLQQ25YVFBNRCSZ3EJEXR2" }
+            }
+          }
+        ],
+        "categories": ["Build your own"],
+        "modifier": [
+          {
+            "name": "Crust",
+            "options": [
+              {
+                "name": "Hand Tossed",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Brooklyn style",
+                "price": { "amount": 200, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Size",
+            "options": [
+              {
+                "name": "Small",
+                "price": { "amount": 1099, "currency": "USD" }
+              },
+              {
+                "name": "Medium",
+                "price": { "amount": 1699, "currency": "USD" }
+              },
+              {
+                "name": "Large",
+                "price": { "amount": 2099, "currency": "USD" }
+              },
+              {
+                "name": "X-Large",
+                "price": { "amount": 2399, "currency": "USD" }
+              }
+            ],
+            "minimum": 1,
+            "maximum": 1
+          },
+          {
+            "name": "Cheese",
+            "options": [
+              { "name": "None", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Thin", "price": { "amount": 100, "currency": "USD" } },
+              {
+                "name": "Normal",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              { "name": "Extra", "price": { "amount": 300, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Cheese portion",
+            "options": [
+              { "name": "Left", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Right", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "All", "price": { "amount": 0, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Sauce",
+            "options": [
+              {
+                "name": "Tomato Sauce",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Marinara Sauce",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "BBQ Sauce",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Toppings",
+            "options": [
+              {
+                "name": "Pineapple",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "Garlic",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Olives",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          }
+        ],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca457a6f17b5",
+        "applicableTaxKeys": [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "UFWKUZ3GI32NP7NYM7VQLML2" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/kaoc0tbpgsowcfmtgn1x"
+        ]
+      },
+      {
+        "name": "Seasoned Fries",
+        "description": "[score: 1.0] Generous side of fries",
+        "variations": [
+          {
+            "name": "Build your own Pasta",
+            "price": { "amount": 699, "currency": "USD" },
+            "_id": "5f7c883784f0ca18756f1790",
+            "status": "OUT_OF_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "24K6BSWIDR6QJZLBKEPS7MYE" }
+            }
+          }
+        ],
+        "categories": ["Build your own"],
+        "modifier": [
+          {
+            "name": "Sauce",
+            "options": [
+              {
+                "name": "Tomato Sauce",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Marinara Sauce",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "BBQ Sauce",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Toppings",
+            "options": [
+              {
+                "name": "Pineapple",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "Garlic",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Olives",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Cheese",
+            "options": [
+              { "name": "None", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Thin", "price": { "amount": 100, "currency": "USD" } },
+              {
+                "name": "Normal",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              { "name": "Extra", "price": { "amount": 300, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          }
+        ],
+        "status": "OUT_OF_STOCK",
+        "_id": "5f7c883784f0cac94a6f17b6",
+        "applicableTaxKeys": [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "IJRTI5R4WNDGNTYCMIVXZOAI" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/phxoy8ogbnizqfuxw8xs"
+        ]
+      },
+      {
+        "name": "Sweet Potato Fries",
+        "description": "[score: 1.0] Louisiana sweet potatoes.",
+        "variations": [
+          {
+            "name": "MeatZZa Small",
+            "price": { "amount": 1399, "currency": "USD" },
+            "_id": "5f7c883784f0ca82476f1791",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "2LLN6662NGLZ7HPIWYV3PVQI" }
+            }
+          },
+          {
+            "name": "MeatZZa Medium",
+            "price": { "amount": 1699, "currency": "USD" },
+            "_id": "5f7c883784f0ca5cc86f1792",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "BYZPRU63D773LFIPIO4JT3N3" }
+            }
+          },
+          {
+            "name": "MeatZZa Large",
+            "price": { "amount": 2099, "currency": "USD" },
+            "_id": "5f7c883784f0ca69626f1793",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "CRH4ZCW3BWSNN562NJR6BSN4" }
+            }
+          },
+          {
+            "name": "MeatZZa X-Large",
+            "price": { "amount": 2399, "currency": "USD" },
+            "_id": "5f7c883784f0caf4b46f1794",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "GVOCIEV6Y7GYEB7K2R4P2OQW" }
+            }
+          }
+        ],
+        "categories": ["Speciality Pizza"],
+        "modifier": [
+          {
+            "name": "Cheese",
+            "options": [
+              { "name": "None", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Thin", "price": { "amount": 100, "currency": "USD" } },
+              {
+                "name": "Normal",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              { "name": "Extra", "price": { "amount": 300, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Cheese portion",
+            "options": [
+              { "name": "Left", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Right", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "All", "price": { "amount": 0, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Crust",
+            "options": [
+              {
+                "name": "Hand Tossed",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Brooklyn style",
+                "price": { "amount": 200, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Sauce",
+            "options": [
+              {
+                "name": "Tomato Sauce",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Marinara Sauce",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "BBQ Sauce",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Toppings",
+            "options": [
+              {
+                "name": "Pineapple",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "Garlic",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Olives",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          }
+        ],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca26ee6f17b7",
+        "applicableTaxKeys": ["2T3SOH5TRFWQTR5FBPH233P4"],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "2V4B3TSUCL6MY7PJJIAORT3W" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/b3kayzjudjcfbjiccrrq"
+        ]
+      },
+      {
+        "name": "Bacon Cheese Fries",
+        "description": "[score: 0.816] Melted cheddar and Jack cheeses, diced bacon and jalapenos. Served with a side of ranch dressing.",
+        "variations": [
+          {
+            "name": "Pacific Veggie Small",
+            "price": { "amount": 1399, "currency": "USD" },
+            "_id": "5f7c883784f0caf79f6f1795",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "HUYKAMBR4ZAQ6YTEU2USFH3I" }
+            }
+          },
+          {
+            "name": "Pacific Veggie Medium",
+            "price": { "amount": 1699, "currency": "USD" },
+            "_id": "5f7c883784f0ca787b6f1796",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "ZA3JRBS4S476WPPX7WKLKHIY" }
+            }
+          },
+          {
+            "name": "Pacific Veggie Large",
+            "price": { "amount": 2099, "currency": "USD" },
+            "_id": "5f7c883784f0ca05f56f1797",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "EMVS2AQVL5UQYKRTGUSB76VL" }
+            }
+          },
+          {
+            "name": "Pacific Veggie X-Large",
+            "price": { "amount": 2399, "currency": "USD" },
+            "_id": "5f7c883784f0ca0e876f1798",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "CBI5SBGDBQMXGR75TYNR6AON" }
+            }
+          }
+        ],
+        "categories": ["Speciality Pizza"],
+        "modifier": [
+          {
+            "name": "Cheese",
+            "options": [
+              { "name": "None", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Thin", "price": { "amount": 100, "currency": "USD" } },
+              {
+                "name": "Normal",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              { "name": "Extra", "price": { "amount": 300, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Cheese portion",
+            "options": [
+              { "name": "Left", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Right", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "All", "price": { "amount": 0, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Crust",
+            "options": [
+              {
+                "name": "Hand Tossed",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Brooklyn style",
+                "price": { "amount": 200, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Sauce",
+            "options": [
+              {
+                "name": "Tomato Sauce",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Marinara Sauce",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "BBQ Sauce",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Toppings",
+            "options": [
+              {
+                "name": "Pineapple",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "Garlic",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Olives",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          }
+        ],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca5eee6f17b8",
+        "applicableTaxKeys": ["2T3SOH5TRFWQTR5FBPH233P4"],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "DQBEX2RV4WZTOWRJPDGQ7EJN" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/hxgdbv1rcmtcwt9yzuov"
+        ]
+      },
+      {
+        "name": "Cali Club",
+        "description": "[score: 0.816] In house marinated and roasted turkey with black forest ham, fresh sprouts, tomatoes, onions, a generous spread of avocado, and mayo, all topped off with crunchy bacon.  Served on grilled sourdough.",
+        "variations": [
+          {
+            "name": "Pasta Primavera",
+            "price": { "amount": 699, "currency": "USD" },
+            "_id": "5f7c883784f0ca244e6f1799",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "IQIOVKDFN5TOITDSDGW5ZRRV" }
+            }
+          }
+        ],
+        "categories": ["Pasta"],
+        "modifier": [
+          {
+            "name": "Cheese",
+            "options": [
+              { "name": "None", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Thin", "price": { "amount": 100, "currency": "USD" } },
+              {
+                "name": "Normal",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              { "name": "Extra", "price": { "amount": 300, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Sauce",
+            "options": [
+              {
+                "name": "Tomato Sauce",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Marinara Sauce",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "BBQ Sauce",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Toppings",
+            "options": [
+              {
+                "name": "Pineapple",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "Garlic",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Olives",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          }
+        ],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca280f6f17b9",
+        "applicableTaxKeys": [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "RNR3OSRKTO52AT4NJ5TFWAWG" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/csd7rxijmefnbrt1zhsh"
+        ]
+      },
+      {
+        "name": "Classic Grilled Cheese",
+        "description": "[score: 1.0] Melted american cheese between two slices of buttery grilled bread.",
+        "variations": [
+          {
+            "name": "Italian Sausage Marinara",
+            "price": { "amount": 699, "currency": "USD" },
+            "_id": "5f7c883784f0cab7a96f179a",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "GOCQHDQYL5NCEISAPEDILOPY" }
+            }
+          }
+        ],
+        "categories": ["Pasta"],
+        "modifier": [
+          {
+            "name": "Sauce",
+            "options": [
+              {
+                "name": "Tomato Sauce",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Marinara Sauce",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "BBQ Sauce",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Toppings",
+            "options": [
+              {
+                "name": "Pineapple",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "Garlic",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Olives",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Cheese",
+            "options": [
+              { "name": "None", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Thin", "price": { "amount": 100, "currency": "USD" } },
+              {
+                "name": "Normal",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              { "name": "Extra", "price": { "amount": 300, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          }
+        ],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca10156f17ba",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "J34PBLORAZ2APZ5EELNVAWDC" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/edhhde5n6kw1n4d9278q"
+        ]
+      },
+      {
+        "name": "Ranch Bacon Burger",
+        "description": "[score: 0.866] Crispy Chik’n Patty, Organic Tempeh Bacon, Provolone Style Cheese, Creamy Garlic Ranch. 540 cals l 23g protein",
+        "variations": [
+          {
+            "name": "Chicken Alfredo",
+            "price": { "amount": 699, "currency": "USD" },
+            "_id": "5f7c883784f0ca86426f179b",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "XZ6NEMS4CA7AUSTMCRW3IJL7" }
+            }
+          }
+        ],
+        "categories": ["Pasta"],
+        "modifier": [
+          {
+            "name": "Cheese",
+            "options": [
+              { "name": "None", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Thin", "price": { "amount": 100, "currency": "USD" } },
+              {
+                "name": "Normal",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              { "name": "Extra", "price": { "amount": 300, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Toppings",
+            "options": [
+              {
+                "name": "Pineapple",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "Garlic",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Olives",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Sauce",
+            "options": [
+              {
+                "name": "Tomato Sauce",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Marinara Sauce",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "BBQ Sauce",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          }
+        ],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0ca3a0a6f17bb",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "JRLSDFO6DW7AA64J4IQ7QQ67" }
+        },
+        "imagePaths": [
+          "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/ty6gut34ezxysynuszfy"
+        ]
+      },
+      {
+        "name": "Chicken Carbonara",
+        "description": "Taste the delectable blend of flavorful grilled chicken breast, smoked bacon, fresh onions, and fresh mushrooms mixed with penne pasta. Baked to perfection with rich Alfredo sauce.",
+        "variations": [
+          {
+            "name": "Chicken Carbonara",
+            "price": { "amount": 699, "currency": "USD" },
+            "_id": "5f7c883784f0ca04536f179c",
+            "status": "IN_STOCK",
+            "pointOfSaleInfo": {
+              "type": "SQUARE",
+              "squareInfo": { "inventoryItemId": "4VEMOUIDCYTZIJJL53DQ6L6M" }
+            }
+          }
+        ],
+        "categories": ["Pasta"],
+        "modifier": [
+          {
+            "name": "Sauce",
+            "options": [
+              {
+                "name": "Tomato Sauce",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Marinara Sauce",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "BBQ Sauce",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Cheese",
+            "options": [
+              { "name": "None", "price": { "amount": 0, "currency": "USD" } },
+              { "name": "Thin", "price": { "amount": 100, "currency": "USD" } },
+              {
+                "name": "Normal",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              { "name": "Extra", "price": { "amount": 300, "currency": "USD" } }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          },
+          {
+            "name": "Toppings",
+            "options": [
+              {
+                "name": "Pineapple",
+                "price": { "amount": 200, "currency": "USD" }
+              },
+              {
+                "name": "Garlic",
+                "price": { "amount": 100, "currency": "USD" }
+              },
+              {
+                "name": "Olives",
+                "price": { "amount": 300, "currency": "USD" }
+              }
+            ],
+            "minimum": 0,
+            "maximum": 999
+          }
+        ],
+        "status": "IN_STOCK",
+        "_id": "5f7c883784f0cac3626f17bc",
+        "applicableTaxKeys": [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4"
+        ],
+        "pointOfSaleInfo": {
+          "type": "SQUARE",
+          "squareInfo": { "inventoryItemId": "P2TKGQJ4EEOSRCV2KVWR7Z27" }
+        },
+        "imagePaths": [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/35cb29c25787d90cd9217bc2f8e672eefa06f7b9/original.jpeg"
+        ]
+      }
+    ]
+  },
+  "description": "menu based on Dominos",
+  "tag": [],
+  "expenseLevel": 2,
+  "reviews": 20,
+  "rating": 4.5,
+  "pointOfSaleInfo": {
+    "type": "SQUARE",
+    "pointOfSaleAuthInfoId": "5f32ddfe598d1fb09b91641a",
+    "squareInfo": { "locationId": "GPQDQYYHBQ0G3" }
+  },
+  "businessHours": {
+    "businessHoursPeriod": [
+      { "dayOfTheWeek": "MON", "startTime": "09:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "TUE", "startTime": "09:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "WED", "startTime": "09:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "THU", "startTime": "09:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "FRI", "startTime": "11:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "SAT", "startTime": "09:00:00", "endTime": "17:00:00" },
+      { "dayOfTheWeek": "SUN", "startTime": "09:00:00", "endTime": "17:00:00" }
+    ]
+  }
+}

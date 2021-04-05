@@ -1428,7 +1428,7 @@ export const event = {
   _id: '5f3577a7405bae54c65239b2',
   logoImagePath: '/img/themes/bottlerock/bottlerock.png',
   name: 'Bottlerock',
-  stalls: [stall, stall2, stall3, stall4],
+  stalls: [stall, stall2, stall3, stall4, stall, stall2, stall3, stall4],
 };
 
 export const invoice = {
@@ -2619,7 +2619,7 @@ export const userinfo = {
         },
       },
       pickupTime: '2020-12-30T11:28:13.502Z',
-      //here
+      // here
       receiptUrl:
         'https://squareupsandbox.com/receipt/preview/9m8S9lyzOMWvG8LR5PTMeRW6FgLZY',
       paymentMethod: 'CARD',

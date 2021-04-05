@@ -60,22 +60,22 @@ export const theme = createMuiTheme({
       fontWeight: 'bold',
     },
     h3: {
+      fontFamily: 'GT-Walsheim',
+      fontWeight: 700,
+      fontSize: '30px',
+      lineHeight: '34.35px',
+    },
+    h4: {
       fontFamily: 'GT-Walsheim, Roboto',
       fontWeight: 'bold',
       fontSize: '20px',
       lineHeight: '23px',
     },
-    h4: {
-      fontFamily: 'GT-Walsheim, Roboto',
-      fontWeight: 'bold',
-      fontSize: '18px',
-      lineHeight: '21px',
-    },
     h5: {
       fontFamily: 'GT-Walsheim, Roboto',
       fontWeight: 'bold',
-      fontSize: '16px',
-      lineHeight: '18px',
+      fontSize: '26px',
+      lineHeight: '32px',
     },
 
     h6: {
@@ -85,7 +85,7 @@ export const theme = createMuiTheme({
     },
 
     body1: {
-      fontFamily: 'GT-Walsheim, Roboto',
+      fontFamily: 'GT-Walsheim, roboto',
       fontWeight: 'normal',
       fontSize: '16px',
       lineHeight: '24px',

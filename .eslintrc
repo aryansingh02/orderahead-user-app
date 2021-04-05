@@ -74,7 +74,6 @@
     "react/jsx-boolean-value": "off",
     "react/prop-types": "off",
     "react/no-unescaped-entities": "off",
-    "react/jsx-tag-spacing": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-wrap-multilines": "off",
     "react/destructuring-assignment": "off",
@@ -89,13 +88,12 @@
     }],
     "@typescript-eslint/dot-notation": "off",
     "react/jsx-curly-newline": "off",
-    "spaced-comment": "off",
-    "import/extensions": "off",
-    "react/static-property-placement": "off",
-    "react/no-unused-prop-types": "off",
-    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/quotes": "off",
+    // the stateless function rule is unusually restrict
     "react/prefer-stateless-function": "off",
-    "@typescript-eslint/quotes": "off"
+    // unusually retrict
+    "react/static-property-placement": "off"
+
   }
 }
 // no undersocre dangle had to be turned off because _id of business needed to be accessed which was throwing errors
