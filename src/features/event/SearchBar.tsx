@@ -53,7 +53,7 @@ export default function SearchBar() {
           container
           direction="row"
           item
-          xs={isDesktop()? 10: 11}
+          xs={11}
           style={{
             background: isDesktop() ? '#FFFFFF' : 'none',
             position: isDesktop() ? 'absolute' : 'inherit',
