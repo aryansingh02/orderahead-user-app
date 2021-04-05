@@ -47,7 +47,7 @@ class CartHeader extends React.Component<IProps, IState> {
           <Grid item xs={5} className="startJustifiedFlex">
             <KeyboardArrowLeftIcon className={classes.leftCaret} />
           </Grid>
-          <Grid item xs={7} >
+          <Grid item xs={7}>
             <Typography variant="h4">My Cart</Typography>
           </Grid>
         </Grid>

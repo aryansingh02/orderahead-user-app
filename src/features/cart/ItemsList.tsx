@@ -6,6 +6,7 @@ import AddIcon from '@material-ui/icons/Add';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import RemoveIcon from '@material-ui/icons/Remove';
 import DeleteIcon from '@material-ui/icons/Delete';
+import get from 'lodash/get';
 
 import {
   FindMenuItem,
@@ -19,9 +20,6 @@ import Typography from '../../Typography';
 interface IProps {
   lineItems: ILineItems;
   stall: IStall;
-  page: string;
-  history: HistoryType;
-  cart: ICart;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -66,12 +64,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     rootItem: {
       marginTop: '15px',
-
     },
     wrapper: {
       borderBottom: '1px solid #E3E3E3',
-      paddingBottom: theme.spacing(2.5)
-    }
+      paddingBottom: theme.spacing(2.5),
+    },
   })
 );
 
@@ -107,10 +104,14 @@ const ItemsList = (props: IProps) => {
     const { cartItem } = lineItem;
     const item = FindMenuItem(props.stall.menu, cartItem.itemId);
     if (item) {
+      // @ts-ignore
       itemsArr.push(
         <Grid item container direction="row" className={classes.rootItem}>
           <Grid item xs={2}>
-            <img src={item.imagePaths[0]} className={classes.itemImage} />
+            <img
+              src={get(item, 'imagePaths[0]', '')}
+              className={classes.itemImage}
+            />
           </Grid>
           <Grid
             item
@@ -141,7 +142,11 @@ const ItemsList = (props: IProps) => {
       );
     }
   }
-  return <Grid container className={classes.wrapper}>{itemsArr}</Grid>;
+  return (
+    <Grid container className={classes.wrapper}>
+      {itemsArr}
+    </Grid>
+  );
 };
 
 export default ItemsList;

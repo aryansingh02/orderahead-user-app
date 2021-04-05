@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
-import { Modal } from 'react-bootstrap';
 import styled from 'styled-components';
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import Modal from '@material-ui/core/Modal';
 import SlotModal from './SlotModal';
 import { GenerateEpochDate } from '../../utils';
 import { appConfig } from '../../data/testData';
@@ -43,7 +43,7 @@ export const DateModal = (props: IProps) => {
         initialFocusedDate={null}
         value={
           new Date(
-            //@ts-ignore
+            // @ts-ignore
             pickup || Date.parse(new Date())
           )
         }
@@ -59,7 +59,7 @@ export const DateModal = (props: IProps) => {
         onOpen={() => {
           updateState({ dateModal: true });
         }}
-        //@ts-ignore
+        // @ts-ignore
         minutesStep={1}
         minDate={new Date()}
       />
@@ -68,30 +68,27 @@ export const DateModal = (props: IProps) => {
   return (
     <>
       <Modal
-        show={dateModal}
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        className="rounded-0 "
-        onHide={() => {
+        open={!!dateModal}
+        onClose={() => {
           updateState({ dateModal: false, pickup: undefined });
         }}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
       >
-        <Modal.Body className="rounded-0 date-modal">
-          <div className="container p-0">
-            {!rhState.startTime && renderDatePicker()}
-            <SlotWrapper>
-              {!!pickup && (
-                <SlotModal
-                  pickup={pickup}
-                  pickupSlot={pickupSlot}
-                  //@ts-ignore
-                  clickHandler={onSlotClick}
-                  itemEta={itemEta}
-                />
-              )}
-            </SlotWrapper>
-          </div>
-        </Modal.Body>
+        <div className="container p-0">
+          {!rhState.startTime && renderDatePicker()}
+          <SlotWrapper>
+            {!!pickup && (
+              <SlotModal
+                pickup={pickup}
+                pickupSlot={pickupSlot}
+                // @ts-ignore
+                clickHandler={onSlotClick}
+                itemEta={itemEta}
+              />
+            )}
+          </SlotWrapper>
+        </div>
       </Modal>
     </>
   );

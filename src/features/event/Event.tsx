@@ -24,7 +24,7 @@ const styles = (theme: typeof Theme) =>
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      paddingBottom: isDesktop()? theme.spacing(2): 0
+      paddingBottom: isDesktop() ? theme.spacing(2) : 0,
     },
     headingRow: {},
     accountHeading: {},
@@ -98,7 +98,7 @@ class Event extends React.Component<IProps, IState> {
               </Grid>
             </Hidden>
 
-            <Grid item xs={12} container justify='center'>
+            <Grid item xs={12} container justify="center">
               <SearchBar />
             </Grid>
             <Grid item xs={12}>
@@ -133,5 +133,5 @@ class Event extends React.Component<IProps, IState> {
     );
   }
 }
-
+// @ts-ignore
 export default withWidth()(WithNavigation(withStyles(styles)(Event)));

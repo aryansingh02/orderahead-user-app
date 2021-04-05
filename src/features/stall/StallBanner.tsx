@@ -1,6 +1,5 @@
 import { makeStyles, Theme, createStyles, Paper } from '@material-ui/core';
 import React from 'react';
-import BannerImage from '../../assets/CostaDesktop.png';
 import { StallSummary } from './StallSummary';
 
 interface IProps {
@@ -30,7 +29,7 @@ export const StallBanner = (props: IProps) => {
   const classes = useStyles();
   return (
     <div className={classes.paper}>
-      <img src={BannerImage} className={classes.stallImg} alt="" />
+      <img src='/img/CostaDesktop.png' className={classes.stallImg} alt="" />
       <StallSummary
         stallName="Costa Coffee"
         rating={4.6}

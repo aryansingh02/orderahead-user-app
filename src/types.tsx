@@ -20,15 +20,9 @@ export interface IDynamicSettings {
   requestedEta: number;
   requestedDynamicFee: IPrice;
 }
-
 export interface IPos {
   type: string;
   squareInfo: Record<string, string>;
-}
-
-export interface IPrice {
-  amount: number;
-  currency: string;
 }
 export interface IVariation {
   name: string;

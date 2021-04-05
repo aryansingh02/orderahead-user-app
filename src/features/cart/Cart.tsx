@@ -85,6 +85,7 @@ const styles = (theme: typeof Theme) =>
     appBarRoot: {
       backgroundColor: 'transparent',
     },
+
     tabRoot: {
       fontFamily: 'Roboto',
     },
@@ -132,7 +133,7 @@ class Cart extends React.Component<IProps, IState> {
 
   // enableSurgeFee = true;
   enableSurgeFee =
-    config.get('enable_surge_fee') ||
+  config.get('enable_surge_fee') ||
     (this.props.stall &&
       config
         .get('surge_fee_enabled_stall_whitelist')
@@ -287,11 +288,8 @@ class Cart extends React.Component<IProps, IState> {
           </Grid>
           <Grid item xs={10}>
             <ItemsList
-              cart={cart}
               lineItems={cart.lineItems}
               stall={stall}
-              page="cart"
-              history={props.history}
             />
           </Grid>
           {invoice && (

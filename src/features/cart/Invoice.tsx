@@ -115,7 +115,7 @@ export const Invoice = (props: IProps) => {
       ) : (
         ""
       )}
-      <Divider className={classes.divider}/>
+      <Divider className={classes.divider} />
       <Grid item xs={12} container>
         <Grid item xs={6}>
           <Typography roboto={true} variant="body1" className={classes.boldFont}>
