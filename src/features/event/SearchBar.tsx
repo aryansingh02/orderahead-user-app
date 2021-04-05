@@ -35,7 +35,7 @@ export default function SearchBar() {
   const classes = useStyles();
 
   return (
-    <Grid item container xs={isDesktop() ? 12 : 10}>
+    <Grid item container xs={isDesktop() ? 12 : 11}>
       <Paper
         component="form"
         className={classes.root}
@@ -53,7 +53,7 @@ export default function SearchBar() {
           container
           direction="row"
           item
-          xs={isDesktop()? 10: 12}
+          xs={isDesktop()? 10: 11}
           style={{
             background: isDesktop() ? '#FFFFFF' : 'none',
             position: isDesktop() ? 'absolute' : 'inherit',

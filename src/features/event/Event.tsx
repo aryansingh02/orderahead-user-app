@@ -24,7 +24,8 @@ const styles = (theme: typeof Theme) =>
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      paddingBottom: isDesktop() ? theme.spacing(2) : 0,
+      paddingBottom: theme.spacing(2),
+      paddingTop: isDesktop() ? 0 : '28px',
     },
     headingRow: {},
     accountHeading: {},
@@ -66,11 +67,7 @@ class Event extends React.Component<IProps, IState> {
   render() {
     const { classes } = this.props;
     return (
-      <div
-        className={classes.root}
-        ref={this.eventContainerRef}
-        style={{ paddingTop: isWidthUp('lg', this.props.width) ? 0 : '28px' }}
-      >
+      <div className={classes.root} ref={this.eventContainerRef}>
         <Hidden mdDown>
           <DesktopHeader />
         </Hidden>
@@ -85,11 +82,11 @@ class Event extends React.Component<IProps, IState> {
             style={{
               height: isWidthUp('lg', this.props.width)
                 ? 'calc(100vh - 87px)'
-                : 'calc(100vh - 60px)',
+                : 'calc(100vh - 95px)',
             }}
           >
             <Hidden lgUp>
-              <Grid item xs={10}>
+              <Grid item xs={11}>
                 <EventHeader
                   history={this.props.history}
                   location={this.props.location}
@@ -104,10 +101,10 @@ class Event extends React.Component<IProps, IState> {
             <Grid item xs={12}>
               <CategoriesScroll />
             </Grid>
-            <Grid item xs={10}>
+            <Grid item xs={11}>
               <PlacesFilter />
             </Grid>
-            <Grid item xs={10} container direction="column">
+            <Grid item xs={11} container direction="column">
               {this.state.stalls.map((item) => (
                 <StallCard stall={item} key={stall._id} />
               ))}

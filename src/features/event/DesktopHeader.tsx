@@ -100,14 +100,6 @@ export default function DesktopHeader() {
           >
             <img src="/img/LogoSleek.png" />
           </IconButton>
-          <Typography
-            roboto={true}
-            variant="h5"
-            noWrap
-            style={{ color: Theme.palette.primary.main }}
-          >
-            Browse
-          </Typography>
           <div className={classes.sectionDesktop}>
             <IconButton>
               <img src="/img/magnify.svg" className={classes.magnifyImg} />
