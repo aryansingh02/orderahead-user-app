@@ -16,6 +16,7 @@ import WithNavigation from '../../components/BottomNavigationHoc';
 import EventMap from './EventMap';
 import DesktopHeader from './DesktopHeader';
 import { isDesktop } from '../../utils';
+import DesktopHeaderHOC from '../../components/DesktopHeaderHOC';
 
 const styles = (theme: typeof Theme) =>
   createStyles({
@@ -68,9 +69,6 @@ class Event extends React.Component<IProps, IState> {
     const { classes } = this.props;
     return (
       <div className={classes.root} ref={this.eventContainerRef}>
-        <Hidden mdDown>
-          <DesktopHeader />
-        </Hidden>
         <Grid container direction="row">
           <Grid
             container
@@ -131,4 +129,4 @@ class Event extends React.Component<IProps, IState> {
   }
 }
 // @ts-ignore
-export default withWidth()(WithNavigation(withStyles(styles)(Event)));
+export default withWidth()(WithNavigation(withStyles(styles)(DesktopHeaderHOC(Event))));
