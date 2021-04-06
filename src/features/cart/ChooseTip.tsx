@@ -42,7 +42,6 @@ const useStyles = makeStyles((theme: Theme) =>
 const ChooseTip = (props: IProps) => {
   const { invoice, cart, setRequestedTipPercent } = props;
   const classes = useStyles();
-  console.log('invoice', invoice);
 
   return (
     <Grid container className={classes.tipRoot}>

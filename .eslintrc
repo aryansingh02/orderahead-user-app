@@ -92,7 +92,9 @@
     // the stateless function rule is unusually restrict
     "react/prefer-stateless-function": "off",
     // unusually retrict
-    "react/static-property-placement": "off"
+    "react/static-property-placement": "off",
+    // prettier and typescript generate different indentation
+    "@typescript-eslint/indent": "warn"
 
   }
 }

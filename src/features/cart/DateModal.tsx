@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import CloseIcon from '@material-ui/icons/Close';
 import { Grid } from '@material-ui/core';
 import DateFnsUtils from '@date-io/date-fns';
 import Modal from '@material-ui/core/Modal';
@@ -30,13 +31,23 @@ interface IProps {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     modalRoot: {
-      background: '#FFFFFF',
-      height: '100%'
+      width: '100%',
+      position: 'relative',
+      borderRadius: '10px',
     },
     container: {
       background: '#FFFFFF',
-      height: '100%'
-    }
+      height: '475px',
+      maxWidth: '394px',
+      margin: 'auto',
+      top: '50%',
+      position: 'absolute',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+    },
+    modalContainer: {
+      width: '90%',
+    },
   })
 );
 
@@ -57,6 +68,7 @@ export const DateModal = (props: IProps) => {
       <DatePicker
         variant="static"
         initialFocusedDate={null}
+        disableToolbar={true}
         value={
           new Date(
             // @ts-ignore
@@ -82,35 +94,61 @@ export const DateModal = (props: IProps) => {
     </MuiPickersUtilsProvider>
   );
   return (
-    <>
-      <Modal
-        open={!!dateModal}
-        onClose={() => {
-          updateState({ dateModal: false, pickup: undefined });
-        }}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-        className={classes.modalRoot}
-      >
-        <Grid container direction='column' className={classes.container}>
-          {!rhState.startTime && renderDatePicker()}
-          <SlotWrapper>
-            {!!pickup && (
-              <SlotModal
-                // pickup={pickup}
-                pickupSlot={pickupSlot}
-                // @ts-ignore
-                clickHandler={onSlotClick}
-                itemEta={itemEta}
+    <Grid
+      container
+      direction="column"
+      className={classes.modalContainer}
+      alignItems="center"
+    >
+      <Grid item xs={11}>
+        <Modal
+          open={!!dateModal}
+          onClose={() => {
+            updateState({ dateModal: false, pickup: undefined });
+          }}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          className={classes.modalRoot}
+        >
+          <Grid
+            container
+            direction="row"
+            className={classes.container}
+            justify="center"
+          >
+            <Grid
+              item
+              container
+              direction="row"
+              xs={11}
+              justify='flex-end'
+              alignItems='center'
+            >
+              <CloseIcon
+                onClick={() => {
+                  updateState({ dateModal: false, pickup: undefined });
+                }}
+                className='pointer'
               />
-            )}
-          </SlotWrapper>
-        </Grid>
-      </Modal>
-    </>
+            </Grid>
+            <Grid item xs={12} container justify='center'>
+              {' '}
+              {!rhState.startTime && renderDatePicker()}
+            </Grid>
+            <Grid item xs={11}>
+              {!!pickup && (
+                <SlotModal
+                  // pickup={pickup}
+                  pickupSlot={pickupSlot}
+                  // @ts-ignore
+                  clickHandler={onSlotClick}
+                  itemEta={itemEta}
+                />
+              )}
+            </Grid>
+          </Grid>
+        </Modal>
+      </Grid>
+    </Grid>
   );
 };
-
-const SlotWrapper = styled.div`
-  margin-top: 20px;
-`;

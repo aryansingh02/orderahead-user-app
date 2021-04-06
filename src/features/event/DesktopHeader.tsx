@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme: typeof Theme) =>
   createStyles({
     grow: {
       width: '100%',
+      position: 'fixed',
+      top: 0,
+      zIndex: 100
     },
     menuButton: {
       marginRight: theme.spacing(2),
