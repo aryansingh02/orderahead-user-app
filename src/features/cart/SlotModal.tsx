@@ -3,11 +3,12 @@ import styled from "styled-components";
 import { Dropdown } from "react-bootstrap";
 import config from "react-global-configuration";
 import { format } from "date-fns";
-import { appConfig, stall as Stall } from '../../data/testData';
+
+import { appConfig, stall as Stall, slotsInfo } from '../../data/testData';
 import { ISlotsInfo } from '../../types';
 
 interface IProps {
-  pickup: Date;
+  // pickup: Date;
   itemEta: number;
   clickHandler: (slot: number) => void;
   pickupSlot: Date;
@@ -15,33 +16,33 @@ interface IProps {
 
 const SlotModal = (props:IProps) => {
   const stall = Stall;
-  const [slotsInfo, setSlotsInfo] = useState<ISlotsInfo>([]);
   const { rhState } = appConfig;
 
-  useEffect(() => {
-    const fetchSlots = async () => {
-      let url = `/stall/${stall._id}/available-slots?startTime=`;
-      if (rhState.startTime) {
-        url += rhState.startTime;
-      } else {
-        url += props.pickup;
-      }
-      if (rhState.endTime) {
-        url += `&endTime=${rhState.endTime}`;
-      }
-
-      const response = await fetch(config.get("backend") + url);
-      const slots: typeof slotsInfo = await response.json();
-      setSlotsInfo(slots);
-    };
-    if (stall._id && props.pickup) {
-      fetchSlots();
-    }
-  }, [stall._id, props.pickup, rhState.startTime, rhState.endTime]);
+  // useEffect(() => {
+  //   const fetchSlots = async () => {
+  //     let url = `/stall/${stall._id}/available-slots?startTime=`;
+  //     if (rhState.startTime) {
+  //       url += rhState.startTime;
+  //     } else {
+  //       url += props.pickup;
+  //     }
+  //     if (rhState.endTime) {
+  //       url += `&endTime=${rhState.endTime}`;
+  //     }
+  //
+  //     const response = await fetch(config.get("backend") + url);
+  //     const slots: typeof slotsInfo = await response.json();
+  //     setSlotsInfo(slots);
+  //   };
+  //   if (stall._id && props.pickup) {
+  //     fetchSlots();
+  //   }
+  // }, [stall._id, props.pickup, rhState.startTime, rhState.endTime]);
 
   const renderSlots = () => {
     const minTime = Date.now() + props.itemEta * 60 * 1000;
-    const filteredSlots = slotsInfo.filter((slot) => slot.slot - minTime > 0);
+    const filteredSlots = slotsInfo;
+    console.log('filtered slots', slotsInfo);
 
     return filteredSlots.map((slotInfo) => (
       <Dropdown.Item

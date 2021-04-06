@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import { Grid } from '@material-ui/core';
 import DateFnsUtils from '@date-io/date-fns';
 import Modal from '@material-ui/core/Modal';
 import SlotModal from './SlotModal';
@@ -25,7 +27,21 @@ interface IProps {
   }) => void;
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    modalRoot: {
+      background: '#FFFFFF',
+      height: '100%'
+    },
+    container: {
+      background: '#FFFFFF',
+      height: '100%'
+    }
+  })
+);
+
 export const DateModal = (props: IProps) => {
+  const classes = useStyles();
   const {
     dateModal,
     pickup,
@@ -74,13 +90,14 @@ export const DateModal = (props: IProps) => {
         }}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
+        className={classes.modalRoot}
       >
-        <div className="container p-0">
+        <Grid container direction='column' className={classes.container}>
           {!rhState.startTime && renderDatePicker()}
           <SlotWrapper>
             {!!pickup && (
               <SlotModal
-                pickup={pickup}
+                // pickup={pickup}
                 pickupSlot={pickupSlot}
                 // @ts-ignore
                 clickHandler={onSlotClick}
@@ -88,7 +105,7 @@ export const DateModal = (props: IProps) => {
               />
             )}
           </SlotWrapper>
-        </div>
+        </Grid>
       </Modal>
     </>
   );
