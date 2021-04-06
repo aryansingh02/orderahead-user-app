@@ -1347,7 +1347,7 @@ export const event = {
   _id: '5f3577a7405bae54c65239b2',
   logoImagePath: '/img/themes/bottlerock/bottlerock.png',
   name: 'Bottlerock',
-  stalls: [stall, stall2, stall3, stall4, stall, stall2, stall3, stall4],
+  stalls: [stall, stall2, stall3, stall4],
 };
 
 export const script =

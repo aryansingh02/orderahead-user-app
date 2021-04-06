@@ -43,3 +43,16 @@ export const GenerateExpenseLevel = (expenseLevel: number) => {
 };
 
 export const isDesktop = () => window.innerWidth > 1280;
+
+const FilterbyTag = (stalls: IStall[], tag: string) =>
+  stalls.filter((stall) => {
+    const validTags = stall.tag.filter((item) => item.name.toLowerCase() === tag.toLowerCase());
+    return validTags.length > 0;
+  });
+export const FilterStalls = (stalls: IStall[], query: string) => {
+  let filteredStalls = stalls;
+  if (query) {
+    filteredStalls = FilterbyTag(filteredStalls, query);
+  }
+  return filteredStalls;
+};
