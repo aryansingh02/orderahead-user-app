@@ -14,3 +14,4 @@ declare module '@material-ui/core/Typography/Typography' {
 declare module 'currency-symbol-map';
 declare module 'react-number-format';
 declare module 'react-switch';
+declare module 'moment';

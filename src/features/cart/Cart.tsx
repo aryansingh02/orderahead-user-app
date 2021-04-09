@@ -34,7 +34,6 @@ import ItemsList from './ItemsList';
 import { PickupOptions } from './PickupOptions';
 import { Invoice } from './Invoice';
 import { DateModal } from './DateModal';
-import { SkipModal } from './SkipModal';
 import { CutleryCoupon } from './CutleryCoupon';
 import {
   ICart,
@@ -107,7 +106,7 @@ const styles = (theme: typeof Theme) =>
     },
     leftPane: {
       overflow: 'scroll',
-      paddingBottom: '100px'
+      paddingBottom: '100px',
     },
     rightPane: {},
     cartRoot: {},
@@ -373,14 +372,6 @@ class Cart extends React.Component<IProps, IState> {
             }}
           />
         </Grid>
-        <SkipModal
-          showModal={showModal}
-          itemEta={itemEta}
-          handleClose={this.handleClose}
-          updateState={(data) => this.setState(data)}
-          dynamicFee={dynamicFee}
-          dynamicEta={dynamicEta}
-        />
         <DateModal
           dateModal={dateModal}
           // @ts-ignore
