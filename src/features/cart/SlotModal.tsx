@@ -4,7 +4,7 @@ import FormControl from '@material-ui/core/FormControl';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Select from '@material-ui/core/Select';
 import { format } from 'date-fns';
-import { appConfig, stall as Stall, slotsInfo } from '../../data/testData';
+import { slotsInfo } from '../../data/testData';
 
 interface IProps {
   // pickup: Date;

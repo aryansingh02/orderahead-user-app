@@ -5,8 +5,6 @@ import config from 'react-global-configuration';
 import { Redirect, RouteComponentProps } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import RootRef from '@material-ui/core/RootRef';
-import { isWidthUp } from '@material-ui/core/withWidth';
-import Hidden from '@material-ui/core/Hidden';
 import {
   createStyles,
   WithStyles,

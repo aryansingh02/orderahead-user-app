@@ -4,7 +4,7 @@ import config from 'react-global-configuration';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 import { IconContext } from 'react-icons';
-import { IoFlashSharp, MdModeEdit } from 'react-icons/all';
+import { IoFlashSharp } from 'react-icons/all';
 import PeopleIcon from '@material-ui/icons/People';
 import { GenerateCurrencyNumber, GenerateEpochDate } from '../../utils';
 import { FullfilmentModeType, zeroFee } from './Cart';

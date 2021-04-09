@@ -1,7 +1,7 @@
 import React from 'react';
 import get from 'lodash/get';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { Button, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import { GenerateCurrencyNumber } from '../../utils';
 import { ICart, IInvoice } from '../../types';
