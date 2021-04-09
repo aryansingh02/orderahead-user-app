@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import config from 'react-global-configuration';
 import { Redirect, RouteComponentProps } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
 import RootRef from '@material-ui/core/RootRef';
 import { isWidthUp } from '@material-ui/core/withWidth';
 import Hidden from '@material-ui/core/Hidden';
@@ -45,7 +44,6 @@ import {
 } from '../../types';
 import { AppDispatch } from '../../store';
 import { theme as Theme } from '../../theme';
-import { CommonP } from '../../commonStyles';
 import CartHeader from './CartHeader';
 import Typography from '../../Typography';
 import ChooseTip from './ChooseTip';
@@ -420,22 +418,5 @@ export default connect(
   // @ts-ignore
 )(withStyles(styles)(DesktopHeaderHOC(Cart)));
 
-const Wrapper = styled.div`
-  padding-bottom: 90px;
-`;
 
-const ItemListText = styled(CommonP)`
-  font-family: PlatformBold;
-  font-size: 22px;
-  line-height: 28px;
-  color: #444444;
-`;
 
-const CheckoutText = styled(CommonP)`
-  font-family: PlatformBold;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.5px;
-  text-transform: capitalize;
-  color: #ffffff;
-`;

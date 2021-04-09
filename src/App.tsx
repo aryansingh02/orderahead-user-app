@@ -8,10 +8,11 @@ import { theme as Theme } from './theme';
 import Cart from './features/cart/Cart';
 import configuration from "./config";
 import Event from './features/event/Event';
-
 import { StallMenu } from './features/stall/StallMenu';
 import AddedToCart from './features/stall/AddedToCart';
 import OrderSent from './features/stall/OrderSent';
+import { OrderStatus } from './features/stall/OrderStatus';
+import { OrderConfirmation } from './features/stall/OrderConfirmation';
 
 config.set(configuration, { assign: false, freeze: false });
 
@@ -70,6 +71,12 @@ class App extends Component<IProps, IState> {
               <Route exact path="/stall/cart/added" component={AddedToCart} />
               <Route exact path="/stall/order/sent" component={OrderSent} />
               <Route exact path="/cart" component={Cart} />
+              <Route exact path="/stall/order/status" component={OrderStatus} />
+              <Route
+                exact
+                path="/stall/order/confirmation"
+                component={OrderConfirmation}
+              />
               <Route path="/" component={Event} />
             </Switch>
           </Router>

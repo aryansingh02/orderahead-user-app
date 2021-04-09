@@ -1,7 +1,5 @@
 import React from 'react';
-import config from 'react-global-configuration';
 import get from 'lodash/get';
-import styled from 'styled-components';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Button, Grid } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
@@ -132,49 +130,6 @@ export const Invoice = (props: IProps) => {
   );
 };
 
-const CostContainer = styled.div`
-  margin-top: 42px;
-`;
 
-const PriceLabel = styled.div`
-  font-family: NationalRegular;
-  font-size: 14px;
-  line-height: 22px;
-  color: #444444;
-`;
-const DiscountLabel = styled.div`
-  font-family: NationalRegular;
-  font-size: 14px;
-  line-height: 22px;
-  color: rgba(28, 189, 142, 1);
-`;
 
-const PriceValue = styled.div`
-  font-family: PlatformRegular;
-  font-size: 14px;
-  line-height: 22px;
-  letter-spacing: 1px;
-  color: #444444;
-`;
 
-const DiscountValue = styled(PriceValue)`
-  color: rgba(28, 189, 142, 1);
-`;
-
-const TotalLabel = styled.div`
-  font-family: NationalMedium;
-  font-size: 18px;
-  line-height: 26px;
-  color: #444444;
-`;
-
-const TotalValue = styled.div`
-  font-family: PlatformBold;
-  font-size: 18px;
-  line-height: 26px;
-  display: flex;
-  align-items: center;
-  text-align: right;
-  letter-spacing: 1px;
-  color: #000000;
-`;

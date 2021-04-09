@@ -1,111 +1,173 @@
+import {
+  Grid,
+  createStyles,
+  makeStyles,
+  Theme,
+  Hidden,
+  Divider,
+} from '@material-ui/core';
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import Typography from '@material-ui/core/Typography';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import DoneIcon from '@material-ui/icons/Done';
-import clsx from 'clsx';
-import { StepIconProps } from '@material-ui/core/StepIcon';
-
-const useColorlibStepIconStyles = makeStyles({
-  root: {
-    backgroundColor: '#E5E2FF',
-    zIndex: 1,
-    color: '#fff',
-    width: 30,
-    height: 30,
-    display: 'flex',
-    borderRadius: '50%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  active: {
-    background: '#6D5CFF',
-    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
-  },
-  completed: {
-    background: '#E5E2FF',
-  },
-});
-
-function ColorlibStepIcon(props: StepIconProps) {
-  const classes = useColorlibStepIconStyles();
-  const { active, completed } = props;
-
-  const icons: { [index: string]: React.ReactElement } = {
-    1: <DoneIcon style={{ color: '#6D5CFF' }} />,
-    2: <DoneIcon />,
-    3: <FiberManualRecordIcon style={{ color: '#6D5CFF' }} />,
-    4: <FiberManualRecordIcon style={{ color: '#6D5CFF' }} />,
-    5: <FiberManualRecordIcon style={{ color: '#6D5CFF' }} />,
-  };
-
-  return (
-    <div
-      className={clsx(classes.root, {
-        [classes.active]: active,
-        [classes.completed]: completed,
-      })}
-    >
-      {icons[String(props.icon)]}
-    </div>
-  );
-}
+import Currency from 'react-currency-formatter';
+import StatusStepper from './StatusStepper';
+import Typography from '../../Typography';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'row',
       width: '100%',
+      justifyContent: 'center',
+    },
+    continueRoot: {
+      paddingTop: '50px',
+      paddingBottom: '50px',
+    },
+    bodyText: {
+      marginTop: '16px',
+    },
+    outerGrid: {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '100%',
+      alignItems: 'center',
+      background: '#F7F8FB',
+      overflowY: 'scroll',
+    },
+
+    namefield: {
+      marginBottom: '20px',
+    },
+    middleGrid: {
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    divider: {
+      marginTop: theme.spacing(1.5),
+    },
+    commonStyle: {
+      display: 'flex',
+      flexDirection: 'column',
+      marginTop: theme.spacing(1.9),
+    },
+    listitem: {
+      marginBottom: theme.spacing(1.9),
+    },
+    collectionGrid: {
+      display: 'flex',
+      flexDirection: 'column',
+      marginTop: theme.spacing(3.8),
+      marginBottom: theme.spacing(6.2),
     },
   })
 );
 
-function getSteps() {
-  return [
-    'Order Scheduled',
-    'Order Received',
-    'Preparing Order',
-    'Order Completed',
-    'Order Collected',
-  ];
-}
-
-function getStepContent(step: number) {
-  switch (step) {
-    case 0:
-      return 'Your order is scheduled';
-    case 1:
-      return 'Your order has been received';
-    case 2:
-      return 'Your order is prepared';
-    case 3:
-      return 'Your order was completed with a partial refund';
-    case 4:
-      return 'Your order has been collected';
-    default:
-      return 'Unknown step';
-  }
-}
-
-export default function OrderStatus() {
+export const OrderStatus = () => {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const steps = getSteps();
 
   return (
     <div className={classes.root}>
-      <Stepper activeStep={activeStep} orientation="vertical">
-        {steps.map((label, index) => (
-          <Step key={label}>
-            <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
-            <Typography variant="caption" style={{ marginLeft: '40px' }}>
-              {getStepContent(index)}
-            </Typography>
-          </Step>
-        ))}
-      </Stepper>
+      <Grid xs={12} sm={12} lg={6} className={classes.outerGrid}>
+        <Grid xs={10} sm={10} lg={10} style={{ width: '100%' }}>
+          <Grid
+            xs={12}
+            sm={12}
+            lg={12}
+            style={{ display: 'flex', justifyContent: 'center' }}
+          >
+            <Grid item className={classes.commonStyle}>
+              <Typography roboto component="div" variant="body2">
+                Order # 602C52KP312806
+              </Typography>
+              <Typography
+                roboto
+                component="div"
+                variant="subtitle1"
+                color="primary"
+                style={{ textAlign: 'center' }}
+              >
+                Detailed receipt
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid xs={11} sm={12} lg={12} className={classes.middleGrid}>
+            <Divider className={classes.divider} />
+            <Grid item xs={12} sm={12} className={classes.commonStyle}>
+              <Typography
+                component="div"
+                variant="h4"
+                style={{ marginBottom: '15px' }}
+              >
+                Items
+              </Typography>
+              <Typography
+                component="div"
+                variant="body1"
+                roboto
+                className={classes.listitem}
+              >
+                1 x Ultimate Breakfast Wrap
+              </Typography>
+              <Typography
+                component="div"
+                variant="body1"
+                roboto
+                className={classes.listitem}
+              >
+                1 x Caramel Oat Latte, Mini
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={12} className={classes.commonStyle}>
+              <Typography component="div" variant="h4">
+                Amount Paid
+              </Typography>
+              <Typography
+                roboto
+                variant="h3"
+                style={{ marginTop: '15px' }}
+                color="primary"
+              >
+                <Currency quantity={19.25} currency="USD" />
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={12} style={{ marginTop: '30px' }}>
+              <Typography component="div" variant="h4">
+                Updates
+              </Typography>
+              <StatusStepper />
+            </Grid>
+            <Grid item xs={12} sm={12} className={classes.collectionGrid}>
+              <Typography
+                component="div"
+                variant="h4"
+                style={{ marginBottom: '13px' }}
+              >
+                Collection Point
+              </Typography>
+              <Typography component="div" variant="body1" roboto>
+                6:00 AM / March 27, 2021
+              </Typography>
+              <Typography component="div" variant="body1" roboto>
+                Costa Coffee - 220 E 42nd St, NY 10017-5806
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Hidden xsDown>
+        <Grid lg={6}>
+          <div
+            style={{
+              height: '100%',
+              width: '100%',
+              backgroundImage: `url(${'/img/status.png'})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        </Grid>
+      </Hidden>
     </div>
   );
-}
+};

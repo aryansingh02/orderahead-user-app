@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import CloseIcon from '@material-ui/icons/Close';

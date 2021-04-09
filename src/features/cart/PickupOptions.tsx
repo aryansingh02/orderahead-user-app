@@ -1,13 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Radio from '@material-ui/core/Radio';
 import config from 'react-global-configuration';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
-import { format } from 'date-fns';
 import { IconContext } from 'react-icons';
 import { IoFlashSharp, MdModeEdit } from 'react-icons/all';
 import PeopleIcon from '@material-ui/icons/People';
-import styled from 'styled-components';
 import { GenerateCurrencyNumber, GenerateEpochDate } from '../../utils';
 import { FullfilmentModeType, zeroFee } from './Cart';
 import { IPrice } from '../../types';

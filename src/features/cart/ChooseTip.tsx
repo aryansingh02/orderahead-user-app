@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Button, Grid, Box } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import styled from 'styled-components';
 import { ICart, IInvoice } from '../../types';
 import Typography from '../../Typography';
 import { GenerateCurrencyNumber } from '../../utils';
@@ -126,33 +125,3 @@ const ChooseTip = (props: IProps) => {
 
 export default ChooseTip;
 
-const CouponRow = styled.div`
-  margin-top: 24px;
-  margin-bottom: 24px;
-  position: relative;
-`;
-
-const Input = styled.input`
-  border: 1px solid #e6e6e6;
-  box-sizing: border-box;
-  border-radius: 8px;
-  height: 51px;
-  width: 100%;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 14px;
-  padding-left: 10px;
-  color: #979797;
-  &:focus {
-    outline: none;
-  }
-`;
-
-const CheckDiv = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(-50%, -50%);
-`;

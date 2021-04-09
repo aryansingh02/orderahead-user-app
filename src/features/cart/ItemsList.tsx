@@ -1,6 +1,5 @@
 //
-import React, { Fragment } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import { Box, Grid } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
@@ -13,8 +12,7 @@ import {
   GenerateCurrencyNumber,
   CalculateLineItemTotal,
 } from '../../utils';
-import { HistoryType, ICart, ILineItems, IStall } from '../../types';
-import { CommonP, defaultFlex } from '../../commonStyles';
+import { ILineItems, IStall } from '../../types';
 import Typography from '../../Typography';
 
 interface IProps {
@@ -150,44 +148,3 @@ const ItemsList = (props: IProps) => {
 };
 
 export default ItemsList;
-
-const Count = styled(CommonP)`
-  font-family: NationalRegular;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: center;
-  color: #00476e;
-`;
-
-const CountWrapper = styled(defaultFlex)`
-  height: 22px;
-  width: 22px;
-  background: #ffffff;
-  mix-blend-mode: normal;
-  border: 1px solid #00476e;
-  box-sizing: border-box;
-  border-radius: 4px;
-`;
-
-const ItemName = styled(CommonP)`
-  font-family: NationalRegular;
-  font-size: 16px;
-  line-height: 24px;
-  color: #444444;
-`;
-
-const EditText = styled(CommonP)`
-  font-family: NationalBold;
-  font-size: 14px;
-  line-height: 22px;
-  color: #00adf6;
-  cursor: pointer;
-`;
-
-const CurrencyP = styled(CommonP)`
-  font-family: PlatformRegular;
-  font-size: 14px;
-  line-height: 22px;
-  letter-spacing: 1px;
-  color: #444444;
-`;
