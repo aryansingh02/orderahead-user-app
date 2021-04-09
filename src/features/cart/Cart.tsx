@@ -141,7 +141,7 @@ class Cart extends React.Component<IProps, IState> {
 
   // enableSurgeFee = true;
   enableSurgeFee =
-    config.get('enable_surge_fee') ||
+  config.get('enable_surge_fee') ||
     (this.props.stall &&
       config
         .get('surge_fee_enabled_stall_whitelist')

@@ -45,7 +45,7 @@ class CartHeader extends React.Component<IProps, IState> {
       <div className={classes.root}>
         <Grid container direction="row">
           <Grid item xs={5} className="startJustifiedFlex">
-            <KeyboardArrowLeftIcon className={classes.leftCaret} />
+            <KeyboardArrowLeftIcon className={`${classes.leftCaret} pointer`} onClick={() => this.props.history.goBack()} />
           </Grid>
           <Grid item xs={7}>
             <Typography variant="h4">My Cart</Typography>
