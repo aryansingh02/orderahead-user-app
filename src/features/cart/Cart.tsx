@@ -3,7 +3,6 @@ import React, { LegacyRef, RefObject } from 'react';
 import { connect } from 'react-redux';
 import config from 'react-global-configuration';
 import { Redirect, RouteComponentProps } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 import RootRef from '@material-ui/core/RootRef';
 import {
   createStyles,
@@ -21,8 +20,6 @@ import {
   updateNote,
 } from './CartSlice';
 import {
-  CalculateInvoice,
-  GenerateWaitTime,
   createAppConfigState,
   createStallState,
   isDesktop,
@@ -162,45 +159,6 @@ class Cart extends React.Component<IProps, IState> {
     this.bodyWrapper = React.createRef();
   }
 
-  componentDidMount() {
-    this.updateInvoice();
-    this.fetchOrderData();
-  }
-
-  componentDidUpdate(prevProps: IProps, prevState: IState) {
-    if (
-      prevState.mode !== this.state.mode ||
-      prevProps.cart.requestedTipPercent !==
-        this.props.cart.requestedTipPercent ||
-      prevProps.cart.couponCode !== this.props.cart.couponCode
-    ) {
-      this.updateInvoice();
-    }
-  }
-
-  updateInvoice = async () => {
-    const { cart, stall } = this.props;
-    CalculateInvoice(cart).then((data) => {
-      this.setState({ invoice: data });
-    });
-  };
-
-  fetchOrderData = async () => {
-    const { dynamicEta } = this.state;
-    const { stall } = this.props;
-
-    const response = await fetch(
-      `${config.get('backend')}/stall/${stall._id}/wait-time`
-    );
-    let time = await response.json();
-    time = GenerateWaitTime(time.waitTime);
-    this.setState({ itemEta: time });
-
-    if (dynamicEta < 1.0) {
-      this.triggerSkipTheLineModal();
-    }
-  };
-
   handleClose = (fee: IPrice, eta: number) => {
     this.setState({ showModal: false });
     this.props.setDynamicSettings({
@@ -270,10 +228,6 @@ class Cart extends React.Component<IProps, IState> {
     }
     return (
       <Grid container className={classes.cartRoot}>
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title>{stall.name} Cart</title>
-        </Helmet>
         <Grid container direction="row" justify="center">
           <Grid
             item

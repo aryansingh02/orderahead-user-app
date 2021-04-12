@@ -128,18 +128,6 @@ export const GenerateEpochDate = (date:Date) => {
   return newDate;
 };
 
-export async function CalculateInvoice(cart:ICart) {
-  // const response = await fetch(config.get("backend") + "/order/invoice", {
-  //   method: "post",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     cart: cart,
-  //   }),
-  // });
-  return invoice;
-}
 
 export const GenerateWaitTime = (time: number) => Math.round(time / (1000 * 60));
 
