@@ -120,17 +120,17 @@ export const DateModal = (props: IProps) => {
               container
               direction="row"
               xs={11}
-              justify='flex-end'
-              alignItems='center'
+              justify="flex-end"
+              alignItems="center"
             >
               <CloseIcon
                 onClick={() => {
                   updateState({ dateModal: false, pickup: undefined });
                 }}
-                className='pointer'
+                className="pointer"
               />
             </Grid>
-            <Grid item xs={12} container justify='center'>
+            <Grid item xs={12} container justify="center">
               {' '}
               {!rhState.startTime && renderDatePicker()}
             </Grid>

@@ -29,7 +29,7 @@ export const StallBanner = (props: IProps) => {
   const classes = useStyles();
   return (
     <div className={classes.paper}>
-      <img src='/img/CostaDesktop.png' className={classes.stallImg} alt="" />
+      <img src="/img/CostaDesktop.png" className={classes.stallImg} alt="" />
       <StallSummary
         stallName="Costa Coffee"
         rating={4.6}

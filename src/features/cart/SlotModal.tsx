@@ -29,7 +29,7 @@ const SlotModal = (props: IProps) => {
     const minTime = Date.now() + props.itemEta * 60 * 1000;
     const filteredSlots = slotsInfo;
     const retSlots = [
-      <MenuItem value='Choose Pickup Time' disabled key='placeholder'>
+      <MenuItem value="Choose Pickup Time" disabled key="placeholder">
         Choose Pickup Time
       </MenuItem>,
     ];

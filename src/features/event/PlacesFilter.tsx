@@ -31,9 +31,9 @@ const styles = (theme: typeof Theme) =>
     formControl: {
       width: '150px',
     },
-    rootSelect:{
-      textAlign: 'right'
-    }
+    rootSelect: {
+      textAlign: 'right',
+    },
   });
 
 interface IProps extends WithStyles<typeof styles> {}
@@ -78,17 +78,29 @@ class PlacesFilter extends React.Component<IProps, IState> {
                 className={classes.rootSelect}
               >
                 <MenuItem value="distance">
-                  <Typography roboto={true} variant="subtitle1" display="inline">
+                  <Typography
+                    roboto={true}
+                    variant="subtitle1"
+                    display="inline"
+                  >
                     Sort by Distance
                   </Typography>
                 </MenuItem>
                 <MenuItem value="ratings">
-                  <Typography roboto={true} variant="subtitle1" display="inline">
+                  <Typography
+                    roboto={true}
+                    variant="subtitle1"
+                    display="inline"
+                  >
                     Sort by Ratings
                   </Typography>
                 </MenuItem>
                 <MenuItem value="quality">
-                  <Typography roboto={true} variant="subtitle1" display="inline">
+                  <Typography
+                    roboto={true}
+                    variant="subtitle1"
+                    display="inline"
+                  >
                     Sort by Quality
                   </Typography>
                 </MenuItem>

@@ -110,7 +110,7 @@ export const theme = createMuiTheme({
       fontSize: '11px',
       lineHeight: '13px',
       color: 'rgba(38, 50, 56, 0.8)',
-      textTransform: 'capitalize'
+      textTransform: 'capitalize',
     },
     subtitle1: {
       fontFamily: 'GT-Walsheim, roboto',

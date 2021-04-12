@@ -20,7 +20,7 @@ const EventSlice = createSlice({
   },
 });
 
-export const {  } = EventSlice.actions;
+export const {} = EventSlice.actions;
 
 export default EventSlice.reducer;
 

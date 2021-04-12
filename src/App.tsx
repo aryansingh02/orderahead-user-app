@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-import config from "react-global-configuration";
+import config from 'react-global-configuration';
 import { SnackbarProvider } from 'notistack';
 import { WithStyles, withStyles, createStyles } from '@material-ui/core';
 import { theme as Theme } from './theme';
 import Cart from './features/cart/Cart';
-import configuration from "./config";
+import configuration from './config';
 import Event from './features/event/Event';
 import { StallMenu } from './features/stall/StallMenu';
 import AddedToCart from './features/stall/AddedToCart';

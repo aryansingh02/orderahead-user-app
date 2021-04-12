@@ -1,6 +1,14 @@
 import { History } from 'history';
 import RootReducer from './rootReducer';
-import { cart, cartItem, invoice, lineItems, menu, slotsInfo, stall } from './data/testData';
+import {
+  cart,
+  cartItem,
+  invoice,
+  lineItems,
+  menu,
+  slotsInfo,
+  stall,
+} from './data/testData';
 
 export type RootState = ReturnType<typeof RootReducer>;
 export type HistoryType = ReturnType<typeof Object>;

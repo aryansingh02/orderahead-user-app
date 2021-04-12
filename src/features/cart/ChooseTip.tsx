@@ -86,7 +86,6 @@ const ChooseTip = (props: IProps) => {
                   cart.requestedTipPercent === 15 ? 'activeButton' : ''
                 }`}
                 onClick={() => setRequestedTipPercent(15)}
-
               >
                 <Typography
                   roboto={true}
@@ -124,4 +123,3 @@ const ChooseTip = (props: IProps) => {
 };
 
 export default ChooseTip;
-

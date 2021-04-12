@@ -129,4 +129,6 @@ class Event extends React.Component<IProps, IState> {
   }
 }
 // @ts-ignore
-export default withWidth()(WithNavigation(withStyles(styles)(DesktopHeaderHOC(Event))));
+export default withWidth()(
+  WithNavigation(withStyles(styles)(DesktopHeaderHOC(Event)))
+);

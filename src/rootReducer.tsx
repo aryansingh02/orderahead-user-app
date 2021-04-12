@@ -5,7 +5,7 @@ import { RootState } from './types';
 
 export const rootReducer = combineReducers({
   event: EventReducer,
-  cart: CartReducer
+  cart: CartReducer,
 });
 
 // here userInfo in state is not reset because we want to preserve payment method data, authentication token over the refreshes

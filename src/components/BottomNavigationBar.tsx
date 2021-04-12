@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 
-
 const useStyles = makeStyles({
   root: {
     width: '100%',
@@ -15,8 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-interface IProps {
-}
+interface IProps {}
 
 export default function BottomNavigationBar(props: IProps) {
   const classes = useStyles();

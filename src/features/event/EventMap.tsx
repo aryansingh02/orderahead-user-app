@@ -41,4 +41,3 @@ class EventMap extends React.Component<IProps, IState> {
 }
 
 export default withStyles(styles)(EventMap);
-

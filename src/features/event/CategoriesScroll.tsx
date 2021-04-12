@@ -16,16 +16,17 @@ interface StyledTabProps {
   className: string;
 }
 
-const StyledTab = withStyles((theme: typeof Theme) =>
-  createStyles({
-    root: {
-      textTransform: 'none',
-      minWidth: '90px',
-      '&:focus': {
-        opacity: 1,
+const StyledTab = withStyles(
+  (theme: typeof Theme) =>
+    createStyles({
+      root: {
+        textTransform: 'none',
+        minWidth: '90px',
+        '&:focus': {
+          opacity: 1,
+        },
       },
-    },
-  })
+    })
   // @ts-ignore
 )((props: StyledTabProps) => <Tab disableRipple {...props} />);
 
@@ -64,12 +65,11 @@ const styles = (theme: typeof Theme) =>
       fontSize: '14px',
       fontWeight: 500,
       textTransform: 'capitalize',
-      width: '90px !important'
-    }
+      width: '90px !important',
+    },
   });
 
-interface IProps extends WithStyles<typeof styles> {
-}
+interface IProps extends WithStyles<typeof styles> {}
 
 interface IState {
   value: number;
@@ -101,7 +101,7 @@ class CategoriesScroll extends React.Component<IProps, IState> {
             className={`${classes.categoryWrapper} startJustifiedFlex`}
             container
           >
-            {/* @ts-ignore */ }
+            {/* @ts-ignore */}
             <Typography variant="h4" roboto={true} display="inline">
               Categories
             </Typography>
@@ -142,4 +142,3 @@ class CategoriesScroll extends React.Component<IProps, IState> {
 }
 
 export default withStyles(styles)(CategoriesScroll);
-

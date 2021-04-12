@@ -13,24 +13,24 @@ interface IProps {
   setRequestedTipPercent: (num: number) => void;
 }
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
-  invoiceRoot: {
-
-  },
-  divider: {
-    color: '#E3E3E3',
-    width: '100%',
-    marginTop: '10px',
-    marginBottom: '10px'
-  },
-  boldFont: {
-    fontWeight: 'bold'
-  },
-  checkoutButton: {
-    height: '48px',
-    borderRadius: '24px'
-  }
-}));
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    invoiceRoot: {},
+    divider: {
+      color: '#E3E3E3',
+      width: '100%',
+      marginTop: '10px',
+      marginBottom: '10px',
+    },
+    boldFont: {
+      fontWeight: 'bold',
+    },
+    checkoutButton: {
+      height: '48px',
+      borderRadius: '24px',
+    },
+  })
+);
 
 export const Invoice = (props: IProps) => {
   const classes = useStyles();
@@ -97,7 +97,7 @@ export const Invoice = (props: IProps) => {
           </Grid>
         </Grid>
       )}
-      {get(invoice, "discount.amount") !== 0 ? (
+      {get(invoice, 'discount.amount') !== 0 ? (
         <Grid item xs={12} container>
           <Grid item xs={6}>
             <Typography roboto={true} variant="body2">
@@ -111,17 +111,25 @@ export const Invoice = (props: IProps) => {
           </Grid>
         </Grid>
       ) : (
-        ""
+        ''
       )}
       <Divider className={classes.divider} />
       <Grid item xs={12} container>
         <Grid item xs={6}>
-          <Typography roboto={true} variant="body1" className={classes.boldFont}>
+          <Typography
+            roboto={true}
+            variant="body1"
+            className={classes.boldFont}
+          >
             Total
           </Typography>
         </Grid>
         <Grid item xs={6} className="endJustifiedFlex">
-          <Typography roboto={true} variant="body1" className={classes.boldFont}>
+          <Typography
+            roboto={true}
+            variant="body1"
+            className={classes.boldFont}
+          >
             {GenerateCurrencyNumber(invoice.total)}
           </Typography>
         </Grid>
@@ -129,7 +137,3 @@ export const Invoice = (props: IProps) => {
     </Grid>
   );
 };
-
-
-
-

@@ -11,19 +11,8 @@ import {
   withStyles,
   Button,
 } from '@material-ui/core';
-import {
-  createShoppingCart,
-  setCouponCode,
-  setDynamicSettings,
-  setPickupTime,
-  setRequestedTipPercent,
-  updateNote,
-} from './CartSlice';
-import {
-  createAppConfigState,
-  createStallState,
-  isDesktop,
-} from '../../utils';
+import { createShoppingCart } from './CartSlice';
+import { createAppConfigState, createStallState, isDesktop } from '../../utils';
 import ItemsList from './ItemsList';
 import { PickupOptions } from './PickupOptions';
 import { Invoice } from './Invoice';
@@ -42,7 +31,6 @@ import { theme as Theme } from '../../theme';
 import CartHeader from './CartHeader';
 import Typography from '../../Typography';
 import ChooseTip from './ChooseTip';
-import DesktopHeader from '../event/DesktopHeader';
 import DesktopHeaderHOC from '../../components/DesktopHeaderHOC';
 
 export const FullfilmentModeType = {
@@ -108,11 +96,6 @@ const styles = (theme: typeof Theme) =>
 interface IProps extends WithStyles<typeof styles>, RouteComponentProps {
   cart: ICart;
   stall: IStall;
-  setDynamicSettings: (data: IDynamicSettings) => void;
-  updateNote: (note: string) => void;
-  setCouponCode: (code: string) => void;
-  setRequestedTipPercent: (percent: number | string) => void;
-  setPickupTime: (data: number) => void;
   rhState: () => {};
 }
 interface IState {
@@ -161,42 +144,6 @@ class Cart extends React.Component<IProps, IState> {
 
   handleClose = (fee: IPrice, eta: number) => {
     this.setState({ showModal: false });
-    this.props.setDynamicSettings({
-      requestedEta: eta,
-      requestedDynamicFee: fee,
-    });
-  };
-
-  triggerSkipTheLineModal = async () => {
-    const { cart } = this.props;
-    if (!this.enableSurgeFee) {
-      return;
-    }
-
-    fetch(`${config.get('backend')}/surge-fee`, {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        cart,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Update State of dynamicFee and dynamicEta
-        // Hide UI for skipping the line if DynamoDB cannot communicate with Lambda
-        this.setState({
-          dynamicEta: data.data.eta,
-          dynamicFee: data.data.fee,
-          showModal: true,
-        });
-      })
-      .catch((error) => {
-        // TODO: show error to user
-        console.log(`SurgeFee API failed ${error}`);
-        this.setState({ showModal: false });
-      });
   };
 
   onSlotClick = (slot: Date) => {
@@ -259,7 +206,7 @@ class Cart extends React.Component<IProps, IState> {
                 {/* @ts-ignore */}
                 <ChooseTip
                   invoice={invoice}
-                  setRequestedTipPercent={setRequestedTipPercent}
+                  setRequestedTipPercent={() => {}}
                   cart={cart}
                 />
               </Grid>
@@ -283,8 +230,8 @@ class Cart extends React.Component<IProps, IState> {
               <CutleryCoupon
                 cutlerySwitch={cutlerySwitch}
                 updateState={(data) => this.setState(data)}
-                updateNote={this.props.updateNote}
-                setCouponCode={this.props.setCouponCode}
+                updateNote={() => {}}
+                setCouponCode={() => {}}
                 // @ts-ignore
                 invoice={invoice}
                 cart={cart}
@@ -295,7 +242,7 @@ class Cart extends React.Component<IProps, IState> {
                 <Invoice
                   invoice={invoice}
                   cart={cart}
-                  setRequestedTipPercent={this.props.setRequestedTipPercent}
+                  setRequestedTipPercent={() => {}}
                 />
               </Grid>
             )}
@@ -339,23 +286,7 @@ class Cart extends React.Component<IProps, IState> {
   }
 }
 
-const mapDispatchToProps = (dispatch: AppDispatch) => ({
-  setDynamicSettings: (data: IDynamicSettings) => {
-    dispatch(setDynamicSettings(data));
-  },
-  updateNote: (note: string) => {
-    dispatch(updateNote(note));
-  },
-  setCouponCode: (code: string) => {
-    dispatch(setCouponCode(code));
-  },
-  setRequestedTipPercent: (percent: number) => {
-    dispatch(setRequestedTipPercent(percent));
-  },
-  setPickupTime: (data: number) => {
-    dispatch(setPickupTime({ pickupTime: data }));
-  },
-});
+const mapDispatchToProps = (dispatch: AppDispatch) => ({});
 
 const mapStateToProps = (state: RootState) => ({
   rhState: createAppConfigState(),
@@ -369,6 +300,3 @@ export default connect(
   mapDispatchToProps
   // @ts-ignore
 )(withStyles(styles)(DesktopHeaderHOC(Cart)));
-
-
-

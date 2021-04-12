@@ -17,7 +17,7 @@ const styles = (theme: typeof Theme) =>
       justifyContent: 'flex-start',
       width: '100%',
       paddingTop: theme.spacing(4),
-      paddingBottom: theme.spacing(5)
+      paddingBottom: theme.spacing(5),
     },
     headingRow: {},
     accountHeading: {},
@@ -45,7 +45,10 @@ class CartHeader extends React.Component<IProps, IState> {
       <div className={classes.root}>
         <Grid container direction="row">
           <Grid item xs={5} className="startJustifiedFlex">
-            <KeyboardArrowLeftIcon className={`${classes.leftCaret} pointer`} onClick={() => this.props.history.goBack()} />
+            <KeyboardArrowLeftIcon
+              className={`${classes.leftCaret} pointer`}
+              onClick={() => this.props.history.goBack()}
+            />
           </Grid>
           <Grid item xs={7}>
             <Typography variant="h4">My Cart</Typography>

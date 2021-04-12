@@ -13,13 +13,13 @@ const styles = (theme: typeof Theme) =>
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'flex-start',
-      width: '100%'
+      width: '100%',
     },
     headingRow: {},
     accountHeading: {},
     logoImage: {
-      marginRight: theme.spacing(2.5)
-    }
+      marginRight: theme.spacing(2.5),
+    },
   });
 
 interface IProps extends WithStyles<typeof styles>, RouteComponentProps {}
@@ -37,10 +37,10 @@ class MobileHeader extends React.Component<IProps, IState> {
     return (
       <div className={classes.root}>
         <Grid container direction="row">
-          <Grid item xs={6} className='startJustifiedFlex'>
+          <Grid item xs={6} className="startJustifiedFlex">
             <img src="/img/LogoSleek.png" />
           </Grid>
-          <Grid item xs={6} className='endJustifiedFlex'>
+          <Grid item xs={6} className="endJustifiedFlex">
             <img src="/img/search_logo.png" className={classes.logoImage} />
             <DehazeIcon />
           </Grid>
@@ -50,4 +50,4 @@ class MobileHeader extends React.Component<IProps, IState> {
   }
 }
 
-export default (withStyles(styles)(MobileHeader));
+export default withStyles(styles)(MobileHeader);

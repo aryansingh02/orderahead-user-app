@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     pickupText: {
       marginTop: '20px',
-      marginBottom:'20px'
+      marginBottom: '20px',
     },
     pickupRow: {
       padding: '10px',
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     pickupRoot: {
       paddingBottom: '10px',
-      borderBottom: 'solid 1px #E3E3E3'
+      borderBottom: 'solid 1px #E3E3E3',
     },
     skipRow: (props) => ({
       // @ts-ignore
@@ -292,6 +292,3 @@ export const PickupOptions = (props: IProps) => {
     )
   );
 };
-
-
-
