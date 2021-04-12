@@ -35,14 +35,19 @@ const styles = (theme: typeof Theme) =>
     }
   });
 
-interface IProps extends WithStyles<typeof styles> {}
+interface IProps extends WithStyles<typeof styles> {
+  query: string;
+}
 
-interface IState {}
+interface IState {
+}
 
 class RecentSearches extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
   }
+
+  filterSearches = () => recentSearches.filter((search) => search.indexOf(this.props.query) !== -1);
 
   render() {
     const { classes } = this.props;
@@ -76,7 +81,7 @@ class RecentSearches extends React.Component<IProps, IState> {
               <ExpandLessIcon className={classes.expandIcon} />
             </Box>
           </Grid>
-          {recentSearches.map((search) => (
+          {this.filterSearches().map((search) => (
             <Grid className={classes.searchRow} item xs={12} container direction="row" key={search} justify='space-between'>
               <Box className='centreJustifiedFlex'>
                 <SearchIcon className={classes.searchIcon} />

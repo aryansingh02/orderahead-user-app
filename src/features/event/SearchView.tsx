@@ -30,6 +30,9 @@ const styles = (theme: typeof Theme) =>
       height: '65px',
       borderBottomColor: '#E3E3E3',
     },
+    root: {
+      paddingBottom: '70px'
+    },
     icon: {
       color: '#979797',
     },
@@ -76,7 +79,7 @@ class SearchView extends React.Component<IProps, IState> {
   render() {
     const { classes } = this.props;
     return (
-      <Grid container justify="center">
+      <Grid container justify="center" className={classes.root}>
         <Grid item xs={11}>
           <Input
             className={classes.InputRoot}
@@ -101,7 +104,7 @@ class SearchView extends React.Component<IProps, IState> {
           />
         </Grid>
         <Grid item xs={11} container direction="row">
-          <RecentSearches />
+          <RecentSearches query={this.state.query} />
         </Grid>
         <Grid item xs={11} container direction="row">
           {this.state.filteredStalls.map((item) => (
