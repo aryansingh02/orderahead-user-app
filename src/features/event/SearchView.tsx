@@ -10,7 +10,8 @@ import {
   Grid,
   TextField,
   InputAdornment,
-  Input, Box,
+  Input,
+  Box,
 } from '@material-ui/core';
 import { theme as Theme } from '../../theme';
 
@@ -20,6 +21,7 @@ import WithNavigation from '../../components/BottomNavigationHoc';
 import { IStall } from '../../types';
 import { event as Event } from '../../data/testData';
 import StallCard from './StallCard';
+import RecentSearches from './RecentSearches';
 
 const styles = (theme: typeof Theme) =>
   createStyles({
@@ -83,7 +85,10 @@ class SearchView extends React.Component<IProps, IState> {
             id="input-with-icon-textfield"
             startAdornment={
               <InputAdornment position="start">
-                <Box onClick={() => this.props.history.push('/event')} className='pointer'>
+                <Box
+                  onClick={() => this.props.history.push('/event')}
+                  className="pointer"
+                >
                   <ArrowBackIosIcon className={classes.icon} />
                 </Box>
               </InputAdornment>
@@ -94,6 +99,9 @@ class SearchView extends React.Component<IProps, IState> {
               </InputAdornment>
             }
           />
+        </Grid>
+        <Grid item xs={11} container direction="row">
+          <RecentSearches />
         </Grid>
         <Grid item xs={11} container direction="row">
           {this.state.filteredStalls.map((item) => (

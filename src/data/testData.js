@@ -350,6 +350,17 @@ export const stall4 = {
   businessHours: {},
 };
 
+export const recentSearches = [
+  'Vegetarian Food',
+  'Pizza',
+  'Hamburger',
+  'Cheeseburger',
+  'Vegetarian Salad',
+  'Keto Cake',
+  'Vanila ice cream',
+  'Pizza with ham',
+];
+
 export const menu = {
   _id: '5f35c4dbec0310c59e8bf3e5',
   name: 'dh',
