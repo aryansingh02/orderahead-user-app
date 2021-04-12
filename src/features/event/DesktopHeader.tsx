@@ -117,11 +117,11 @@ const useStyles = makeStyles((theme: typeof Theme) =>
       justifyContent: 'center',
     },
     inputInput: {
-      color: 'inherit',
       padding: theme.spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
       transition: theme.transitions.create('width'),
+      color: '#000000',
       width: '100%',
       [theme.breakpoints.up('sm')]: {
         width: '12ch',
@@ -165,16 +165,16 @@ export default function DesktopHeader() {
                 <div className={classes.searchIcon}>
                   <SearchIcon />
                 </div>
-                <InputBase
-                  placeholder="Search…"
-                  classes={{
-                    root: classes.inputRoot,
-                    input: classes.inputInput,
-                  }}
-                  inputProps={{ 'aria-label': 'search' }}
-                />
               </div>
             </IconButton>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
             <IconButton color="inherit">
               <img src="/img/cart.svg" className={classes.cartImg} />
             </IconButton>

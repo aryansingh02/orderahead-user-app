@@ -14,8 +14,6 @@ import {
   Box,
 } from '@material-ui/core';
 import { theme as Theme } from '../../theme';
-
-import config from '../../config';
 import { FilterStalls, isDesktop } from '../../utils';
 import WithNavigation from '../../components/BottomNavigationHoc';
 import { IStall } from '../../types';
