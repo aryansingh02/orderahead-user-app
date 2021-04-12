@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { fade, makeStyles, createStyles } from '@material-ui/core/styles';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import AppBar from '@material-ui/core/AppBar';
@@ -18,43 +18,9 @@ const useStyles = makeStyles((theme: typeof Theme) =>
     menuButton: {
       marginRight: theme.spacing(2),
     },
-    // search: {
-    //   position: 'relative',
-    //   borderRadius: theme.shape.borderRadius,
-    //   backgroundColor: fade(theme.palette.common.white, 0.15),
-    //   '&:hover': {
-    //     backgroundColor: fade(theme.palette.common.white, 0.25),
-    //   },
-    //   marginRight: theme.spacing(2),
-    //   marginLeft: 0,
-    //   width: '100%',
-    //   [theme.breakpoints.up('sm')]: {
-    //     marginLeft: theme.spacing(3),
-    //     width: 'auto',
-    //   },
-    // },
-    // searchIcon: {
-    //   padding: theme.spacing(0, 2),
-    //   height: '100%',
-    //   position: 'absolute',
-    //   pointerEvents: 'none',
-    //   display: 'flex',
-    //   alignItems: 'center',
-    //   justifyContent: 'center',
-    // },
     inputRoot: {
       color: 'inherit',
     },
-    // inputInput: {
-    //   padding: theme.spacing(1, 1, 1, 0),
-    //   // vertical padding + font size from searchIcon
-    //   paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    //   transition: theme.transitions.create('width'),
-    //   width: '100%',
-    //   [theme.breakpoints.up('md')]: {
-    //     width: '20ch',
-    //   },
-    // },
     sectionDesktop: {
       position: 'absolute',
       right: theme.spacing(3.75),
@@ -136,6 +102,8 @@ const useStyles = makeStyles((theme: typeof Theme) =>
 export default function DesktopHeader() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [inputFocused, setInputFocused] = React.useState<boolean>(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   const [
     mobileMoreAnchorEl,
     setMobileMoreAnchorEl,
@@ -174,6 +142,7 @@ export default function DesktopHeader() {
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+              inputRef={inputRef}
             />
             <IconButton color="inherit">
               <img src="/img/cart.svg" className={classes.cartImg} />
