@@ -21,7 +21,6 @@ const useColorlibStepIconStyles = makeStyles({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   active: {
     background: '#6D5CFF',
     boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
@@ -105,6 +104,7 @@ const statusToIndexObject = {
 
 export default function StatusStepper() {
   const classes = useStyles();
+  // TODO: ActiveStep will be set from API response.
   const [activeStep, setActiveStep] = React.useState(
     statusToIndexObject.PREPARING
   );
