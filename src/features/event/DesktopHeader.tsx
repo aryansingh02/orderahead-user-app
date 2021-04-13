@@ -1,7 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useReducer } from 'react';
 import { fade, makeStyles, createStyles } from '@material-ui/core/styles';
+import { useSelector, useDispatch } from 'react-redux';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import AppBar from '@material-ui/core/AppBar';
+import get from 'lodash/get';
+import { Box } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MoreIcon from '@material-ui/icons/MoreVert';
@@ -9,6 +12,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Typography from '../../Typography';
 import { theme as Theme } from '../../theme';
+import RecentSearches from './RecentSearches';
+import { getQuery, setQuery } from './EventSlice';
 
 const useStyles = makeStyles((theme: typeof Theme) =>
   createStyles({
@@ -90,11 +95,19 @@ const useStyles = makeStyles((theme: typeof Theme) =>
       color: '#000000',
       width: '100%',
       [theme.breakpoints.up('sm')]: {
-        width: '12ch',
+        width: '20ch',
         '&:focus': {
           width: '20ch',
         },
       },
+    },
+    recentSearchBox: {
+      position: 'absolute',
+      width: '350px',
+      height: 'auto',
+      background: '#fff',
+      color: '#000000',
+      padding: '5px',
     },
   })
 );
@@ -103,11 +116,26 @@ export default function DesktopHeader() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [inputFocused, setInputFocused] = React.useState<boolean>(false);
+  const [inputValue, setInputValue] = React.useState<string>('');
   const inputRef = useRef<HTMLInputElement>(null);
   const [
     mobileMoreAnchorEl,
     setMobileMoreAnchorEl,
   ] = React.useState<null | HTMLElement>(null);
+
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+  const dispatch = useDispatch();
+  const searchQuery = useSelector(getQuery);
+
+  function handleClick() {
+    forceUpdate();
+    console.log(inputRef.current!.getBoundingClientRect().left);
+    console.log(inputRef.current!.getBoundingClientRect().top);
+  }
+
+  useEffect(() => {
+    handleClick();
+  }, [inputRef]);
 
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
@@ -141,8 +169,12 @@ export default function DesktopHeader() {
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
+              onClick={() => setInputFocused(true)}
+              onBlur={() => setInputFocused(false)}
               inputProps={{ 'aria-label': 'search' }}
               inputRef={inputRef}
+              value={searchQuery}
+              onChange={(evt) => dispatch(setQuery(evt.target.value))}
             />
             <IconButton color="inherit">
               <img src="/img/cart.svg" className={classes.cartImg} />
@@ -162,6 +194,17 @@ export default function DesktopHeader() {
               <MoreIcon />
             </IconButton>
           </div>
+          {inputFocused && inputRef.current && (
+            <Box
+              className={classes.recentSearchBox}
+              style={{
+                left: inputRef.current.getBoundingClientRect().left || 0,
+                top: inputRef.current.getBoundingClientRect().top + 50 || 0,
+              }}
+            >
+              <RecentSearches query={searchQuery} />
+            </Box>
+          )}
         </Toolbar>
       </AppBar>
     </div>

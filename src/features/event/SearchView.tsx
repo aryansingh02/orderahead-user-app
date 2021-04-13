@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+import React from 'react';
+import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import SearchIcon from '@material-ui/icons/Search';
@@ -8,7 +8,6 @@ import {
   withStyles,
   WithStyles,
   Grid,
-  TextField,
   InputAdornment,
   Input,
   Box,
@@ -16,10 +15,11 @@ import {
 import { theme as Theme } from '../../theme';
 import { FilterStalls, isDesktop } from '../../utils';
 import WithNavigation from '../../components/BottomNavigationHoc';
-import { IStall } from '../../types';
-import { event as Event } from '../../data/testData';
-import StallCard from './StallCard';
 import RecentSearches from './RecentSearches';
+import FilteredStalls from './FilteredStalls';
+import { AppDispatch } from '../../store';
+import { RootState } from '../../types';
+import { getQuery, setQuery } from './EventSlice';
 
 const styles = (theme: typeof Theme) =>
   createStyles({
@@ -29,7 +29,7 @@ const styles = (theme: typeof Theme) =>
       borderBottomColor: '#E3E3E3',
     },
     root: {
-      paddingBottom: '70px'
+      paddingBottom: '70px',
     },
     icon: {
       color: '#979797',
@@ -39,20 +39,16 @@ const styles = (theme: typeof Theme) =>
 interface IProps extends WithStyles<typeof styles>, RouteComponentProps {
   center: { lat: number; lng: number };
   zoom: number;
+  query: string;
+  setQuery: (query: string) => void;
 }
 
-interface IState {
-  query: string;
-  filteredStalls: IStall[];
-}
+interface IState {}
 
 class SearchView extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
-    this.state = {
-      query: '',
-      filteredStalls: Event.stalls,
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -61,19 +57,6 @@ class SearchView extends React.Component<IProps, IState> {
     }
   }
 
-  componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<IState>) {
-    if (prevState.query !== this.state.query) {
-      this.filterStalls();
-    }
-  }
-
-  filterStalls = () => {
-    const newStalls = FilterStalls(Event.stalls, this.state.query);
-    this.setState((state, props) => ({
-      filteredStalls: newStalls,
-    }));
-  };
-
   render() {
     const { classes } = this.props;
     return (
@@ -81,8 +64,10 @@ class SearchView extends React.Component<IProps, IState> {
         <Grid item xs={11}>
           <Input
             className={classes.InputRoot}
-            value={this.state.query}
-            onChange={(evt) => this.setState({ query: evt.target.value })}
+            value={this.props.query}
+            onChange={(evt) => {
+              this.props.setQuery(evt.target.value);
+            }}
             id="input-with-icon-textfield"
             startAdornment={
               <InputAdornment position="start">
@@ -102,16 +87,29 @@ class SearchView extends React.Component<IProps, IState> {
           />
         </Grid>
         <Grid item xs={11} container direction="row">
-          <RecentSearches query={this.state.query} />
+          <RecentSearches query={this.props.query} />
         </Grid>
         <Grid item xs={11} container direction="row">
-          {this.state.filteredStalls.map((item) => (
-            <StallCard stall={item} key={item._id} />
-          ))}
+          <FilteredStalls />
         </Grid>
       </Grid>
     );
   }
 }
 
-export default withStyles(styles)(WithNavigation(SearchView));
+const mapDispatchToProps = (dispatch: AppDispatch) => ({
+  setQuery: (query: string) => {
+    dispatch(setQuery(query));
+  },
+});
+
+const mapStateToProps = (state: RootState) => ({
+  query: getQuery(state),
+});
+
+export default connect(
+  mapStateToProps,
+  // @ts-ignore
+  mapDispatchToProps
+  // @ts-ignore
+)(withStyles(styles)(WithNavigation(SearchView)));
