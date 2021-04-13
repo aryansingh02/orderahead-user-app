@@ -26,7 +26,7 @@ const styles = (theme: typeof Theme) =>
     },
     leftCaret: {
       color: theme.palette.secondary.light,
-      height: '30px'
+      height: '30px',
     },
   });
 

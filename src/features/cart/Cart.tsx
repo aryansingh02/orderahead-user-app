@@ -130,7 +130,6 @@ class Cart extends React.Component<IProps, IState> {
         .get('surge_fee_enabled_stall_whitelist')
         .findIndex((x: string) => x === this.props.stall._id) !== -1);
 
-
   constructor(props: IProps) {
     super(props);
     this.state = {
@@ -151,7 +150,7 @@ class Cart extends React.Component<IProps, IState> {
   }
 
   componentDidMount() {
-    if (this.bodyWrapper!.current!.offsetWidth){
+    if (this.bodyWrapper!.current!.offsetWidth) {
       this.forceUpdate();
     }
   }

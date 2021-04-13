@@ -10,7 +10,7 @@ import get from 'lodash/get';
 import {
   FindMenuItem,
   GenerateCurrencyNumber,
-  CalculateLineItemTotal,
+  CalculateLineItemTotal, isDesktop,
 } from '../../utils';
 import { ILineItems, IStall } from '../../types';
 import Typography from '../../Typography';
@@ -30,8 +30,8 @@ const useStyles = makeStyles((theme: Theme) =>
       lineHeight: '24px',
     },
     itemImage: {
-      height: '40px',
-      width: '40px',
+      height: isDesktop()? '60px': '40px',
+      width: isDesktop()? '60px': '40px',
       filter: 'drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.1))',
       borderRadius: '6px',
     },
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
       position: 'relative',
       background: '#FFFFFF',
       marginTop: '2px',
-      padding: '1px'
+      padding: '1px',
     },
     addIcon: {
       position: 'absolute',
@@ -56,26 +56,25 @@ const useStyles = makeStyles((theme: Theme) =>
     deleteIcon: {
       color: '#979797',
       width: '14px',
+      marginLeft: '12px'
     },
     itemName: {
       paddingLeft: theme.spacing(1.25),
-      width: '160px',
-      color: '#263238'
+      color: '#263238',
     },
     countCol: {
       width: '55px',
       justifySelf: 'flex-end',
-      marginLeft: 'auto'
+      marginLeft: 'auto',
     },
     amountCol: {
-      width: '58px',
       justifySelf: 'flex-end',
       justifyContent: 'flex-end',
     },
     deleteCol: {
       width: '20px',
       justifySelf: 'flex-end',
-      textAlign: 'right'
+      textAlign: 'right',
     },
     rootItem: {
       marginBottom: '15px',
@@ -123,23 +122,26 @@ const ItemsList = (props: IProps) => {
       // @ts-ignore
       itemsArr.push(
         <Grid item container direction="row" className={classes.rootItem}>
-          <Grid item>
-            <img
-              src={get(item, 'imagePaths[0]', '')}
-              className={classes.itemImage}
-            />
-          </Grid>
-          <Grid item container direction="column" className={classes.itemName}>
-            <Typography roboto={true} variant="body2">
-              {item.name}
-            </Typography>
-            <Typography roboto={true} variant="caption">
-              standard
-            </Typography>
+          <Grid xs={8} item container direction="row">
+            <Grid item>
+              <img
+                src={get(item, 'imagePaths[0]', '')}
+                className={classes.itemImage}
+              />
+            </Grid>
+            <Grid className={classes.itemName} item direction="column">
+              <Typography roboto={true} variant="body2">
+                {item.name}
+              </Typography>
+              <Typography roboto={true} variant="caption">
+                standard
+              </Typography>
+            </Grid>
           </Grid>
           <Grid
             className={classes.countCol}
             item
+            xs={2}
             container
             direction="row"
             justify="space-between"
@@ -151,6 +153,7 @@ const ItemsList = (props: IProps) => {
           <Grid
             className={classes.amountCol}
             item
+            xs={2}
             justify="center"
             container
             direction="row"
@@ -159,8 +162,6 @@ const ItemsList = (props: IProps) => {
               {' '}
               {GenerateCurrencyNumber(CalculateLineItemTotal(cartItem))}
             </Typography>
-          </Grid>
-          <Grid item className={classes.deleteCol}>
             <DeleteIcon className={classes.deleteIcon} />
           </Grid>
         </Grid>

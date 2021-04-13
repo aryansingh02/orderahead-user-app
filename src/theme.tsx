@@ -125,7 +125,7 @@ export const theme = createMuiTheme({
       fontSize: '14px',
       lineHeight: '16px',
       color: '#FFFFFF',
-      textTransform: 'capitalize'
+      textTransform: 'capitalize',
     },
   },
 
