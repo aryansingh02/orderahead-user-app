@@ -10,7 +10,8 @@ import get from 'lodash/get';
 import {
   FindMenuItem,
   GenerateCurrencyNumber,
-  CalculateLineItemTotal, isDesktop,
+  CalculateLineItemTotal,
+  isDesktop,
 } from '../../utils';
 import { ILineItems, IStall } from '../../types';
 import Typography from '../../Typography';
@@ -30,8 +31,8 @@ const useStyles = makeStyles((theme: Theme) =>
       lineHeight: '24px',
     },
     itemImage: {
-      height: isDesktop()? '60px': '40px',
-      width: isDesktop()? '60px': '40px',
+      height: isDesktop() ? '60px' : '40px',
+      width: isDesktop() ? '60px' : '40px',
       filter: 'drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.1))',
       borderRadius: '6px',
     },
@@ -56,7 +57,7 @@ const useStyles = makeStyles((theme: Theme) =>
     deleteIcon: {
       color: '#979797',
       width: '14px',
-      marginLeft: '12px'
+      marginLeft: '12px',
     },
     itemName: {
       paddingLeft: theme.spacing(1.25),
