@@ -3,14 +3,12 @@ import { fade, makeStyles, createStyles } from '@material-ui/core/styles';
 import { useSelector, useDispatch } from 'react-redux';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import AppBar from '@material-ui/core/AppBar';
-import get from 'lodash/get';
 import { Box } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import Typography from '../../Typography';
 import { theme as Theme } from '../../theme';
 import RecentSearches from './RecentSearches';
 import { getQuery, setQuery } from './EventSlice';
@@ -114,9 +112,7 @@ const useStyles = makeStyles((theme: typeof Theme) =>
 
 export default function DesktopHeader() {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [inputFocused, setInputFocused] = React.useState<boolean>(false);
-  const [inputValue, setInputValue] = React.useState<string>('');
   const inputRef = useRef<HTMLInputElement>(null);
   const [
     mobileMoreAnchorEl,

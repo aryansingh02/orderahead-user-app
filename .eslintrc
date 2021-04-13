@@ -57,6 +57,7 @@
       }
     ],
     "react/jsx-key": "error",
+    // the reason this has been turned to warn because in spite of installing all dependencies somtimes typescript keeps throwing up this error for no reason
     "import/no-extraneous-dependencies": [
       "warn",
       {
@@ -79,13 +80,16 @@
     "react/destructuring-assignment": "off",
     "react/require-default-props": "off",
     "no-underscore-dangle": "off",
-    "@typescript-eslint/comma-dangle": ["error", {
-      "arrays": "only-multiline",
-      "objects": "only-multiline",
-      "imports": "only-multiline",
-      "exports": "only-multiline",
-      "functions": "never"
-    }],
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "never"
+      }
+    ],
     "@typescript-eslint/dot-notation": "off",
     "react/jsx-curly-newline": "off",
     "@typescript-eslint/quotes": "off",
@@ -93,7 +97,6 @@
     "react/prefer-stateless-function": "off",
     // unusually retrict
     "react/static-property-placement": "off"
-
   }
 }
 // no undersocre dangle had to be turned off because _id of business needed to be accessed which was throwing errors

@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import SearchIcon from '@material-ui/icons/Search';
 import {
   createStyles,
@@ -13,7 +12,7 @@ import {
   Box,
 } from '@material-ui/core';
 import { theme as Theme } from '../../theme';
-import { FilterStalls, isDesktop } from '../../utils';
+import { isDesktop } from '../../utils';
 import WithNavigation from '../../components/BottomNavigationHoc';
 import RecentSearches from './RecentSearches';
 import FilteredStalls from './FilteredStalls';
@@ -26,13 +25,21 @@ const styles = (theme: typeof Theme) =>
     InputRoot: {
       width: '100%',
       height: '65px',
-      borderBottomColor: '#E3E3E3',
+      borderBottom: 'solid 2px rgb(227,227,227, 1)',
+      MuiInputUnderline: {
+        border: 'none',
+      },
     },
     root: {
       paddingBottom: '70px',
     },
     icon: {
       color: '#979797',
+      height: '16px',
+    },
+    searchIcon: {
+      color: '#979797',
+      height: '20px',
     },
   });
 
@@ -75,13 +82,13 @@ class SearchView extends React.Component<IProps, IState> {
                   onClick={() => this.props.history.push('/event')}
                   className="pointer"
                 >
-                  <ArrowBackIosIcon className={classes.icon} />
+                  <img src="/img/backIcon.svg" className={classes.icon} />
                 </Box>
               </InputAdornment>
             }
             endAdornment={
               <InputAdornment position="start">
-                <SearchIcon className={classes.icon} />
+                <SearchIcon className={classes.searchIcon} />
               </InputAdornment>
             }
           />
