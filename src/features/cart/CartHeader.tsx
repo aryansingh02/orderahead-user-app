@@ -26,6 +26,7 @@ const styles = (theme: typeof Theme) =>
     },
     leftCaret: {
       color: theme.palette.secondary.light,
+      height: '30px'
     },
   });
 
@@ -44,7 +45,7 @@ class CartHeader extends React.Component<IProps, IState> {
     return (
       <div className={classes.root}>
         <Grid container direction="row">
-          <Grid item xs={5} className="startJustifiedFlex">
+          <Grid item xs={5}>
             <KeyboardArrowLeftIcon
               className={`${classes.leftCaret} pointer`}
               onClick={() => this.props.history.goBack()}

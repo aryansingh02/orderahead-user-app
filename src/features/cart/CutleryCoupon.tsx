@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     input: {
       border: '1px solid #e6e6e6',
+      background: '#FFFFFF',
       boxSizing: 'border-box',
       borderRadius: '8px',
       height: '51px',
@@ -49,8 +50,8 @@ const useStyles = makeStyles((theme: Theme) =>
       transform: 'translate(-50%, -50%)',
     },
     couponRow: {
-      marginTop: '24px',
-      marginBottom: '24px',
+      marginTop: '20px',
+      marginBottom: '20px',
       position: 'relative',
     },
   })
@@ -95,15 +96,15 @@ export const CutleryCoupon = (props: IProps) => {
             inputProps={{ 'aria-label': 'primary checkbox' }}
           />
         </Grid>
-        <Grid item xs={7} container direction="column">
+        <Grid item xs={8} container direction="column">
           <Typography variant="body2" roboto={true}>
             Utensils, straws, etc..
           </Typography>
-          <Typography variant="overline" roboto={true}>
+          <Typography variant="caption" roboto={true}>
             These items won't be added unless you ask
           </Typography>
         </Grid>
-        <Grid item xs={3} container className="endJustifiedFlex">
+        <Grid item xs={2} container className="endJustifiedFlex">
           <img src="/img/leaf.png" alt="surge fee" width="16px" height="16px" />
         </Grid>
       </Grid>
@@ -112,10 +113,6 @@ export const CutleryCoupon = (props: IProps) => {
           <InputBase
             placeholder="Enter your coupon or promo code"
             className={`${getCouponClass()} ${classes.input}`}
-            value={cart.couponCode}
-            onChange={(evt: { target: { value: string } }) => {
-              setCouponCode(evt.target.value);
-            }}
           />
           <Box className={`${classes.checkDiv} "pointer"`}>
             {getCouponClass() === 'validCoupon' && (

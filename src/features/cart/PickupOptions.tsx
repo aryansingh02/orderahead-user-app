@@ -40,6 +40,12 @@ const useStyles = makeStyles((theme: Theme) =>
     pickupIcon: {
       paddingRight: theme.spacing(1.25),
     },
+    pickup: {
+      fontStyle: 'normal',
+      fontWeight: 'bold',
+      fontSize: '16px',
+      lineHeight: '18px',
+    },
     pickupText: {
       marginTop: '20px',
       marginBottom: '20px',
@@ -68,7 +74,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
     scheduledRow: (props) => ({
       // @ts-ignore
-      borderColor: props.scheduledActive
+      borderColor: props.scheduleActive
         ? theme.palette.primary.main
         : 'transparent',
     }),
@@ -100,7 +106,7 @@ export const PickupOptions = (props: IProps) => {
     (enableSurgeFee || config.get('schedule_payment')) && (
       <Grid container direction="row" className={classes.pickupRoot}>
         <Grid item xs={12} className={classes.pickupText}>
-          <Typography variant="h4" roboto={true}>
+          <Typography className={classes.pickup} variant="h4" roboto={true}>
             Pickup
           </Typography>
         </Grid>

@@ -119,6 +119,14 @@ export const theme = createMuiTheme({
       lineHeight: '14px',
       color: '#263238',
     },
+    button: {
+      fontStyle: 'normal',
+      fontWeight: 500,
+      fontSize: '14px',
+      lineHeight: '16px',
+      color: '#FFFFFF',
+      textTransform: 'capitalize'
+    },
   },
 
   overrides: {

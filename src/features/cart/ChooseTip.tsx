@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
     tipButton: {
       height: '40px !important',
       width: '40px !important',
-      marginRight: '8px',
+      marginRight: theme.spacing(1),
       background: '#FFFFFF',
       padding: 0,
       borderRadius: '4px',
@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     tipText: {
       margin: '20px 0',
+      fontStyle: 'normal',
+      fontWeight: 'bold',
+      fontSize: '16px',
+      lineHeight: '18px',
     },
     tipRoot: {
       paddingBottom: '20px',

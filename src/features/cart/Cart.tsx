@@ -3,7 +3,7 @@ import React, { LegacyRef, RefObject } from 'react';
 import { connect } from 'react-redux';
 import config from 'react-global-configuration';
 import { Redirect, RouteComponentProps } from 'react-router-dom';
-import RootRef from '@material-ui/core/RootRef';
+import get from 'lodash/get';
 import {
   createStyles,
   WithStyles,
@@ -32,6 +32,7 @@ import CartHeader from './CartHeader';
 import Typography from '../../Typography';
 import ChooseTip from './ChooseTip';
 import DesktopHeaderHOC from '../../components/DesktopHeaderHOC';
+import { invoice as testInvoice } from '../../data/testData';
 
 export const FullfilmentModeType = {
   FREE_PICKUP: 'FREE_PICKUP',
@@ -91,6 +92,12 @@ const styles = (theme: typeof Theme) =>
     },
     rightPane: {},
     cartRoot: {},
+    orderText: {
+      fontStyle: 'normal',
+      fontWeight: 'bold',
+      fontSize: '16px',
+      lineHeight: '18px',
+    },
   });
 
 interface IProps extends WithStyles<typeof styles>, RouteComponentProps {
@@ -123,6 +130,7 @@ class Cart extends React.Component<IProps, IState> {
         .get('surge_fee_enabled_stall_whitelist')
         .findIndex((x: string) => x === this.props.stall._id) !== -1);
 
+
   constructor(props: IProps) {
     super(props);
     this.state = {
@@ -132,7 +140,7 @@ class Cart extends React.Component<IProps, IState> {
       itemEta: 0,
       dynamicEta: 0,
       dynamicFee: zeroFee,
-      invoice: undefined,
+      invoice: testInvoice,
       pickup: undefined,
       pickupSlot: undefined,
       cutlerySwitch: !!(
@@ -140,6 +148,12 @@ class Cart extends React.Component<IProps, IState> {
       ),
     };
     this.bodyWrapper = React.createRef();
+  }
+
+  componentDidMount() {
+    if (this.bodyWrapper!.current!.offsetWidth){
+      this.forceUpdate();
+    }
   }
 
   handleClose = (fee: IPrice, eta: number) => {
@@ -184,25 +198,27 @@ class Cart extends React.Component<IProps, IState> {
             className={classes.leftPane}
             justify="center"
           >
-            <RootRef rootRef={this.bodyWrapper}>
-              <Grid item xs={10}>
-                <CartHeader
-                  history={this.props.history}
-                  match={this.props.match}
-                  location={this.props.location}
-                />
-              </Grid>
-            </RootRef>
-            <Grid item xs={10} className="startJustifiedFlex">
-              <Typography roboto={true} variant="h4">
+            <Grid ref={this.bodyWrapper} item xs={11}>
+              <CartHeader
+                history={this.props.history}
+                match={this.props.match}
+                location={this.props.location}
+              />
+            </Grid>
+            <Grid item xs={11} className="startJustifiedFlex">
+              <Typography
+                className={classes.orderText}
+                roboto={true}
+                variant="h4"
+              >
                 My Order
               </Typography>
             </Grid>
-            <Grid item xs={10}>
+            <Grid item xs={11}>
               <ItemsList lineItems={cart.lineItems} stall={stall} />
             </Grid>
             {invoice && (
-              <Grid item xs={10}>
+              <Grid item xs={11}>
                 {/* @ts-ignore */}
                 <ChooseTip
                   invoice={invoice}
@@ -212,7 +228,7 @@ class Cart extends React.Component<IProps, IState> {
               </Grid>
             )}
 
-            <Grid item xs={10}>
+            <Grid item xs={11}>
               <PickupOptions
                 enableSurgeFee={this.enableSurgeFee}
                 mode={mode}
@@ -226,7 +242,7 @@ class Cart extends React.Component<IProps, IState> {
                 pickupSlot={pickupSlot}
               />
             </Grid>
-            <Grid item xs={10} className={classes.cutleryRow}>
+            <Grid item xs={11} className={classes.cutleryRow}>
               <CutleryCoupon
                 cutlerySwitch={cutlerySwitch}
                 updateState={(data) => this.setState(data)}
@@ -238,7 +254,7 @@ class Cart extends React.Component<IProps, IState> {
               />
             </Grid>
             {invoice && (
-              <Grid item xs={10} className={classes.invoiceRow}>
+              <Grid item xs={11} className={classes.invoiceRow}>
                 <Invoice
                   invoice={invoice}
                   cart={cart}
@@ -246,14 +262,20 @@ class Cart extends React.Component<IProps, IState> {
                 />
               </Grid>
             )}
-            <Button
-              color="primary"
-              variant="contained"
-              className={classes.checkoutButton}
-              style={{ width: this.bodyWrapper?.current?.offsetWidth }}
-            >
-              <Typography roboto={true}>Proceed to Checkout</Typography>
-            </Button>
+            {this.bodyWrapper && this.bodyWrapper.current && (
+              <Button
+                color="primary"
+                variant="contained"
+                className={classes.checkoutButton}
+                style={{
+                  width: this.bodyWrapper!.current!.offsetWidth,
+                }}
+              >
+                <Typography variant="button" roboto={true}>
+                  Proceed to Checkout
+                </Typography>
+              </Button>
+            )}
           </Grid>
           {/* @ts-ignore */}
           <Grid

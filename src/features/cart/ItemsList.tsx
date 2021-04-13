@@ -30,14 +30,13 @@ const useStyles = makeStyles((theme: Theme) =>
       lineHeight: '24px',
     },
     itemImage: {
-      height: 'auto',
-      width: '100%',
+      height: '40px',
+      width: '40px',
       filter: 'drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.1))',
       borderRadius: '6px',
     },
     plusBox: {
-      opacity: '0.5',
-      border: '0.375px solid #263238',
+      border: '0.375px solid rgba(38,50,56,.16)',
       boxSizing: 'border-box',
       borderRadius: '3px',
       width: '15px',
@@ -45,6 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
       position: 'relative',
       background: '#FFFFFF',
       marginTop: '2px',
+      padding: '1px'
     },
     addIcon: {
       position: 'absolute',
@@ -55,17 +55,35 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     deleteIcon: {
       color: '#979797',
-      width: '13px',
+      width: '14px',
     },
     itemName: {
       paddingLeft: theme.spacing(1.25),
+      width: '160px',
+      color: '#263238'
+    },
+    countCol: {
+      width: '55px',
+      justifySelf: 'flex-end',
+      marginLeft: 'auto'
+    },
+    amountCol: {
+      width: '58px',
+      justifySelf: 'flex-end',
+      justifyContent: 'flex-end',
+    },
+    deleteCol: {
+      width: '20px',
+      justifySelf: 'flex-end',
+      textAlign: 'right'
     },
     rootItem: {
-      marginTop: '15px',
+      marginBottom: '15px',
     },
     wrapper: {
       borderBottom: '1px solid #E3E3E3',
-      paddingBottom: theme.spacing(2.5),
+      paddingBottom: '5px',
+      paddingTop: theme.spacing(2.5),
     },
   })
 );
@@ -105,35 +123,44 @@ const ItemsList = (props: IProps) => {
       // @ts-ignore
       itemsArr.push(
         <Grid item container direction="row" className={classes.rootItem}>
-          <Grid item xs={2}>
+          <Grid item>
             <img
               src={get(item, 'imagePaths[0]', '')}
               className={classes.itemImage}
             />
           </Grid>
-          <Grid
-            item
-            xs={5}
-            container
-            direction="column"
-            className={classes.itemName}
-          >
+          <Grid item container direction="column" className={classes.itemName}>
             <Typography roboto={true} variant="body2">
               {item.name}
             </Typography>
+            <Typography roboto={true} variant="caption">
+              standard
+            </Typography>
           </Grid>
-          <Grid item xs={2} container direction="row" justify="space-between">
+          <Grid
+            className={classes.countCol}
+            item
+            container
+            direction="row"
+            justify="space-between"
+          >
             <PlusIcon />
             {lineItem.count}
             <MinusIcon />
           </Grid>
-          <Grid item xs={2} justify="center" container direction="row">
+          <Grid
+            className={classes.amountCol}
+            item
+            justify="center"
+            container
+            direction="row"
+          >
             <Typography variant="body2" roboto={true}>
               {' '}
               {GenerateCurrencyNumber(CalculateLineItemTotal(cartItem))}
             </Typography>
           </Grid>
-          <Grid item xs={1} className="endJustifiedFlex">
+          <Grid item className={classes.deleteCol}>
             <DeleteIcon className={classes.deleteIcon} />
           </Grid>
         </Grid>
