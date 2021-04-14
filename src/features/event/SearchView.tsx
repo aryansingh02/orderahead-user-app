@@ -25,7 +25,7 @@ const styles = (theme: typeof Theme) =>
     InputRoot: {
       width: '100%',
       height: '65px',
-      borderBottom: 'solid 2px rgb(227,227,227, 1)',
+      borderBottom: 'solid 1px rgb(227,227,227, 1)',
       MuiInputUnderline: {
         border: 'none',
       },
