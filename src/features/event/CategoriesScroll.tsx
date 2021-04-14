@@ -67,9 +67,13 @@ const styles = (theme: typeof Theme) =>
       textTransform: 'capitalize',
       width: '90px !important',
     },
+    tabs: {}
   });
 
-interface IProps extends WithStyles<typeof styles> {}
+interface IProps extends WithStyles<typeof styles> {
+  eventRef: React.RefObject<HTMLInputElement>;
+  callingParent?: string;
+}
 
 interface IState {
   value: number;
@@ -90,22 +94,25 @@ class CategoriesScroll extends React.Component<IProps, IState> {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, eventRef, callingParent } = this.props;
     const { value } = this.state;
     return (
       <div className={classes.root}>
         <Grid container direction="column" alignItems="center">
-          <Grid
-            item
-            xs={11}
-            className={`${classes.categoryWrapper} startJustifiedFlex`}
-            container
-          >
-            {/* @ts-ignore */}
-            <Typography variant="h4" roboto={true} display="inline">
-              Categories
-            </Typography>
-          </Grid>
+          {callingParent === 'Event' && (
+            <Grid
+              item
+              xs={11}
+              className={`${classes.categoryWrapper} startJustifiedFlex`}
+              container
+            >
+              {/* @ts-ignore */}
+
+              <Typography variant="h4" roboto={true} display="inline">
+                Categories
+              </Typography>
+            </Grid>
+          )}
           <Grid item xs={11} container>
             <div className={classes.scrollRoot}>
               <AppBar
@@ -115,6 +122,7 @@ class CategoriesScroll extends React.Component<IProps, IState> {
                 className={classes.appBarRoot}
               >
                 <Tabs
+                  classes={{ flexContainer: classes.tabs }}
                   value={this.state.value}
                   onChange={(evt, newValue) => this.setValue(newValue)}
                   indicatorColor="primary"
@@ -127,7 +135,11 @@ class CategoriesScroll extends React.Component<IProps, IState> {
                     <StyledTab
                       label={category.name}
                       key={category.name}
-                      icon={<img src={category.image} />}
+                      icon={
+                        callingParent === 'Event' && (
+                          <img src={category.image} />
+                        )
+                      }
                       className={classes.tabRoot}
                     />
                   ))}
@@ -142,3 +154,35 @@ class CategoriesScroll extends React.Component<IProps, IState> {
 }
 
 export default withStyles(styles)(CategoriesScroll);
+interface TabPanelProps {
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
+
+function TabPanel(props: TabPanelProps) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`scrollable-auto-tabpanel-${index}`}
+      aria-labelledby={`scrollable-auto-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
+
+function a11yProps(index: number) {
+  return {
+    id: `scrollable-auto-tab-${index}`,
+    'aria-controls': `scrollable-auto-tabpanel-${index}`,
+  };
+}
