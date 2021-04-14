@@ -125,8 +125,6 @@ export default function DesktopHeader() {
 
   function handleClick() {
     forceUpdate();
-    console.log(inputRef.current!.getBoundingClientRect().left);
-    console.log(inputRef.current!.getBoundingClientRect().top);
   }
 
   useEffect(() => {

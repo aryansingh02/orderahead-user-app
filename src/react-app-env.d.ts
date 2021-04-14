@@ -4,11 +4,11 @@ declare module '@material-ui/core/Typography/Typography' {
     captionR: true;
     body2R: true;
     body1R: true;
-    h6R: true,
-    h5R: true,
-    h4R: true,
-    h2R: true,
-    h1R: true,
+    h6R: true;
+    h5R: true;
+    h4R: true;
+    h2R: true;
+    h1R: true;
   }
 }
 declare module 'lodash/get';

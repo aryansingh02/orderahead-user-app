@@ -22,32 +22,32 @@ const styles = (theme: typeof Theme) =>
       marginTop: '20px',
     },
     searchRowText: {
-      marginLeft: '11.5px'
+      marginLeft: '11.5px',
     },
     expandIcon: {
       color: '#979797',
     },
     searchIcon: {
-      color: '#979797'
+      color: '#979797',
     },
     searchRow: {
-      padding: '11px 0'
-    }
+      padding: '11px 0',
+    },
   });
 
 interface IProps extends WithStyles<typeof styles> {
   query: string;
 }
 
-interface IState {
-}
+interface IState {}
 
 class RecentSearches extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
   }
 
-  filterSearches = () => recentSearches.filter((search) => search.indexOf(this.props.query) !== -1);
+  filterSearches = () =>
+    recentSearches.filter((search) => search.indexOf(this.props.query) !== -1);
 
   render() {
     const { classes } = this.props;
@@ -82,13 +82,21 @@ class RecentSearches extends React.Component<IProps, IState> {
             </Box>
           </Grid>
           {this.filterSearches().map((search) => (
-            <Grid className={classes.searchRow} item xs={12} container direction="row" key={search} justify='space-between'>
-              <Box className='centreJustifiedFlex'>
+            <Grid
+              className={classes.searchRow}
+              item
+              xs={12}
+              container
+              direction="row"
+              key={search}
+              justify="space-between"
+            >
+              <Box className="centreJustifiedFlex">
                 <SearchIcon className={classes.searchIcon} />
                 <Typography
                   roboto={true}
                   className={classes.searchRowText}
-                  variant='body1'
+                  variant="body1"
                   display="inline"
                 >
                   {search}
