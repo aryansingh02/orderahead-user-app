@@ -19,8 +19,7 @@ const useStyles = makeStyles({
   },
 });
 
-interface IProps {
-}
+interface IProps {}
 
 export default function BottomNavigationBar(props: IProps) {
   const classes = useStyles();

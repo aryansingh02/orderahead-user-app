@@ -42,7 +42,6 @@ const styles = (theme: typeof Theme) =>
           color: theme.palette.primary.main,
         },
       },
-
     },
     stallName: {
       '&:hover': {
@@ -61,7 +60,7 @@ const styles = (theme: typeof Theme) =>
     stallImage: {
       height: '90px',
       width: '120px',
-      borderRadius: '4px'
+      borderRadius: '4px',
     },
     paneRow: {
       display: 'flex',
@@ -107,7 +106,7 @@ const styles = (theme: typeof Theme) =>
     restoreIcon: {
       transform: 'scale(-1, -1)',
       marginLeft: theme.spacing(2),
-      height: '14px'
+      height: '14px',
     },
   });
 
@@ -168,7 +167,7 @@ class StallCard extends React.Component<IProps, IState> {
                   value={{
                     color: Theme.palette.primary.main,
                     className: 'global-class-name',
-                    size: '14px'
+                    size: '14px',
                   }}
                 >
                   <IoFlashSharp />

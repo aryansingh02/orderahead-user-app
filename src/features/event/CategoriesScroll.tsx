@@ -16,16 +16,17 @@ interface StyledTabProps {
   className: string;
 }
 
-const StyledTab = withStyles((theme: typeof Theme) =>
-  createStyles({
-    root: {
-      textTransform: 'none',
-      minWidth: '90px',
-      '&:focus': {
-        opacity: 1,
+const StyledTab = withStyles(
+  (theme: typeof Theme) =>
+    createStyles({
+      root: {
+        textTransform: 'none',
+        minWidth: '90px',
+        '&:focus': {
+          opacity: 1,
+        },
       },
-    },
-  })
+    })
   // @ts-ignore
 )((props: StyledTabProps) => <Tab disableRipple {...props} />);
 
@@ -64,12 +65,16 @@ const styles = (theme: typeof Theme) =>
       fontSize: '14px',
       fontWeight: 500,
       textTransform: 'capitalize',
-      width: '90px !important'
-    }
+      width: '90px !important',
+    },
+    tabs: {
+      justifyContent: 'center ',
+    },
   });
 
 interface IProps extends WithStyles<typeof styles> {
   eventRef: React.RefObject<HTMLInputElement>;
+  callingParent?: string;
 }
 
 interface IState {
@@ -91,22 +96,25 @@ class CategoriesScroll extends React.Component<IProps, IState> {
   };
 
   render() {
-    const { classes, eventRef } = this.props;
+    const { classes, eventRef, callingParent } = this.props;
     const { value } = this.state;
     return (
       <div className={classes.root}>
         <Grid container direction="column" alignItems="center">
-          <Grid
-            item
-            xs={11}
-            className={`${classes.categoryWrapper} startJustifiedFlex`}
-            container
-          >
-            {/* @ts-ignore */ }
-            <Typography variant="h4" roboto={true} display="inline">
-              Categories
-            </Typography>
-          </Grid>
+          {callingParent === 'Event' && (
+            <Grid
+              item
+              xs={11}
+              className={`${classes.categoryWrapper} startJustifiedFlex`}
+              container
+            >
+              {/* @ts-ignore */}
+
+              <Typography variant="h4" roboto={true} display="inline">
+                Categories
+              </Typography>
+            </Grid>
+          )}
           <Grid item xs={11} container>
             <div className={classes.scrollRoot}>
               <AppBar
@@ -116,6 +124,7 @@ class CategoriesScroll extends React.Component<IProps, IState> {
                 className={classes.appBarRoot}
               >
                 <Tabs
+                  classes={{ flexContainer: classes.tabs }}
                   value={this.state.value}
                   onChange={(evt, newValue) => this.setValue(newValue)}
                   indicatorColor="primary"
@@ -128,7 +137,11 @@ class CategoriesScroll extends React.Component<IProps, IState> {
                     <StyledTab
                       label={category.name}
                       key={category.name}
-                      icon={<img src={category.image} />}
+                      icon={
+                        callingParent === 'Event' && (
+                          <img src={category.image} />
+                        )
+                      }
                       className={classes.tabRoot}
                     />
                   ))}

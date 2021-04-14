@@ -110,7 +110,7 @@ export const theme = createMuiTheme({
       fontWeight: 500,
       fontSize: '12px',
       lineHeight: '14px',
-      color: '#263238'
+      color: '#263238',
     },
   },
 
@@ -168,6 +168,19 @@ export const theme = createMuiTheme({
     MuiInputBase: {
       input: {
         height: 'auto',
+      },
+    },
+    MuiStepConnector: {
+      lineVertical: {
+        borderLeftStyle: 'dotted',
+        marginTop: '-4px',
+        borderColor: '#E5E2FF',
+        borderLeftWidth: '4px',
+      },
+    },
+    MuiStepLabel: {
+      active: {
+        color: '#6D5CFF !important',
       },
     },
   },
