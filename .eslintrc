@@ -57,9 +57,9 @@
       }
     ],
     "react/jsx-key": "error",
-    // the reason this has been turned to warn because in spite of installing all dependencies somtimes typescript keeps throwing up this error for no reason
+    // some problem with react project, sometimes it keeps showing error even if nothing extraneous is imported
     "import/no-extraneous-dependencies": [
-      "warn",
+      "error",
       {
         "devDependencies": [
           "**/*.test.js",
@@ -97,6 +97,7 @@
     "react/prefer-stateless-function": "off",
     // unusually retrict
     "react/static-property-placement": "off"
+    // some problem with react project, sometimes file changes do not get reflected immedidately by typescript and it keeps showing errors
   }
 }
 // no undersocre dangle had to be turned off because _id of business needed to be accessed which was throwing errors

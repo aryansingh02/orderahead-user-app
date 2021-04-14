@@ -4,11 +4,11 @@ import { RouteComponentProps } from 'react-router-dom';
 import { WithStyles, withStyles, createStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
+import Paper from '@material-ui/core/Paper';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 import Hidden from '@material-ui/core/Hidden';
 import { theme as Theme } from '../../theme';
 import EventHeader from './MobileHeader';
-import SearchBar from './SearchBar';
 import CategoriesScroll from './CategoriesScroll';
 import PlacesFilter from './PlacesFilter';
 import { event, stall } from '../../data/testData';
@@ -21,6 +21,7 @@ import { AppDispatch } from '../../store';
 import { getQuery, setQuery } from './EventSlice';
 import { RootState } from '../../types';
 import FilteredStalls from './FilteredStalls';
+import AutoCompleteService from './AutoCompleteService';
 
 const styles = (theme: typeof Theme) =>
   createStyles({
@@ -32,10 +33,21 @@ const styles = (theme: typeof Theme) =>
       paddingBottom: theme.spacing(2),
       paddingTop: isDesktop() ? 0 : '28px',
     },
+    paperRoot: {
+      padding: '2px 4px',
+      display: 'flex',
+      alignItems: 'center',
+      width: '100%',
+      marginTop: theme.spacing(4),
+      border: isDesktop() ? 'none' : '1px solid #E3E3E3',
+      boxSizing: 'border-box',
+      borderRadius: isDesktop() ? 'none' : '8px',
+    },
     headingRow: {},
     accountHeading: {},
     eventPane: {
       maxHeight: '100%',
+      position: 'relative',
     },
     leftPane: {
       overflow: 'scroll',
@@ -111,7 +123,43 @@ class Event extends React.Component<IProps, IState> {
             </Hidden>
 
             <Grid item xs={12} container justify="center">
-              <SearchBar />
+              <Grid item container xs={isDesktop() ? 12 : 11}>
+                <Paper
+                  component="form"
+                  className={classes.paperRoot}
+                  elevation={0}
+                  style={{
+                    backgroundImage: isDesktop()
+                      ? `url('img/EventBackground.png')`
+                      : 'none',
+                    height: isDesktop() ? '280px' : 'auto',
+                    position: isDesktop() ? 'relative' : 'inherit',
+                    marginTop: isDesktop() ? 0 : Theme.spacing(4),
+                  }}
+                >
+                  <Grid
+                    container
+                    direction="row"
+                    item
+                    xs={isDesktop() ? 11 : 12}
+                    style={{
+                      position: isDesktop() ? 'absolute' : 'inherit',
+                      top: isDesktop() ? '30px' : 'inherit',
+                      left: isDesktop() ? '50%' : 'inherit',
+                      transform: isDesktop() ? 'translate(-50%, 0)' : 'inherit',
+                      borderRadius: isDesktop() ? '8px' : 'none',
+                      background: '#FFFFFF',
+                    }}
+                    onClick={() => {
+                      if (!isDesktop()) {
+                        this.props.history.push('/map');
+                      }
+                    }}
+                  >
+                    <AutoCompleteService />
+                  </Grid>
+                </Paper>
+              </Grid>
             </Grid>
             <Grid item xs={12}>
               <CategoriesScroll
