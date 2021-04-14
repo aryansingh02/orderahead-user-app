@@ -65,7 +65,7 @@ class PlacesFilter extends React.Component<IProps, IState> {
               Nearby Places
             </Typography>
           </Grid>
-          <Grid container justify='flex-end' item xs={6}>
+          <Grid container justify="flex-end" item xs={6}>
             <FormControl className={classes.formControl}>
               <Select
                 labelId="demo-simple-select-label"

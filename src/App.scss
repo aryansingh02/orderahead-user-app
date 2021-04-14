@@ -4,6 +4,8 @@
   justify-content: flex-end;
 }
 
+// these three classes are only for styling boxes not grids. Some custom css can't be avoided altogether
+
 .centreJustifiedFlex {
   display: flex;
   justify-content: center;
