@@ -83,8 +83,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     countText: {
       marginLeft: '10px',
-      marginRight: '10px'
-    }
+      marginRight: '10px',
+    },
   })
 );
 
@@ -149,7 +149,11 @@ const ItemsList = (props: IProps) => {
               justify="center"
             >
               <PlusIcon />
-              <Typography roboto={true} variant="body2" className={classes.countText}>
+              <Typography
+                roboto={true}
+                variant="body2"
+                className={classes.countText}
+              >
                 {lineItem.count}
               </Typography>
               <MinusIcon />

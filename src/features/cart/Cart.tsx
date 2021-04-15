@@ -197,14 +197,14 @@ class Cart extends React.Component<IProps, IState> {
             className={classes.leftPane}
             justify="center"
           >
-            <Grid ref={this.bodyWrapper} item xs={11}>
+            <Grid ref={this.bodyWrapper} item xs={11} lg={10}>
               <CartHeader
                 history={this.props.history}
                 match={this.props.match}
                 location={this.props.location}
               />
             </Grid>
-            <Grid item xs={11} className="startJustifiedFlex">
+            <Grid item xs={11} lg={10} className="startJustifiedFlex">
               <Typography
                 className={classes.orderText}
                 roboto={true}
@@ -213,11 +213,11 @@ class Cart extends React.Component<IProps, IState> {
                 My Order
               </Typography>
             </Grid>
-            <Grid item xs={11}>
+            <Grid item xs={11} lg={10}>
               <ItemsList lineItems={cart.lineItems} stall={stall} />
             </Grid>
             {invoice && (
-              <Grid item xs={11}>
+              <Grid item xs={11} lg={10}>
                 {/* @ts-ignore */}
                 <ChooseTip
                   invoice={invoice}
@@ -227,7 +227,7 @@ class Cart extends React.Component<IProps, IState> {
               </Grid>
             )}
 
-            <Grid item xs={11}>
+            <Grid item xs={11} lg={10}>
               <PickupOptions
                 enableSurgeFee={this.enableSurgeFee}
                 mode={mode}
@@ -241,7 +241,7 @@ class Cart extends React.Component<IProps, IState> {
                 pickupSlot={pickupSlot}
               />
             </Grid>
-            <Grid item xs={11} className={classes.cutleryRow}>
+            <Grid item xs={11} lg={10} className={classes.cutleryRow}>
               <CutleryCoupon
                 cutlerySwitch={cutlerySwitch}
                 updateState={(data) => this.setState(data)}
@@ -253,7 +253,7 @@ class Cart extends React.Component<IProps, IState> {
               />
             </Grid>
             {invoice && (
-              <Grid item xs={11} className={classes.invoiceRow}>
+              <Grid item xs={11} lg={10} className={classes.invoiceRow}>
                 <Invoice
                   invoice={invoice}
                   cart={cart}
