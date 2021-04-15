@@ -45,7 +45,7 @@ export const zeroFee = { amount: 0, currency: 'USD' };
 const styles = (theme: typeof Theme) =>
   createStyles({
     root: {
-      height: '100%',
+      height: 'auto',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -53,7 +53,6 @@ const styles = (theme: typeof Theme) =>
       width: '100%',
       boxShadow: 'inset 0px -1px 0px #E3E3E3',
       borderRadius: '20px 20px 10px 10px',
-      overflow: 'none',
     },
     scrollRoot: {
       flexGrow: 1,
