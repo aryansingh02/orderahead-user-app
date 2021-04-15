@@ -41,7 +41,7 @@ class EventMap extends React.Component<IProps, IState> {
         }}
       >
         {/* @ts-ignore */}
-        {this.props.markerLocation.lat && (
+        {this.props.markerLocation.lat && this.props.markerLocation.lng && (
           // @ts-ignore
           <Marker
             // @ts-ignore
