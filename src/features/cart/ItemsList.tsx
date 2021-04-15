@@ -81,6 +81,10 @@ const useStyles = makeStyles((theme: Theme) =>
       paddingBottom: '5px',
       paddingTop: theme.spacing(2.5),
     },
+    countText: {
+      marginLeft: '10px',
+      marginRight: '10px'
+    }
   })
 );
 
@@ -119,7 +123,7 @@ const ItemsList = (props: IProps) => {
       // @ts-ignore
       itemsArr.push(
         <Grid item container direction="row" className={classes.rootItem}>
-          <Grid xs={8} item container direction="row">
+          <Grid xs={7} md={8} item container direction="row">
             <Grid item>
               <img
                 src={get(item, 'imagePaths[0]', '')}
@@ -135,33 +139,37 @@ const ItemsList = (props: IProps) => {
               </Typography>
             </Grid>
           </Grid>
-          <Grid
-            className={classes.countCol}
-            item
-            xs={2}
-            container
-            direction="row"
-            justify="space-between"
-          >
-            <PlusIcon />
-            {lineItem.count}
-            <MinusIcon />
-          </Grid>
-          <Grid
-            className={classes.amountCol}
-            item
-            xs={2}
-            justify="center"
-            container
-            direction="row"
-          >
-            <Typography variant="body2" roboto={true}>
-              {' '}
-              <GenerateCurrencyNumber
-                price={CalculateLineItemTotal(cartItem)}
-              />
-            </Typography>
-            <DeleteIcon className={classes.deleteIcon} />
+          <Grid xs={5} md={4} item container direction="row">
+            <Grid
+              className={classes.countCol}
+              item
+              xs={6}
+              container
+              direction="row"
+              justify="center"
+            >
+              <PlusIcon />
+              <Typography roboto={true} variant="body2" className={classes.countText}>
+                {lineItem.count}
+              </Typography>
+              <MinusIcon />
+            </Grid>
+            <Grid
+              className={classes.amountCol}
+              item
+              xs={6}
+              justify="center"
+              container
+              direction="row"
+            >
+              <Typography variant="body2" roboto={true}>
+                {' '}
+                <GenerateCurrencyNumber
+                  price={CalculateLineItemTotal(cartItem)}
+                />
+              </Typography>
+              <DeleteIcon className={classes.deleteIcon} />
+            </Grid>
           </Grid>
         </Grid>
       );
