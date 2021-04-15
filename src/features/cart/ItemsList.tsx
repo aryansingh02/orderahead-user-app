@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
       height: '15px',
       position: 'relative',
       background: '#FFFFFF',
-      marginTop: '2px',
+      marginTop: '4px',
       padding: '1px',
     },
     addIcon: {
@@ -54,6 +54,9 @@ const useStyles = makeStyles((theme: Theme) =>
       color: '#979797',
       width: '14px',
       marginLeft: '12px',
+      top: '-2px',
+      position: 'relative'
+
     },
     itemName: {
       paddingLeft: theme.spacing(1.25),
@@ -139,7 +142,7 @@ const ItemsList = (props: IProps) => {
               </Typography>
             </Grid>
           </Grid>
-          <Grid xs={5} md={4} item container direction="row">
+          <Grid xs md={4} item container direction="row">
             <Grid
               className={classes.countCol}
               item
