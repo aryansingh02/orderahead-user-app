@@ -62,3 +62,8 @@ export interface IItemDetail {
 }
 
 export type ISlotsInfo = typeof slotsInfo;
+
+export interface IModifier {
+  name: string;
+  price: IPrice;
+}

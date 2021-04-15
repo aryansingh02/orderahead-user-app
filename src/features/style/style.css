@@ -33,3 +33,13 @@
   border-color: rgba(109, 92, 255, 1) !important;
   /* border-width: 1px !important; */
 }
+
+.specialInstructions .MuiOutlinedInput-notchedOutline {
+  border-color: #e3e3e3 !important;
+}
+
+.specialInstructions
+  .MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(109, 92, 255, 1) !important;
+}

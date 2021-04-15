@@ -94,7 +94,7 @@ export const OrderConfirmation = () => {
         </Paper>
         <Grid xs={11} sm={11} lg={11} className={classes.middleGrid}>
           <Grid item xs={12} sm={12}>
-            <BackButton />
+            <BackButton header="Order Confirmation" />
             <Typography roboto component="div">
               Enter your name and your phone number to receive order
               confirmation and enjoy your food

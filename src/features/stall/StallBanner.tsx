@@ -1,10 +1,18 @@
-import { makeStyles, Theme, createStyles, Paper } from '@material-ui/core';
+/* eslint-disable react/no-unused-prop-types */
+import { makeStyles, Theme, createStyles } from '@material-ui/core';
 import React from 'react';
 import { StallSummary } from './StallSummary';
+import { ItemName } from './ItemName';
 
 interface IProps {
-  // eslint-disable-next-line react/no-unused-prop-types
   bannerImage: string;
+  callingParent: string;
+  stallName?: string;
+  rating?: number;
+  type?: string[];
+  distance?: number;
+  itemName?: string;
+  logoUrl?: string;
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -29,13 +37,20 @@ export const StallBanner = (props: IProps) => {
   const classes = useStyles();
   return (
     <div className={classes.paper}>
-      <img src="/img/CostaDesktop.png" className={classes.stallImg} alt="" />
-      <StallSummary
-        stallName="Costa Coffee"
-        rating={4.6}
-        type={['Coffee', 'Desert']}
-        distance={51}
-      />
+      <img src={props.bannerImage} className={classes.stallImg} alt="" />
+      {props.callingParent === 'StallMenu' ? (
+        <StallSummary
+          stallName="Costa Coffee"
+          rating={4.6}
+          type={['Coffee', 'Desert']}
+          distance={51}
+        />
+      ) : (
+        <ItemName
+          itemName={props && props.itemName ? props.itemName : ''}
+          logoUrl={props && props.logoUrl ? props.logoUrl : ''}
+        />
+      )}
     </div>
   );
 };

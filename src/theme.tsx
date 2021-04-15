@@ -198,5 +198,10 @@ export const theme = createMuiTheme({
         color: '#6D5CFF !important',
       },
     },
+    MuiAccordionSummary: {
+      content: {
+        justifyContent: 'space-between',
+      },
+    },
   },
 });
