@@ -1,11 +1,12 @@
 import { History } from 'history';
 import RootReducer from './rootReducer';
-import { stall } from './data/testData';
+import { checkoutstate, stall } from './data/testData';
 
 export type RootState = ReturnType<typeof RootReducer>;
 export type HistoryType = ReturnType<typeof Object>;
 
 export type IStall = typeof stall;
+export type IInvoice = typeof checkoutstate.invoice;
 type AutocompletePrediction = google.maps.places.AutocompletePrediction;
 
 export interface IPos {

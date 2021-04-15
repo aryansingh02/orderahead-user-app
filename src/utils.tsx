@@ -50,7 +50,7 @@ const FilterbyTagOrName = (stalls: IStall[], tag: string) =>
       (item) => item.name.toLowerCase() === tag.toLowerCase()
     );
     const index = stall.name.toLowerCase().indexOf(tag.toLowerCase());
-    return (validTags.length > 0 || index !== -1);
+    return validTags.length > 0 || index !== -1;
   });
 
 export const FilterStalls = (stalls: IStall[], query: string) => {
@@ -60,3 +60,16 @@ export const FilterStalls = (stalls: IStall[], query: string) => {
   }
   return filteredStalls;
 };
+
+export function loadScript(
+  scriptSource: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  callback: ((this: GlobalEventHandlers, ev: Event) => any) | null
+) {
+  const scriptLoad = document.createElement('script');
+  scriptLoad.src = scriptSource;
+  scriptLoad.type = 'text/javascript';
+  scriptLoad.async = false;
+  scriptLoad.onload = callback;
+  document.getElementsByTagName('head')[0].appendChild(scriptLoad);
+}
