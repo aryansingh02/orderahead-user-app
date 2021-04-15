@@ -3,7 +3,7 @@ import { Button, Grid, Box } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { ICart, IInvoice } from '../../types';
 import Typography from '../../Typography';
-import { GenerateCurrencyNumber } from '../../utils';
+import GenerateCurrencyNumber from '../../components/GenerateCurrencyNumber';
 
 interface IProps {
   invoice: IInvoice;
@@ -116,7 +116,7 @@ const ChooseTip = (props: IProps) => {
             </Grid>
             <Grid item xs={2} className="endJustifiedFlex">
               <Typography roboto={true} variant="body2">
-                {GenerateCurrencyNumber(invoice.tip)}
+                <GenerateCurrencyNumber price={invoice.tip} />
               </Typography>
             </Grid>
           </Grid>

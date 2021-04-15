@@ -1,4 +1,3 @@
-import { History } from 'history';
 import RootReducer from './rootReducer';
 import {
   cart,

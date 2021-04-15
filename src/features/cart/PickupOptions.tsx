@@ -6,7 +6,8 @@ import { Grid } from '@material-ui/core';
 import { IconContext } from 'react-icons';
 import { IoFlashSharp } from 'react-icons/all';
 import PeopleIcon from '@material-ui/icons/People';
-import { GenerateCurrencyNumber, GenerateEpochDate } from '../../utils';
+import { GenerateEpochDate } from '../../utils';
+import GenerateCurrencyNumber from '../../components/GenerateCurrencyNumber';
 import { FullfilmentModeType, zeroFee } from './Cart';
 import { IPrice } from '../../types';
 import Typography from '../../Typography';
@@ -168,7 +169,7 @@ export const PickupOptions = (props: IProps) => {
                 <IoFlashSharp className={classes.pickupIcon} />
               </IconContext.Provider>
               <Typography variant="body1" roboto={true}>
-                {GenerateCurrencyNumber(dynamicFee)}
+                <GenerateCurrencyNumber price={dynamicFee} />
               </Typography>
             </Grid>
           </Grid>
@@ -236,7 +237,7 @@ export const PickupOptions = (props: IProps) => {
           >
             <PeopleIcon color="error" className={`${classes.pickupIcon}`} />
             <Typography variant="body1" roboto={true}>
-              {GenerateCurrencyNumber(dynamicFee)}
+              <GenerateCurrencyNumber price={dynamicFee} />
             </Typography>
           </Grid>
         </Grid>

@@ -3,7 +3,7 @@ import get from 'lodash/get';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
-import { GenerateCurrencyNumber } from '../../utils';
+import GenerateCurrencyNumber from '../../components/GenerateCurrencyNumber';
 import { ICart, IInvoice } from '../../types';
 import Typography from '../../Typography';
 
@@ -46,7 +46,7 @@ export const Invoice = (props: IProps) => {
         </Grid>
         <Grid item xs={6} className="endJustifiedFlex">
           <Typography roboto={true} variant="body2">
-            {GenerateCurrencyNumber(invoice.subTotal)}
+            <GenerateCurrencyNumber price={invoice.subTotal} />
           </Typography>
         </Grid>
       </Grid>
@@ -60,7 +60,7 @@ export const Invoice = (props: IProps) => {
           <Grid item xs={6} className="endJustifiedFlex">
             <Typography roboto={true} variant="body2">
               {' '}
-              {GenerateCurrencyNumber(invoice.surgeFee)}
+              <GenerateCurrencyNumber price={invoice.surgeFee} />
             </Typography>
           </Grid>
         </Grid>
@@ -76,7 +76,7 @@ export const Invoice = (props: IProps) => {
           </Grid>
           <Grid item xs={6} className="endJustifiedFlex">
             <Typography roboto={true} variant="body2">
-              {GenerateCurrencyNumber(invoice.serviceFee)}
+              <GenerateCurrencyNumber price={invoice.serviceFee} />
             </Typography>
           </Grid>
         </Grid>
@@ -92,7 +92,7 @@ export const Invoice = (props: IProps) => {
           </Grid>
           <Grid item xs={6} className="endJustifiedFlex">
             <Typography roboto={true} variant="body2">
-              {GenerateCurrencyNumber(invoice.tax)}
+              <GenerateCurrencyNumber price={invoice.tax} />
             </Typography>
           </Grid>
         </Grid>
@@ -106,7 +106,7 @@ export const Invoice = (props: IProps) => {
           </Grid>
           <Grid item xs={6} className="endJustifiedFlex">
             <Typography roboto={true} variant="body2">
-              {GenerateCurrencyNumber(invoice.discount)}
+              <GenerateCurrencyNumber price={invoice.discount} />
             </Typography>
           </Grid>
         </Grid>
@@ -130,7 +130,7 @@ export const Invoice = (props: IProps) => {
             variant="body1"
             className={classes.boldFont}
           >
-            {GenerateCurrencyNumber(invoice.total)}
+            <GenerateCurrencyNumber price={invoice.total} />
           </Typography>
         </Grid>
       </Grid>

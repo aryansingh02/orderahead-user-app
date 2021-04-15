@@ -45,26 +45,6 @@ export const GenerateExpenseLevel = (expenseLevel: number) => {
   return retVal;
 };
 
-export const GenerateCurrencyNumber = (price: IPrice) => (
-  <NumberFormat
-    value={price.amount / 100}
-    decimalScale={2}
-    fixedDecimalScale={true}
-    displayType="text"
-    thousandSeparator={true}
-    prefix={getSymbolFromCurrency(price.currency)}
-    renderText={(
-      value:
-      | boolean
-      | React.ReactChild
-      | React.ReactFragment
-      | React.ReactPortal
-      | null
-      | undefined
-    ) => <span>{value}</span>}
-  />
-);
-
 export const FindMenuItem = (menu: IMenu, id: string) => {
   if (menu && menu.menuItems) {
     return menu.menuItems.find((item) => item._id === id);
