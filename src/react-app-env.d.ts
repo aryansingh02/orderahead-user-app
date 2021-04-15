@@ -10,7 +10,8 @@ declare module '@material-ui/core/Typography/Typography' {
     h1R: true;
   }
 }
-
+declare module 'autosuggest-highlight/parse';
+declare module 'react-async-script-loader';
 declare module 'currency-symbol-map';
 declare module 'react-number-format';
 declare module 'react-switch';

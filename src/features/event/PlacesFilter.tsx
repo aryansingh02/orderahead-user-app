@@ -60,12 +60,12 @@ class PlacesFilter extends React.Component<IProps, IState> {
     return (
       <div className={classes.root}>
         <Grid container direction="row">
-          <Grid item xs={6} className="startJustifiedFlex">
+          <Grid alignItems="center" item xs={6}>
             <Typography variant="h4" display="inline">
               Nearby Places
             </Typography>
           </Grid>
-          <Grid item xs={6} className="endJustifiedFlex">
+          <Grid container justify="flex-end" item xs={6}>
             <FormControl className={classes.formControl}>
               <Select
                 labelId="demo-simple-select-label"

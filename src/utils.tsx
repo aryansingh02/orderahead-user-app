@@ -1,8 +1,8 @@
 import React from 'react';
 import NumberFormat from 'react-number-format';
 import getSymbolFromCurrency from 'currency-symbol-map';
-import { IMenu, IPrice, ICartItem } from './types';
-import { appConfig, invoice, stall } from './data/testData';
+import { IMenu, IPrice, ICartItem, IStall } from './types';
+import { appConfig, invoice, stall as StallData } from './data/testData';
 
 const greyedDollar = () => (
   <span
@@ -100,6 +100,23 @@ export function CalculateLineItemTotal(cartItem: ICartItem) {
 export const GenerateWaitTime = (time: number) =>
   Math.round(time / (1000 * 60));
 
-export const createStallState = () => stall;
+export const createStallState = () => StallData;
 export const createAppConfigState = () => appConfig;
 export const isDesktop = () => window.innerWidth > 1280;
+
+const FilterbyTagOrName = (stalls: IStall[], tag: string) =>
+  stalls.filter((stall) => {
+    const validTags = stall.tag.filter(
+      (item) => item.name.toLowerCase() === tag.toLowerCase()
+    );
+    const index = stall.name.toLowerCase().indexOf(tag.toLowerCase());
+    return validTags.length > 0 || index !== -1;
+  });
+
+export const FilterStalls = (stalls: IStall[], query: string) => {
+  let filteredStalls = stalls;
+  if (query) {
+    filteredStalls = FilterbyTagOrName(filteredStalls, query);
+  }
+  return filteredStalls;
+};

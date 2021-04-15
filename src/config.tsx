@@ -14,6 +14,8 @@ const config = {
   REACT_APP_BACKEND_ENDPOINT: getEnvVar('REACT_APP_BACKEND_ENDPOINT'),
   enable_surge_fee: getEnvVar('REACT_APP_ENABLE_SURGE_FEE') === 'true',
   schedule_payment: true,
+  SAN_FRANCISCO_LAT: 37.7749,
+  SAN_FRANCISCO_LONG: -122.4194,
 };
 
 export default config;

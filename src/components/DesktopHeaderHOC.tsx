@@ -11,7 +11,7 @@ export default function DesktopHeaderHOC<T>(Component: React.ComponentType<T>) {
       {!isDesktop() ? (
         <Component {...props} />
       ) : (
-        <div style={{ position: 'relative', paddingTop: '87px' }}>
+        <div style={{ position: 'relative' }}>
           <DesktopHeader />
           <Component {...props} />
         </div>

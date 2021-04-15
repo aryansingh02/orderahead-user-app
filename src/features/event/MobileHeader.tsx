@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import { RouteComponentProps } from 'react-router-dom';
-import { WithStyles, withStyles, createStyles } from '@material-ui/core';
+import { WithStyles, withStyles, createStyles, Box } from '@material-ui/core';
 import { theme as Theme } from '../../theme';
 
 const styles = (theme: typeof Theme) =>
@@ -37,11 +37,14 @@ class MobileHeader extends React.Component<IProps, IState> {
     return (
       <div className={classes.root}>
         <Grid container direction="row">
-          <Grid item xs={6} className="startJustifiedFlex">
+          <Grid item xs={6}>
             <img src="/img/LogoSleek.png" />
           </Grid>
-          <Grid item xs={6} className="endJustifiedFlex">
-            <img src="/img/search_logo.png" className={classes.logoImage} />
+          <Grid item container justify="flex-end" xs={6}>
+            <Box onClick={() => this.props.history.push('/search_view')}>
+              <img src="/img/search_logo.png" className={classes.logoImage} />
+            </Box>
+
             <DehazeIcon />
           </Grid>
         </Grid>

@@ -2467,6 +2467,17 @@ export const stall4 = {
   businessHours: {},
 };
 
+export const recentSearches = [
+  'Vegetarian Food',
+  'Pizza',
+  'Hamburger',
+  'Cheeseburger',
+  'Vegetarian Salad',
+  'Keto Cake',
+  'Vanila ice cream',
+  'Pizza with ham',
+];
+
 export const menu = {
   _id: "5f35c4dbec0310c59e8bf3e5",
   name: "dh",
@@ -3464,7 +3475,7 @@ export const event = {
   _id: '5f3577a7405bae54c65239b2',
   logoImagePath: '/img/themes/bottlerock/bottlerock.png',
   name: 'Bottlerock',
-  stalls: [stall, stall2, stall3, stall4, stall, stall2, stall3, stall4],
+  stalls: [stall, stall2, stall3, stall4],
 };
 
 export const invoice = {

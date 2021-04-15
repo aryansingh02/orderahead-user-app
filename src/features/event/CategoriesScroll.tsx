@@ -103,7 +103,7 @@ class CategoriesScroll extends React.Component<IProps, IState> {
             <Grid
               item
               xs={11}
-              className={`${classes.categoryWrapper} startJustifiedFlex`}
+              className={`${classes.categoryWrapper}`}
               container
             >
               {/* @ts-ignore */}

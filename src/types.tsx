@@ -18,6 +18,19 @@ export type ICart = typeof cart;
 export type ILineItems = typeof lineItems;
 export type ILineItem = typeof lineItems[0];
 export type ICartItem = typeof cartItem;
+type AutocompletePrediction = google.maps.places.AutocompletePrediction;
+
+export interface IPos {
+  type: string;
+  squareInfo: Record<string, string>;
+}
+
+export interface ILocation {
+  lat: number | undefined;
+  lng: number | undefined;
+  place: google.maps.places.PlaceResult;
+}
+
 export interface IPrice {
   amount: number;
   currency: string;
@@ -27,10 +40,6 @@ export type IInvoice = typeof invoice;
 export interface IDynamicSettings {
   requestedEta: number;
   requestedDynamicFee: IPrice;
-}
-export interface IPos {
-  type: string;
-  squareInfo: Record<string, string>;
 }
 export interface IVariation {
   name: string;

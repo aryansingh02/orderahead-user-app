@@ -57,6 +57,7 @@
       }
     ],
     "react/jsx-key": "error",
+    // some problem with react project, sometimes it keeps showing error even if nothing extraneous is imported
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -79,23 +80,24 @@
     "react/destructuring-assignment": "off",
     "react/require-default-props": "off",
     "no-underscore-dangle": "off",
-    "@typescript-eslint/comma-dangle": ["error", {
-      "arrays": "only-multiline",
-      "objects": "only-multiline",
-      "imports": "only-multiline",
-      "exports": "only-multiline",
-      "functions": "never"
-    }],
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline",
+        "imports": "only-multiline",
+        "exports": "only-multiline",
+        "functions": "never"
+      }
+    ],
     "@typescript-eslint/dot-notation": "off",
     "react/jsx-curly-newline": "off",
     "@typescript-eslint/quotes": "off",
     // the stateless function rule is unusually restrict
     "react/prefer-stateless-function": "off",
     // unusually retrict
-    "react/static-property-placement": "off",
-    // prettier and typescript generate different indentation
-    "@typescript-eslint/indent": "warn"
-
+    "react/static-property-placement": "off"
+    // some problem with react project, sometimes file changes do not get reflected immedidately by typescript and it keeps showing errors
   }
 }
 // no undersocre dangle had to be turned off because _id of business needed to be accessed which was throwing errors
