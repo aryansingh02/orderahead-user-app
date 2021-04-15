@@ -1,7 +1,4 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import BottomNavigationBar from './BottomNavigationBar';
-import { theme } from '../theme';
 import { isDesktop } from '../utils';
 import DesktopHeader from '../features/event/DesktopHeader';
 

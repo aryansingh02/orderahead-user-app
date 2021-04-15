@@ -114,10 +114,6 @@ export default function DesktopHeader() {
   const classes = useStyles();
   const [inputFocused, setInputFocused] = React.useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const [
-    mobileMoreAnchorEl,
-    setMobileMoreAnchorEl,
-  ] = React.useState<null | HTMLElement>(null);
 
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
   const dispatch = useDispatch();
@@ -131,9 +127,6 @@ export default function DesktopHeader() {
     handleClick();
   }, [inputRef]);
 
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
 
@@ -182,7 +175,6 @@ export default function DesktopHeader() {
               aria-label="show more"
               aria-controls={mobileMenuId}
               aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
               color="inherit"
             >
               <MoreIcon />
