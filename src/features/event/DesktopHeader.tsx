@@ -127,7 +127,6 @@ export default function DesktopHeader() {
     handleClick();
   }, [inputRef]);
 
-
   const mobileMenuId = 'primary-search-account-menu-mobile';
 
   return (
