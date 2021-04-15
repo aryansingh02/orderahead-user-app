@@ -222,7 +222,5 @@ const mapStateToProps = (state: RootState) => ({
 
 export default connect(
   mapStateToProps,
-  // @ts-ignore
   mapDispatchToProps
-  // @ts-ignore
 )(withWidth()(withStyles(styles)(DesktopHeaderHOC(Event))));
