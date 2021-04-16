@@ -850,10 +850,18 @@ export const stall = {
     },
   },
   businessHours: {},
+  location: {
+    lat: 37.798347,
+    lng: -122.435852
+  }
 };
 
 export const stall2 = {
   _id: '5f400962f7c04e6925dc16de',
+  location: {
+    lat: 37.785408,
+    lng: -122.399109
+  },
   name: "Dunkin' Donuts",
   eventId: '5f3577a7405bae54c65239z9',
   storeId: '5f3577a8405bae54c65239m8',
@@ -1392,6 +1400,10 @@ export const stall2 = {
 };
 export const stall3 = {
   _id: '5f400962f7c04e6925dc1645',
+  location: {
+    lat: 37.785408,
+    lng: -122.399109
+  },
   name: "McDonald's",
   eventId: '5f3577a7405bae54c65239z9',
   menu : {
@@ -1931,6 +1943,10 @@ export const stall3 = {
 export const stall4 = {
   _id: '5f400962f7c04e6925dc1646',
   name: 'Starbucks',
+  location: {
+    lat: 37.785408,
+    lng: -122.399109
+  },
   eventId: '5f3577a7405bae54c65239z9',
   storeId: '5f3577a8405bae54c65239m8',
   menu : {

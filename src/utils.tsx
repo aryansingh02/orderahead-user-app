@@ -1,8 +1,6 @@
 import React from 'react';
-import NumberFormat from 'react-number-format';
-import getSymbolFromCurrency from 'currency-symbol-map';
-import { IMenu, IPrice, ICartItem, IStall } from './types';
-import { appConfig, invoice, stall as StallData } from './data/testData';
+import { IMenu, ICartItem, IStall } from './types';
+import { appConfig, stall as StallData } from './data/testData';
 
 const greyedDollar = () => (
   <span
