@@ -84,8 +84,7 @@ const styles = (theme: typeof Theme) =>
       width: '100%',
       alignItems: 'center',
     },
-    waitRow: {
-    },
+    waitRow: {},
     distanceIcon: {
       height: '16px',
       width: '16px',

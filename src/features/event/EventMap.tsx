@@ -1,4 +1,4 @@
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
+import { GoogleApiWrapper } from 'google-maps-react';
 import { connect } from 'react-redux';
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
@@ -6,15 +6,15 @@ import GoogleMapReact from 'google-map-react';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 import { ILocation, RootState } from '../../types';
 import config from '../../config';
-import { getLocation } from './EventSlice';
+import { getFilteredStalls, getLocation } from './EventSlice';
 import { AppDispatch } from '../../store';
 import { event as EventData } from '../../data/testData';
-import StallCard from './StallCard';
 import MapStall from './MapStall';
 
 interface IProps extends RouteComponentProps {
   width: Breakpoint;
   markerLocation: ILocation;
+  filteredStalls: typeof EventData.stalls;
 }
 
 interface IState {}
@@ -45,7 +45,7 @@ class EventMap extends React.Component<IProps, IState> {
             // @ts-ignore
             lng={this.props.markerLocation.lng}
           />
-          {EventData.stalls.map((stall) => (
+          {this.props.filteredStalls.map((stall) => (
             // @ts-ignore
             <div
               style={{ width: '400px' }}
@@ -68,6 +68,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) => ({});
 
 const mapStateToProps = (state: RootState) => ({
   markerLocation: getLocation(state),
+  filteredStalls: getFilteredStalls(state),
 });
 
 export default connect(

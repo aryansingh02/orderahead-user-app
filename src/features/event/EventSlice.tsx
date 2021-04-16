@@ -2,6 +2,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../types';
 import config from '../../config';
+import { FilterStalls } from '../../utils';
+import { event as Event } from '../../data/testData';
 
 export interface EventState {
   loading: boolean;
@@ -38,3 +40,5 @@ export default EventSlice.reducer;
 
 export const getQuery = (state: RootState) => state.event.searchQuery;
 export const getLocation = (state: RootState) => state.event.location;
+export const getFilteredStalls = (state: RootState) =>
+  FilterStalls(Event.stalls, state.event.searchQuery);
