@@ -55,8 +55,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '14px',
       marginLeft: '12px',
       top: '-2px',
-      position: 'relative'
-
+      position: 'relative',
     },
     itemName: {
       paddingLeft: theme.spacing(1.25),

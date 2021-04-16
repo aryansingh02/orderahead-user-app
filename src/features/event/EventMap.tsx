@@ -1,12 +1,16 @@
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import { connect } from 'react-redux';
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import GoogleMapReact from 'google-map-react';
 import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 import { ILocation, RootState } from '../../types';
 import config from '../../config';
 import { getLocation } from './EventSlice';
 import { AppDispatch } from '../../store';
+import { event as EventData } from '../../data/testData';
+import StallCard from './StallCard';
+import MapStall from './MapStall';
 
 interface IProps extends RouteComponentProps {
   width: Breakpoint;
@@ -18,42 +22,44 @@ interface IState {}
 class EventMap extends React.Component<IProps, IState> {
   render() {
     return (
-      // @ts-ignore
-      <Map
-        // @ts-ignore
-        google={this.props.google}
-        // @ts-ignore
-        zoom={14}
-        containerStyle={{ width: '100%', height: '100%', position: 'static' }}
-        style={{ width: '100%', height: '100%' }}
-        mapTypeControl={false}
-        zoomControl={false}
-        scaleControl={false}
-        streetViewControl={false}
-        fullscreenControl={false}
-        initialCenter={{
-          lat: this.props.markerLocation.lat || config.SAN_FRANCISCO_LAT,
-          lng: this.props.markerLocation.lng || config.SAN_FRANCISCO_LONG,
-        }}
-        center={{
-          lat: this.props.markerLocation.lat || config.SAN_FRANCISCO_LAT,
-          lng: this.props.markerLocation.lng || config.SAN_FRANCISCO_LONG,
-        }}
+      <div
+        style={{ height: '100%', width: '100%', position: 'absolute', left: 0 }}
       >
-        {/* @ts-ignore */}
-        {this.props.markerLocation.lat && this.props.markerLocation.lng && (
+        <GoogleMapReact
           // @ts-ignore
-          <Marker
+          bootstrapURLKeys={{ key: config.REACT_APP_GOOGLE_API_KEY }}
+          defaultCenter={{
+            lat: this.props.markerLocation.lat || config.SAN_FRANCISCO_LAT,
+            lng: this.props.markerLocation.lng || config.SAN_FRANCISCO_LONG,
+          }}
+          center={{
+            lat: this.props.markerLocation.lat || config.SAN_FRANCISCO_LAT,
+            lng: this.props.markerLocation.lng || config.SAN_FRANCISCO_LONG,
+          }}
+          defaultZoom={14}
+        >
+          <img
+            src="/img/MapLocation.svg"
             // @ts-ignore
-            name="Selected Location"
+            lat={this.props.markerLocation.lat}
             // @ts-ignore
-            position={{
-              lat: this.props.markerLocation.lat,
-              lng: this.props.markerLocation.lng,
-            }}
+            lng={this.props.markerLocation.lng}
           />
-        )}
-      </Map>
+          {EventData.stalls.map((stall) => (
+            // @ts-ignore
+            <div
+              style={{ width: '400px' }}
+              key={stall._id}
+              // @ts-ignore
+              lat={stall.location.lat}
+              // @ts-ignore
+              lng={stall.location.lng}
+            >
+              <MapStall stall={stall} />
+            </div>
+          ))}
+        </GoogleMapReact>
+      </div>
     );
   }
 }
