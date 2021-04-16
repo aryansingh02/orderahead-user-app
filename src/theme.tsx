@@ -55,7 +55,6 @@ export const theme = createMuiTheme({
       fontFamily: 'GT-Walsheim',
       fontWeight: 'bold',
     },
-
     h2: {
       fontFamily: 'GT-Walsheim',
       fontWeight: 'bold',
@@ -105,12 +104,28 @@ export const theme = createMuiTheme({
       lineHeight: '16px',
       color: 'rgba(151, 151, 151, 1)',
     },
+    overline: {
+      fontFamily: 'GT-Walsheim, roboto',
+      fontWeight: 'normal',
+      fontSize: '11px',
+      lineHeight: '13px',
+      color: 'rgba(38, 50, 56, 0.8)',
+      textTransform: 'capitalize',
+    },
     subtitle1: {
       fontFamily: 'GT-Walsheim, roboto',
       fontWeight: 500,
       fontSize: '12px',
       lineHeight: '14px',
       color: '#263238',
+    },
+    button: {
+      fontStyle: 'normal',
+      fontWeight: 500,
+      fontSize: '14px',
+      lineHeight: '16px',
+      color: '#FFFFFF',
+      textTransform: 'capitalize',
     },
   },
 

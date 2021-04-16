@@ -3,11 +3,43 @@ export const price = {
   currency: 'USD',
 };
 
+export const cartItem = {
+  itemId: '5f35c4dbec0310b4ce8bf3da',
+  name: 'Parmesan Bread Twists',
+  image:
+    'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
+
+  selectedVariation: {
+    name: 'Parmesan Bread Twists',
+    price: {
+      amount: 649,
+      currency: 'USD',
+    },
+    _id: '5f35c4dbec031029738bf3cd',
+  },
+  modifiers: [
+    {
+      name: 'Crust',
+      chosenValue: [
+        {
+          name: 'Hand Tossed',
+          price: {
+            amount: 100,
+            currency: 'USD',
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export const cart = {
   lineItems: [
     {
       cartItem: {
         itemId: '5f9c3121e3c8569b33c4c0d2',
+        image:
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
         name: 'Build your own Pizza',
         selectedVariation: {
           name: 'Build your own Pizza Medium',
@@ -73,6 +105,9 @@ export const cart = {
     {
       cartItem: {
         itemId: '5f35c4dbec0310b4ce8bf3da',
+        image:
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
+
         name: 'Parmesan Bread Twists',
         selectedVariation: {
           name: 'Parmesan Bread Twists',
@@ -95,6 +130,9 @@ export const cart = {
       cartItem: {
         itemId: '5f35c4dbec0310375f8bf3db',
         name: 'Garlic Bread Twists',
+        image:
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
+
         selectedVariation: {
           name: 'Garlic Bread Twists',
           price: {
@@ -116,6 +154,9 @@ export const cart = {
       cartItem: {
         itemId: '5f9c3121e3c8569b33c4c0d2',
         name: 'Build your own Pizza',
+        image:
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
+
         selectedVariation: {
           name: 'Build your own Pizza Small',
           price: {
@@ -203,12 +244,51 @@ export const cart = {
   storeId: '5f3577a8405bae54c65239b5',
   note: '',
   requestedEta: 10,
+  pickupTime: 0,
   requestedDynamicFee: { amount: 0, currency: 'USD' },
   requestedTipPercent: 0.0,
+  couponCode: '',
 };
 
+export const { lineItems } = cart;
+
+export const slotsInfo = [
+  { slot: 1617189300000, isAvailable: true },
+  { slot: 1617190200000, isAvailable: true },
+  { slot: 1617191100000, isAvailable: true },
+  { slot: 1617192000000, isAvailable: true },
+  { slot: 1617192900000, isAvailable: true },
+  { slot: 1617193800000, isAvailable: true },
+  { slot: 1617194700000, isAvailable: true },
+  { slot: 1617195600000, isAvailable: true },
+  { slot: 1617196500000, isAvailable: true },
+  { slot: 1617197400000, isAvailable: true },
+  { slot: 1617198300000, isAvailable: true },
+  { slot: 1617199200000, isAvailable: true },
+  { slot: 1617200100000, isAvailable: true },
+  { slot: 1617201000000, isAvailable: true },
+  { slot: 1617201900000, isAvailable: true },
+  { slot: 1617202800000, isAvailable: true },
+  { slot: 1617203700000, isAvailable: true },
+  { slot: 1617204600000, isAvailable: true },
+  { slot: 1617205500000, isAvailable: true },
+  { slot: 1617206400000, isAvailable: true },
+  { slot: 1617207300000, isAvailable: true },
+  { slot: 1617208200000, isAvailable: true },
+  { slot: 1617209100000, isAvailable: true },
+  { slot: 1617210000000, isAvailable: true },
+  { slot: 1617210900000, isAvailable: true },
+  { slot: 1617211800000, isAvailable: true },
+  { slot: 1617212700000, isAvailable: true },
+  { slot: 1617213600000, isAvailable: true },
+  { slot: 1617214500000, isAvailable: true },
+];
+
 export const appConfig = {
-  rhState: {},
+  rhState: {
+    startTime: '',
+    endTime: '',
+  },
 };
 
 export const tag = [
@@ -232,9 +312,519 @@ export const tag = [
   },
 ];
 
+
 export const stall = {
   _id: '5f3577a8405bae54c65239b6',
   name: 'Costa Coffee',
+  menu : {
+    _id: "5f35c4dbec0310c59e8bf3e5",
+    name: "dh",
+    menuItems: [
+      {
+        name: "Parmesan Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with garlic and Parmesan cheese seasoning, and sprinkled with more Parmesan. Served with a side of marinara sauce for dipping.",
+        variations: [
+          {
+            name: "Parmesan Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031029738bf3cd",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310b4ce8bf3da",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg",
+        ],
+      },
+      {
+        name: "Garlic Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with buttery garlic and Parmesan cheese seasoning. Served with a side of marinara sauce for dipping.",
+        variations: [
+          {
+            name: "Garlic Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310816b8bf3ce",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310375f8bf3db",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/960d3c22a68842844ef41f934203a3b8d08b29ce/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread",
+        description:
+          "Our oven-baked breadsticks are generously stuffed and covered with a blend of 100% real mozzarella and cheddar cheeses then seasoned with a touch of garlic. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310245a8bf3cf",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03103fae8bf3dc",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/81d830e89951d7586a948e0a8824ffd0312d6200/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread with Spinach & Feta",
+        description:
+          "Our oven-baked breadsticks are stuffed with cheese, fresh spinach and Feta cheese - covered in a blend of cheese made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread with Spinach & Feta",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031064468bf3d0",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03102d6d8bf3dd",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/789cc77d8c7b5a53bbf76a711628adaa8708311f/original.jpeg",
+        ],
+      },
+      {
+        name: "Parmesan Bread Bites",
+        description:
+          "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Parmesan Bread Bites",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310c3fc8bf3d1",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310c5d58bf3de",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg",
+        ],
+      },
+      {
+        name: "Cinnamon Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing for dipping or drizzling.",
+        variations: [
+          {
+            name: "Cinnamon Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec03100cbc8bf3d2",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310e1168bf3df",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/0f361d3dc6fb65968b8dd3aa31a1dfe8d68a2a56/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread with Bacon & Jalapeno",
+        description:
+          "Our oven-baked breadsticks are stuffed with cheese, smoked bacon & jalapeno peppers - covered in a blend of cheeses; made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread with Bacon & Jalapeno",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031086378bf3d3",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec031080388bf3e0",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/3ea47734d693e3b89fd3f5b8ed5b63c95c5cc60b/original.jpeg",
+        ],
+      },
+      {
+        name: "Coke",
+        description:
+          "The authentic cola sensation that is a refreshing part of sharing life's enjoyable moments.",
+        variations: [
+          {
+            name: "Coke 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031005fe8bf3d4",
+          },
+          {
+            name: "Coke 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031001f38bf3d5",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03109bc58bf3e1",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/6e113f57887816b1b40dcf1035ae255244afa7b5/original.jpeg",
+        ],
+      },
+      {
+        name: "Coca Cola Zero Sugar",
+        description:
+          "Real Coca-Cola® Taste! Now you can cut back on sugar without sacrificing the great Coca-Cola taste you know and love. Coca-Cola Zero Sugar offers you real Coca-Cola taste and uplifting refreshment without any sugar.",
+        variations: [
+          {
+            name: "Coca Cola Zero Sugar 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031041848bf3d6",
+          },
+          {
+            name: "Coca Cola Zero Sugar 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310b0018bf3d7",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310794e8bf3e2",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+      },
+      {
+        name: "Diet Coke",
+        description:
+          "Beautifully balanced adult cola taste in a no calorie beverage.",
+        variations: [
+          {
+            name: "Diet Coke 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec03102b8b8bf3d8",
+          },
+          {
+            name: "Diet Coke 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310e5fb8bf3d9",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03105f018bf3e3",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+      },
+      {
+        name: "Build your own Pizza",
+        description: "Made to order",
+        variations: [
+          {
+            name: "Build your own Pizza Small",
+            price: {
+              amount: 1123,
+              currency: "USD",
+            },
+            _id: '5f35c4dbec0310030d8bf3c9',
+          },
+          {
+            name: 'Build your own Pizza Medium',
+            price: {
+              amount: 1323,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec031072068bf3ca',
+          },
+          {
+            name: 'Build your own Pizza Large',
+            price: {
+              amount: 1523,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec03105d1c8bf3cb',
+          },
+          {
+            name: 'Build your own Pizza X-Large',
+            price: {
+              amount: 1723,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec0310fbbf8bf3cc',
+          },
+        ],
+        categories: ['Build your own'],
+        modifier: [
+          {
+            name: 'Crust',
+            options: [
+              {
+                name: 'Hand Tossed',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Brooklyn style',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 1,
+            maximum: 1,
+          },
+          {
+            name: 'Size',
+            options: [
+              {
+                name: 'Small',
+                price: {
+                  amount: 1099,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Medium',
+                price: {
+                  amount: 1699,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Large',
+                price: {
+                  amount: 2099,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'X-Large',
+                price: {
+                  amount: 2399,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 1,
+            maximum: 1,
+          },
+          {
+            name: 'Cheese',
+            options: [
+              {
+                name: 'None',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Thin',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Normal',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Extra',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Cheese portion',
+            options: [
+              {
+                name: 'Left',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Right',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'All',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Sauce',
+            options: [
+              {
+                name: 'Tomato Sauce',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Marinara Sauce',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'BBQ Sauce',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Toppings',
+            options: [
+              {
+                name: 'Pineapple',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Garlic',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Olives',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+        ],
+        status: 'IN_STOCK',
+        _id: '5f35c4dbec031072dd8bf3e4',
+        applicableTaxKeys: [
+          '2T3SOH5TRFWQTR5FBPH233P4',
+          'N4ACVVQXWUBXLN4MEE52TQEV',
+        ],
+        imagePaths: [
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/cceff4302cc0c8ecfe231584a48e0c051d1e8542/original.jpeg',
+        ],
+      },
+    ],
+  },
   eventId: '5f3577a7405bae54c65239b2',
   storeId: '5f3577a8405bae54c65239b5',
   description: 'Menu based on Haldiram India restaurant',
@@ -267,6 +857,515 @@ export const stall2 = {
   name: "Dunkin' Donuts",
   eventId: '5f3577a7405bae54c65239z9',
   storeId: '5f3577a8405bae54c65239m8',
+  menu : {
+    _id: "5f35c4dbec0310c59e8bf3e5",
+    name: "dh",
+    menuItems: [
+      {
+        name: "Parmesan Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with garlic and Parmesan cheese seasoning, and sprinkled with more Parmesan. Served with a side of marinara sauce for dipping.",
+        variations: [
+          {
+            name: "Parmesan Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031029738bf3cd",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310b4ce8bf3da",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg",
+        ],
+      },
+      {
+        name: "Garlic Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with buttery garlic and Parmesan cheese seasoning. Served with a side of marinara sauce for dipping.",
+        variations: [
+          {
+            name: "Garlic Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310816b8bf3ce",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310375f8bf3db",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/960d3c22a68842844ef41f934203a3b8d08b29ce/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread",
+        description:
+          "Our oven-baked breadsticks are generously stuffed and covered with a blend of 100% real mozzarella and cheddar cheeses then seasoned with a touch of garlic. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310245a8bf3cf",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03103fae8bf3dc",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/81d830e89951d7586a948e0a8824ffd0312d6200/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread with Spinach & Feta",
+        description:
+          "Our oven-baked breadsticks are stuffed with cheese, fresh spinach and Feta cheese - covered in a blend of cheese made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread with Spinach & Feta",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031064468bf3d0",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03102d6d8bf3dd",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/789cc77d8c7b5a53bbf76a711628adaa8708311f/original.jpeg",
+        ],
+      },
+      {
+        name: "Parmesan Bread Bites",
+        description:
+          "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Parmesan Bread Bites",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310c3fc8bf3d1",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310c5d58bf3de",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg",
+        ],
+      },
+      {
+        name: "Cinnamon Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing for dipping or drizzling.",
+        variations: [
+          {
+            name: "Cinnamon Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec03100cbc8bf3d2",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310e1168bf3df",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/0f361d3dc6fb65968b8dd3aa31a1dfe8d68a2a56/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread with Bacon & Jalapeno",
+        description:
+          "Our oven-baked breadsticks are stuffed with cheese, smoked bacon & jalapeno peppers - covered in a blend of cheeses; made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread with Bacon & Jalapeno",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031086378bf3d3",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec031080388bf3e0",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/3ea47734d693e3b89fd3f5b8ed5b63c95c5cc60b/original.jpeg",
+        ],
+      },
+      {
+        name: "Coke",
+        description:
+          "The authentic cola sensation that is a refreshing part of sharing life's enjoyable moments.",
+        variations: [
+          {
+            name: "Coke 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031005fe8bf3d4",
+          },
+          {
+            name: "Coke 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031001f38bf3d5",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03109bc58bf3e1",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/6e113f57887816b1b40dcf1035ae255244afa7b5/original.jpeg",
+        ],
+      },
+      {
+        name: "Coca Cola Zero Sugar",
+        description:
+          "Real Coca-Cola® Taste! Now you can cut back on sugar without sacrificing the great Coca-Cola taste you know and love. Coca-Cola Zero Sugar offers you real Coca-Cola taste and uplifting refreshment without any sugar.",
+        variations: [
+          {
+            name: "Coca Cola Zero Sugar 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031041848bf3d6",
+          },
+          {
+            name: "Coca Cola Zero Sugar 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310b0018bf3d7",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310794e8bf3e2",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+      },
+      {
+        name: "Diet Coke",
+        description:
+          "Beautifully balanced adult cola taste in a no calorie beverage.",
+        variations: [
+          {
+            name: "Diet Coke 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec03102b8b8bf3d8",
+          },
+          {
+            name: "Diet Coke 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310e5fb8bf3d9",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03105f018bf3e3",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+      },
+      {
+        name: "Build your own Pizza",
+        description: "Made to order",
+        variations: [
+          {
+            name: "Build your own Pizza Small",
+            price: {
+              amount: 1123,
+              currency: "USD",
+            },
+            _id: '5f35c4dbec0310030d8bf3c9',
+          },
+          {
+            name: 'Build your own Pizza Medium',
+            price: {
+              amount: 1323,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec031072068bf3ca',
+          },
+          {
+            name: 'Build your own Pizza Large',
+            price: {
+              amount: 1523,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec03105d1c8bf3cb',
+          },
+          {
+            name: 'Build your own Pizza X-Large',
+            price: {
+              amount: 1723,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec0310fbbf8bf3cc',
+          },
+        ],
+        categories: ['Build your own'],
+        modifier: [
+          {
+            name: 'Crust',
+            options: [
+              {
+                name: 'Hand Tossed',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Brooklyn style',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 1,
+            maximum: 1,
+          },
+          {
+            name: 'Size',
+            options: [
+              {
+                name: 'Small',
+                price: {
+                  amount: 1099,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Medium',
+                price: {
+                  amount: 1699,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Large',
+                price: {
+                  amount: 2099,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'X-Large',
+                price: {
+                  amount: 2399,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 1,
+            maximum: 1,
+          },
+          {
+            name: 'Cheese',
+            options: [
+              {
+                name: 'None',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Thin',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Normal',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Extra',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Cheese portion',
+            options: [
+              {
+                name: 'Left',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Right',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'All',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Sauce',
+            options: [
+              {
+                name: 'Tomato Sauce',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Marinara Sauce',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'BBQ Sauce',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Toppings',
+            options: [
+              {
+                name: 'Pineapple',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Garlic',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Olives',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+        ],
+        status: 'IN_STOCK',
+        _id: '5f35c4dbec031072dd8bf3e4',
+        applicableTaxKeys: [
+          '2T3SOH5TRFWQTR5FBPH233P4',
+          'N4ACVVQXWUBXLN4MEE52TQEV',
+        ],
+        imagePaths: [
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/cceff4302cc0c8ecfe231584a48e0c051d1e8542/original.jpeg',
+        ],
+      },
+    ],
+  },
   description: 'Menu based on Haldiram India restaurant',
   tag: [
     {
@@ -295,6 +1394,515 @@ export const stall3 = {
   _id: '5f400962f7c04e6925dc1645',
   name: "McDonald's",
   eventId: '5f3577a7405bae54c65239z9',
+  menu : {
+    _id: "5f35c4dbec0310c59e8bf3e5",
+    name: "dh",
+    menuItems: [
+      {
+        name: "Parmesan Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with garlic and Parmesan cheese seasoning, and sprinkled with more Parmesan. Served with a side of marinara sauce for dipping.",
+        variations: [
+          {
+            name: "Parmesan Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031029738bf3cd",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310b4ce8bf3da",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg",
+        ],
+      },
+      {
+        name: "Garlic Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with buttery garlic and Parmesan cheese seasoning. Served with a side of marinara sauce for dipping.",
+        variations: [
+          {
+            name: "Garlic Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310816b8bf3ce",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310375f8bf3db",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/960d3c22a68842844ef41f934203a3b8d08b29ce/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread",
+        description:
+          "Our oven-baked breadsticks are generously stuffed and covered with a blend of 100% real mozzarella and cheddar cheeses then seasoned with a touch of garlic. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310245a8bf3cf",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03103fae8bf3dc",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/81d830e89951d7586a948e0a8824ffd0312d6200/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread with Spinach & Feta",
+        description:
+          "Our oven-baked breadsticks are stuffed with cheese, fresh spinach and Feta cheese - covered in a blend of cheese made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread with Spinach & Feta",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031064468bf3d0",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03102d6d8bf3dd",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/789cc77d8c7b5a53bbf76a711628adaa8708311f/original.jpeg",
+        ],
+      },
+      {
+        name: "Parmesan Bread Bites",
+        description:
+          "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Parmesan Bread Bites",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310c3fc8bf3d1",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310c5d58bf3de",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg",
+        ],
+      },
+      {
+        name: "Cinnamon Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing for dipping or drizzling.",
+        variations: [
+          {
+            name: "Cinnamon Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec03100cbc8bf3d2",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310e1168bf3df",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/0f361d3dc6fb65968b8dd3aa31a1dfe8d68a2a56/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread with Bacon & Jalapeno",
+        description:
+          "Our oven-baked breadsticks are stuffed with cheese, smoked bacon & jalapeno peppers - covered in a blend of cheeses; made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread with Bacon & Jalapeno",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031086378bf3d3",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec031080388bf3e0",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/3ea47734d693e3b89fd3f5b8ed5b63c95c5cc60b/original.jpeg",
+        ],
+      },
+      {
+        name: "Coke",
+        description:
+          "The authentic cola sensation that is a refreshing part of sharing life's enjoyable moments.",
+        variations: [
+          {
+            name: "Coke 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031005fe8bf3d4",
+          },
+          {
+            name: "Coke 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031001f38bf3d5",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03109bc58bf3e1",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/6e113f57887816b1b40dcf1035ae255244afa7b5/original.jpeg",
+        ],
+      },
+      {
+        name: "Coca Cola Zero Sugar",
+        description:
+          "Real Coca-Cola® Taste! Now you can cut back on sugar without sacrificing the great Coca-Cola taste you know and love. Coca-Cola Zero Sugar offers you real Coca-Cola taste and uplifting refreshment without any sugar.",
+        variations: [
+          {
+            name: "Coca Cola Zero Sugar 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031041848bf3d6",
+          },
+          {
+            name: "Coca Cola Zero Sugar 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310b0018bf3d7",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310794e8bf3e2",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+      },
+      {
+        name: "Diet Coke",
+        description:
+          "Beautifully balanced adult cola taste in a no calorie beverage.",
+        variations: [
+          {
+            name: "Diet Coke 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec03102b8b8bf3d8",
+          },
+          {
+            name: "Diet Coke 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310e5fb8bf3d9",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03105f018bf3e3",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+      },
+      {
+        name: "Build your own Pizza",
+        description: "Made to order",
+        variations: [
+          {
+            name: "Build your own Pizza Small",
+            price: {
+              amount: 1123,
+              currency: "USD",
+            },
+            _id: '5f35c4dbec0310030d8bf3c9',
+          },
+          {
+            name: 'Build your own Pizza Medium',
+            price: {
+              amount: 1323,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec031072068bf3ca',
+          },
+          {
+            name: 'Build your own Pizza Large',
+            price: {
+              amount: 1523,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec03105d1c8bf3cb',
+          },
+          {
+            name: 'Build your own Pizza X-Large',
+            price: {
+              amount: 1723,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec0310fbbf8bf3cc',
+          },
+        ],
+        categories: ['Build your own'],
+        modifier: [
+          {
+            name: 'Crust',
+            options: [
+              {
+                name: 'Hand Tossed',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Brooklyn style',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 1,
+            maximum: 1,
+          },
+          {
+            name: 'Size',
+            options: [
+              {
+                name: 'Small',
+                price: {
+                  amount: 1099,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Medium',
+                price: {
+                  amount: 1699,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Large',
+                price: {
+                  amount: 2099,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'X-Large',
+                price: {
+                  amount: 2399,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 1,
+            maximum: 1,
+          },
+          {
+            name: 'Cheese',
+            options: [
+              {
+                name: 'None',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Thin',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Normal',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Extra',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Cheese portion',
+            options: [
+              {
+                name: 'Left',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Right',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'All',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Sauce',
+            options: [
+              {
+                name: 'Tomato Sauce',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Marinara Sauce',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'BBQ Sauce',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Toppings',
+            options: [
+              {
+                name: 'Pineapple',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Garlic',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Olives',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+        ],
+        status: 'IN_STOCK',
+        _id: '5f35c4dbec031072dd8bf3e4',
+        applicableTaxKeys: [
+          '2T3SOH5TRFWQTR5FBPH233P4',
+          'N4ACVVQXWUBXLN4MEE52TQEV',
+        ],
+        imagePaths: [
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/cceff4302cc0c8ecfe231584a48e0c051d1e8542/original.jpeg',
+        ],
+      },
+    ],
+  },
   storeId: '5f3577a8405bae54c65239m8',
   description: 'Menu based on Haldiram India restaurant',
   tag: [
@@ -325,6 +1933,515 @@ export const stall4 = {
   name: 'Starbucks',
   eventId: '5f3577a7405bae54c65239z9',
   storeId: '5f3577a8405bae54c65239m8',
+  menu : {
+    _id: "5f35c4dbec0310c59e8bf3e5",
+    name: "dh",
+    menuItems: [
+      {
+        name: "Parmesan Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with garlic and Parmesan cheese seasoning, and sprinkled with more Parmesan. Served with a side of marinara sauce for dipping.",
+        variations: [
+          {
+            name: "Parmesan Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031029738bf3cd",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310b4ce8bf3da",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg",
+        ],
+      },
+      {
+        name: "Garlic Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with buttery garlic and Parmesan cheese seasoning. Served with a side of marinara sauce for dipping.",
+        variations: [
+          {
+            name: "Garlic Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310816b8bf3ce",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310375f8bf3db",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/960d3c22a68842844ef41f934203a3b8d08b29ce/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread",
+        description:
+          "Our oven-baked breadsticks are generously stuffed and covered with a blend of 100% real mozzarella and cheddar cheeses then seasoned with a touch of garlic. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310245a8bf3cf",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03103fae8bf3dc",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/81d830e89951d7586a948e0a8824ffd0312d6200/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread with Spinach & Feta",
+        description:
+          "Our oven-baked breadsticks are stuffed with cheese, fresh spinach and Feta cheese - covered in a blend of cheese made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread with Spinach & Feta",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031064468bf3d0",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03102d6d8bf3dd",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/789cc77d8c7b5a53bbf76a711628adaa8708311f/original.jpeg",
+        ],
+      },
+      {
+        name: "Parmesan Bread Bites",
+        description:
+          "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Parmesan Bread Bites",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310c3fc8bf3d1",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310c5d58bf3de",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg",
+        ],
+      },
+      {
+        name: "Cinnamon Bread Twists",
+        description:
+          "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing for dipping or drizzling.",
+        variations: [
+          {
+            name: "Cinnamon Bread Twists",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec03100cbc8bf3d2",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310e1168bf3df",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/0f361d3dc6fb65968b8dd3aa31a1dfe8d68a2a56/original.jpeg",
+        ],
+      },
+      {
+        name: "Stuffed Cheesy Bread with Bacon & Jalapeno",
+        description:
+          "Our oven-baked breadsticks are stuffed with cheese, smoked bacon & jalapeno peppers - covered in a blend of cheeses; made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.",
+        variations: [
+          {
+            name: "Stuffed Cheesy Bread with Bacon & Jalapeno",
+            price: {
+              amount: 649,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031086378bf3d3",
+          },
+        ],
+        categories: ["Bread"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec031080388bf3e0",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/3ea47734d693e3b89fd3f5b8ed5b63c95c5cc60b/original.jpeg",
+        ],
+      },
+      {
+        name: "Coke",
+        description:
+          "The authentic cola sensation that is a refreshing part of sharing life's enjoyable moments.",
+        variations: [
+          {
+            name: "Coke 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031005fe8bf3d4",
+          },
+          {
+            name: "Coke 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031001f38bf3d5",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03109bc58bf3e1",
+        applicableTaxKeys: [
+          "2T3SOH5TRFWQTR5FBPH233P4",
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+        ],
+        imagePaths: [
+          "https://square-catalog-sandbox.s3.amazonaws.com/files/6e113f57887816b1b40dcf1035ae255244afa7b5/original.jpeg",
+        ],
+      },
+      {
+        name: "Coca Cola Zero Sugar",
+        description:
+          "Real Coca-Cola® Taste! Now you can cut back on sugar without sacrificing the great Coca-Cola taste you know and love. Coca-Cola Zero Sugar offers you real Coca-Cola taste and uplifting refreshment without any sugar.",
+        variations: [
+          {
+            name: "Coca Cola Zero Sugar 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec031041848bf3d6",
+          },
+          {
+            name: "Coca Cola Zero Sugar 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310b0018bf3d7",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec0310794e8bf3e2",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+      },
+      {
+        name: "Diet Coke",
+        description:
+          "Beautifully balanced adult cola taste in a no calorie beverage.",
+        variations: [
+          {
+            name: "Diet Coke 20Oz Bottle",
+            price: {
+              amount: 229,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec03102b8b8bf3d8",
+          },
+          {
+            name: "Diet Coke 2-Liter Bottle",
+            price: {
+              amount: 349,
+              currency: "USD",
+            },
+            _id: "5f35c4dbec0310e5fb8bf3d9",
+          },
+        ],
+        categories: ["Drinks"],
+        modifier: [],
+        status: "IN_STOCK",
+        _id: "5f35c4dbec03105f018bf3e3",
+        applicableTaxKeys: [
+          "N4ACVVQXWUBXLN4MEE52TQEV",
+          "2T3SOH5TRFWQTR5FBPH233P4",
+        ],
+      },
+      {
+        name: "Build your own Pizza",
+        description: "Made to order",
+        variations: [
+          {
+            name: "Build your own Pizza Small",
+            price: {
+              amount: 1123,
+              currency: "USD",
+            },
+            _id: '5f35c4dbec0310030d8bf3c9',
+          },
+          {
+            name: 'Build your own Pizza Medium',
+            price: {
+              amount: 1323,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec031072068bf3ca',
+          },
+          {
+            name: 'Build your own Pizza Large',
+            price: {
+              amount: 1523,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec03105d1c8bf3cb',
+          },
+          {
+            name: 'Build your own Pizza X-Large',
+            price: {
+              amount: 1723,
+              currency: 'USD',
+            },
+            _id: '5f35c4dbec0310fbbf8bf3cc',
+          },
+        ],
+        categories: ['Build your own'],
+        modifier: [
+          {
+            name: 'Crust',
+            options: [
+              {
+                name: 'Hand Tossed',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Brooklyn style',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 1,
+            maximum: 1,
+          },
+          {
+            name: 'Size',
+            options: [
+              {
+                name: 'Small',
+                price: {
+                  amount: 1099,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Medium',
+                price: {
+                  amount: 1699,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Large',
+                price: {
+                  amount: 2099,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'X-Large',
+                price: {
+                  amount: 2399,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 1,
+            maximum: 1,
+          },
+          {
+            name: 'Cheese',
+            options: [
+              {
+                name: 'None',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Thin',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Normal',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Extra',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Cheese portion',
+            options: [
+              {
+                name: 'Left',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Right',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'All',
+                price: {
+                  amount: 0,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Sauce',
+            options: [
+              {
+                name: 'Tomato Sauce',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Marinara Sauce',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'BBQ Sauce',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+          {
+            name: 'Toppings',
+            options: [
+              {
+                name: 'Pineapple',
+                price: {
+                  amount: 200,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Garlic',
+                price: {
+                  amount: 100,
+                  currency: 'USD',
+                },
+              },
+              {
+                name: 'Olives',
+                price: {
+                  amount: 300,
+                  currency: 'USD',
+                },
+              },
+            ],
+            minimum: 0,
+            maximum: 999,
+          },
+        ],
+        status: 'IN_STOCK',
+        _id: '5f35c4dbec031072dd8bf3e4',
+        applicableTaxKeys: [
+          '2T3SOH5TRFWQTR5FBPH233P4',
+          'N4ACVVQXWUBXLN4MEE52TQEV',
+        ],
+        imagePaths: [
+          'https://square-catalog-sandbox.s3.amazonaws.com/files/cceff4302cc0c8ecfe231584a48e0c051d1e8542/original.jpeg',
+        ],
+      },
+    ],
+  },
   description: 'Menu based on Haldiram India restaurant',
   tag: [
     {
@@ -362,296 +2479,296 @@ export const recentSearches = [
 ];
 
 export const menu = {
-  _id: '5f35c4dbec0310c59e8bf3e5',
-  name: 'dh',
+  _id: "5f35c4dbec0310c59e8bf3e5",
+  name: "dh",
   menuItems: [
     {
-      name: 'Parmesan Bread Twists',
+      name: "Parmesan Bread Twists",
       description:
-        'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with garlic and Parmesan cheese seasoning, and sprinkled with more Parmesan. Served with a side of marinara sauce for dipping.',
+        "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with garlic and Parmesan cheese seasoning, and sprinkled with more Parmesan. Served with a side of marinara sauce for dipping.",
       variations: [
         {
-          name: 'Parmesan Bread Twists',
+          name: "Parmesan Bread Twists",
           price: {
             amount: 649,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec031029738bf3cd',
+          _id: "5f35c4dbec031029738bf3cd",
         },
       ],
-      categories: ['Bread'],
+      categories: ["Bread"],
       modifier: [],
-      status: 'IN_STOCK',
-      _id: '5f35c4dbec0310b4ce8bf3da',
+      status: "IN_STOCK",
+      _id: "5f35c4dbec0310b4ce8bf3da",
       applicableTaxKeys: [
-        '2T3SOH5TRFWQTR5FBPH233P4',
-        'N4ACVVQXWUBXLN4MEE52TQEV',
+        "2T3SOH5TRFWQTR5FBPH233P4",
+        "N4ACVVQXWUBXLN4MEE52TQEV",
       ],
       imagePaths: [
-        'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
+        "https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg",
       ],
     },
     {
-      name: 'Garlic Bread Twists',
+      name: "Garlic Bread Twists",
       description:
-        'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with buttery garlic and Parmesan cheese seasoning. Served with a side of marinara sauce for dipping.',
+        "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with buttery garlic and Parmesan cheese seasoning. Served with a side of marinara sauce for dipping.",
       variations: [
         {
-          name: 'Garlic Bread Twists',
+          name: "Garlic Bread Twists",
           price: {
             amount: 649,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec0310816b8bf3ce',
+          _id: "5f35c4dbec0310816b8bf3ce",
         },
       ],
-      categories: ['Bread'],
+      categories: ["Bread"],
       modifier: [],
-      status: 'IN_STOCK',
-      _id: '5f35c4dbec0310375f8bf3db',
+      status: "IN_STOCK",
+      _id: "5f35c4dbec0310375f8bf3db",
       applicableTaxKeys: [
-        'N4ACVVQXWUBXLN4MEE52TQEV',
-        '2T3SOH5TRFWQTR5FBPH233P4',
+        "N4ACVVQXWUBXLN4MEE52TQEV",
+        "2T3SOH5TRFWQTR5FBPH233P4",
       ],
       imagePaths: [
-        'https://square-catalog-sandbox.s3.amazonaws.com/files/960d3c22a68842844ef41f934203a3b8d08b29ce/original.jpeg',
+        "https://square-catalog-sandbox.s3.amazonaws.com/files/960d3c22a68842844ef41f934203a3b8d08b29ce/original.jpeg",
       ],
     },
     {
-      name: 'Stuffed Cheesy Bread',
+      name: "Stuffed Cheesy Bread",
       description:
-        'Our oven-baked breadsticks are generously stuffed and covered with a blend of 100% real mozzarella and cheddar cheeses then seasoned with a touch of garlic. Add marinara or your favorite dipping cup for an additional charge.',
+        "Our oven-baked breadsticks are generously stuffed and covered with a blend of 100% real mozzarella and cheddar cheeses then seasoned with a touch of garlic. Add marinara or your favorite dipping cup for an additional charge.",
       variations: [
         {
-          name: 'Stuffed Cheesy Bread',
+          name: "Stuffed Cheesy Bread",
           price: {
             amount: 649,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec0310245a8bf3cf',
+          _id: "5f35c4dbec0310245a8bf3cf",
         },
       ],
-      categories: ['Bread'],
+      categories: ["Bread"],
       modifier: [],
-      status: 'IN_STOCK',
-      _id: '5f35c4dbec03103fae8bf3dc',
+      status: "IN_STOCK",
+      _id: "5f35c4dbec03103fae8bf3dc",
       applicableTaxKeys: [
-        '2T3SOH5TRFWQTR5FBPH233P4',
-        'N4ACVVQXWUBXLN4MEE52TQEV',
+        "2T3SOH5TRFWQTR5FBPH233P4",
+        "N4ACVVQXWUBXLN4MEE52TQEV",
       ],
       imagePaths: [
-        'https://square-catalog-sandbox.s3.amazonaws.com/files/81d830e89951d7586a948e0a8824ffd0312d6200/original.jpeg',
+        "https://square-catalog-sandbox.s3.amazonaws.com/files/81d830e89951d7586a948e0a8824ffd0312d6200/original.jpeg",
       ],
     },
     {
-      name: 'Stuffed Cheesy Bread with Spinach & Feta',
+      name: "Stuffed Cheesy Bread with Spinach & Feta",
       description:
-        'Our oven-baked breadsticks are stuffed with cheese, fresh spinach and Feta cheese - covered in a blend of cheese made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.',
+        "Our oven-baked breadsticks are stuffed with cheese, fresh spinach and Feta cheese - covered in a blend of cheese made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.",
       variations: [
         {
-          name: 'Stuffed Cheesy Bread with Spinach & Feta',
+          name: "Stuffed Cheesy Bread with Spinach & Feta",
           price: {
             amount: 649,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec031064468bf3d0',
+          _id: "5f35c4dbec031064468bf3d0",
         },
       ],
-      categories: ['Bread'],
+      categories: ["Bread"],
       modifier: [],
-      status: 'IN_STOCK',
-      _id: '5f35c4dbec03102d6d8bf3dd',
+      status: "IN_STOCK",
+      _id: "5f35c4dbec03102d6d8bf3dd",
       applicableTaxKeys: [
-        'N4ACVVQXWUBXLN4MEE52TQEV',
-        '2T3SOH5TRFWQTR5FBPH233P4',
+        "N4ACVVQXWUBXLN4MEE52TQEV",
+        "2T3SOH5TRFWQTR5FBPH233P4",
       ],
       imagePaths: [
-        'https://square-catalog-sandbox.s3.amazonaws.com/files/789cc77d8c7b5a53bbf76a711628adaa8708311f/original.jpeg',
+        "https://square-catalog-sandbox.s3.amazonaws.com/files/789cc77d8c7b5a53bbf76a711628adaa8708311f/original.jpeg",
       ],
     },
     {
-      name: 'Parmesan Bread Bites',
+      name: "Parmesan Bread Bites",
       description:
-        'Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.',
+        "Oven-baked bread bites handmade from fresh buttery-tasting dough and seasoned with garlic and Parmesan. Available in 16-piece or 32-piece orders. Add marinara or your favorite dipping cup for an additional charge.",
       variations: [
         {
-          name: 'Parmesan Bread Bites',
+          name: "Parmesan Bread Bites",
           price: {
             amount: 649,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec0310c3fc8bf3d1',
+          _id: "5f35c4dbec0310c3fc8bf3d1",
         },
       ],
-      categories: ['Bread'],
+      categories: ["Bread"],
       modifier: [],
-      status: 'IN_STOCK',
-      _id: '5f35c4dbec0310c5d58bf3de',
+      status: "IN_STOCK",
+      _id: "5f35c4dbec0310c5d58bf3de",
       applicableTaxKeys: [
-        'N4ACVVQXWUBXLN4MEE52TQEV',
-        '2T3SOH5TRFWQTR5FBPH233P4',
+        "N4ACVVQXWUBXLN4MEE52TQEV",
+        "2T3SOH5TRFWQTR5FBPH233P4",
       ],
       imagePaths: [
-        'https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg',
+        "https://square-catalog-sandbox.s3.amazonaws.com/files/e076674e75b27509a2fdc27ef68bc8b91e2fa0c2/original.jpeg",
       ],
     },
     {
-      name: 'Cinnamon Bread Twists',
+      name: "Cinnamon Bread Twists",
       description:
-        'Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing for dipping or drizzling.',
+        "Handmade from fresh buttery-tasting dough and baked to a golden brown. Crusty on the outside and soft on the inside. Drizzled with a perfect blend of cinnamon and sugar, and served with a side of sweet icing for dipping or drizzling.",
       variations: [
         {
-          name: 'Cinnamon Bread Twists',
+          name: "Cinnamon Bread Twists",
           price: {
             amount: 649,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec03100cbc8bf3d2',
+          _id: "5f35c4dbec03100cbc8bf3d2",
         },
       ],
-      categories: ['Bread'],
+      categories: ["Bread"],
       modifier: [],
-      status: 'IN_STOCK',
-      _id: '5f35c4dbec0310e1168bf3df',
+      status: "IN_STOCK",
+      _id: "5f35c4dbec0310e1168bf3df",
       applicableTaxKeys: [
-        'N4ACVVQXWUBXLN4MEE52TQEV',
-        '2T3SOH5TRFWQTR5FBPH233P4',
+        "N4ACVVQXWUBXLN4MEE52TQEV",
+        "2T3SOH5TRFWQTR5FBPH233P4",
       ],
       imagePaths: [
-        'https://square-catalog-sandbox.s3.amazonaws.com/files/0f361d3dc6fb65968b8dd3aa31a1dfe8d68a2a56/original.jpeg',
+        "https://square-catalog-sandbox.s3.amazonaws.com/files/0f361d3dc6fb65968b8dd3aa31a1dfe8d68a2a56/original.jpeg",
       ],
     },
     {
-      name: 'Stuffed Cheesy Bread with Bacon & Jalapeno',
+      name: "Stuffed Cheesy Bread with Bacon & Jalapeno",
       description:
-        'Our oven-baked breadsticks are stuffed with cheese, smoked bacon & jalapeno peppers - covered in a blend of cheeses; made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.',
+        "Our oven-baked breadsticks are stuffed with cheese, smoked bacon & jalapeno peppers - covered in a blend of cheeses; made with 100% real mozzarella and cheddar. Seasoned with a touch of garlic and Parmesan. Add marinara or your favorite dipping cup for an additional charge.",
       variations: [
         {
-          name: 'Stuffed Cheesy Bread with Bacon & Jalapeno',
+          name: "Stuffed Cheesy Bread with Bacon & Jalapeno",
           price: {
             amount: 649,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec031086378bf3d3',
+          _id: "5f35c4dbec031086378bf3d3",
         },
       ],
-      categories: ['Bread'],
+      categories: ["Bread"],
       modifier: [],
-      status: 'IN_STOCK',
-      _id: '5f35c4dbec031080388bf3e0',
+      status: "IN_STOCK",
+      _id: "5f35c4dbec031080388bf3e0",
       applicableTaxKeys: [
-        '2T3SOH5TRFWQTR5FBPH233P4',
-        'N4ACVVQXWUBXLN4MEE52TQEV',
+        "2T3SOH5TRFWQTR5FBPH233P4",
+        "N4ACVVQXWUBXLN4MEE52TQEV",
       ],
       imagePaths: [
-        'https://square-catalog-sandbox.s3.amazonaws.com/files/3ea47734d693e3b89fd3f5b8ed5b63c95c5cc60b/original.jpeg',
+        "https://square-catalog-sandbox.s3.amazonaws.com/files/3ea47734d693e3b89fd3f5b8ed5b63c95c5cc60b/original.jpeg",
       ],
     },
     {
-      name: 'Coke',
+      name: "Coke",
       description:
         "The authentic cola sensation that is a refreshing part of sharing life's enjoyable moments.",
       variations: [
         {
-          name: 'Coke 20Oz Bottle',
+          name: "Coke 20Oz Bottle",
           price: {
             amount: 229,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec031005fe8bf3d4',
+          _id: "5f35c4dbec031005fe8bf3d4",
         },
         {
-          name: 'Coke 2-Liter Bottle',
+          name: "Coke 2-Liter Bottle",
           price: {
             amount: 349,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec031001f38bf3d5',
+          _id: "5f35c4dbec031001f38bf3d5",
         },
       ],
-      categories: ['Drinks'],
+      categories: ["Drinks"],
       modifier: [],
-      status: 'IN_STOCK',
-      _id: '5f35c4dbec03109bc58bf3e1',
+      status: "IN_STOCK",
+      _id: "5f35c4dbec03109bc58bf3e1",
       applicableTaxKeys: [
-        '2T3SOH5TRFWQTR5FBPH233P4',
-        'N4ACVVQXWUBXLN4MEE52TQEV',
+        "2T3SOH5TRFWQTR5FBPH233P4",
+        "N4ACVVQXWUBXLN4MEE52TQEV",
       ],
       imagePaths: [
-        'https://square-catalog-sandbox.s3.amazonaws.com/files/6e113f57887816b1b40dcf1035ae255244afa7b5/original.jpeg',
+        "https://square-catalog-sandbox.s3.amazonaws.com/files/6e113f57887816b1b40dcf1035ae255244afa7b5/original.jpeg",
       ],
     },
     {
-      name: 'Coca Cola Zero Sugar',
+      name: "Coca Cola Zero Sugar",
       description:
-        'Real Coca-Cola® Taste! Now you can cut back on sugar without sacrificing the great Coca-Cola taste you know and love. Coca-Cola Zero Sugar offers you real Coca-Cola taste and uplifting refreshment without any sugar.',
+        "Real Coca-Cola® Taste! Now you can cut back on sugar without sacrificing the great Coca-Cola taste you know and love. Coca-Cola Zero Sugar offers you real Coca-Cola taste and uplifting refreshment without any sugar.",
       variations: [
         {
-          name: 'Coca Cola Zero Sugar 20Oz Bottle',
+          name: "Coca Cola Zero Sugar 20Oz Bottle",
           price: {
             amount: 229,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec031041848bf3d6',
+          _id: "5f35c4dbec031041848bf3d6",
         },
         {
-          name: 'Coca Cola Zero Sugar 2-Liter Bottle',
+          name: "Coca Cola Zero Sugar 2-Liter Bottle",
           price: {
             amount: 349,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec0310b0018bf3d7',
+          _id: "5f35c4dbec0310b0018bf3d7",
         },
       ],
-      categories: ['Drinks'],
+      categories: ["Drinks"],
       modifier: [],
-      status: 'IN_STOCK',
-      _id: '5f35c4dbec0310794e8bf3e2',
+      status: "IN_STOCK",
+      _id: "5f35c4dbec0310794e8bf3e2",
       applicableTaxKeys: [
-        'N4ACVVQXWUBXLN4MEE52TQEV',
-        '2T3SOH5TRFWQTR5FBPH233P4',
+        "N4ACVVQXWUBXLN4MEE52TQEV",
+        "2T3SOH5TRFWQTR5FBPH233P4",
       ],
     },
     {
-      name: 'Diet Coke',
+      name: "Diet Coke",
       description:
-        'Beautifully balanced adult cola taste in a no calorie beverage.',
+        "Beautifully balanced adult cola taste in a no calorie beverage.",
       variations: [
         {
-          name: 'Diet Coke 20Oz Bottle',
+          name: "Diet Coke 20Oz Bottle",
           price: {
             amount: 229,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec03102b8b8bf3d8',
+          _id: "5f35c4dbec03102b8b8bf3d8",
         },
         {
-          name: 'Diet Coke 2-Liter Bottle',
+          name: "Diet Coke 2-Liter Bottle",
           price: {
             amount: 349,
-            currency: 'USD',
+            currency: "USD",
           },
-          _id: '5f35c4dbec0310e5fb8bf3d9',
+          _id: "5f35c4dbec0310e5fb8bf3d9",
         },
       ],
-      categories: ['Drinks'],
+      categories: ["Drinks"],
       modifier: [],
-      status: 'IN_STOCK',
-      _id: '5f35c4dbec03105f018bf3e3',
+      status: "IN_STOCK",
+      _id: "5f35c4dbec03105f018bf3e3",
       applicableTaxKeys: [
-        'N4ACVVQXWUBXLN4MEE52TQEV',
-        '2T3SOH5TRFWQTR5FBPH233P4',
+        "N4ACVVQXWUBXLN4MEE52TQEV",
+        "2T3SOH5TRFWQTR5FBPH233P4",
       ],
     },
     {
-      name: 'Build your own Pizza',
-      description: 'Made to order',
+      name: "Build your own Pizza",
+      description: "Made to order",
       variations: [
         {
-          name: 'Build your own Pizza Small',
+          name: "Build your own Pizza Small",
           price: {
             amount: 1123,
-            currency: 'USD',
+            currency: "USD",
           },
           _id: '5f35c4dbec0310030d8bf3c9',
         },
@@ -1361,6 +3478,60 @@ export const event = {
   stalls: [stall, stall2, stall3, stall4],
 };
 
+export const invoice = {
+  subTotal: {
+    amount: 2522,
+    currency: 'USD',
+  },
+  tip: {
+    amount: 100,
+    currency: 'USD',
+  },
+  tax: {
+    amount: 227,
+    currency: 'USD',
+  },
+  surgeFee: {
+    amount: 0,
+    currency: 'USD',
+  },
+  serviceFee: {
+    amount: 0,
+    currency: 'USD',
+  },
+  discount: {
+    amount: 0,
+    currency: 'USD',
+  },
+
+  chargedFee: [
+    {
+      type: 'SKIP_LINE_FEE',
+      fee: {
+        amount: 0,
+        currency: 'USD',
+      },
+    },
+    {
+      type: 'SERVICE_FEE',
+      fee: {
+        amount: 151,
+        currency: 'USD',
+      },
+    },
+    {
+      type: 'VENDOR_FEE',
+      fee: {
+        amount: 151,
+        currency: 'USD',
+      },
+    },
+  ],
+  total: {
+    amount: 2900,
+    currency: 'USD',
+  },
+};
 export const script =
   '<script>function myFunction(){document.write("Hello World!")}</script>';
 

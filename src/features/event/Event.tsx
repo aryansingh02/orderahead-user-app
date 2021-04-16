@@ -15,10 +15,10 @@ import { event, stall } from '../../data/testData';
 import StallCard from './StallCard';
 import WithNavigation from '../../components/BottomNavigationHoc';
 import EventMap from './EventMap';
-import DesktopHeader from './DesktopHeader';
 import { isDesktop } from '../../utils';
+import DesktopHeaderHOC from '../../components/DesktopHeaderHOC';
 import { AppDispatch } from '../../store';
-import { getQuery, setQuery } from './EventSlice';
+import { getQuery } from './EventSlice';
 import { RootState } from '../../types';
 import FilteredStalls from './FilteredStalls';
 import AutoCompleteService from './AutoCompleteService';
@@ -60,7 +60,7 @@ interface IProps extends WithStyles<typeof styles>, RouteComponentProps {
 }
 
 interface IState {
-  stalls: typeof stall[];
+  stalls: typeof event.stalls;
 }
 
 class Event extends React.Component<IProps, IState> {
@@ -93,10 +93,6 @@ class Event extends React.Component<IProps, IState> {
     const { classes } = this.props;
     return (
       <div className={classes.root} ref={this.eventContainerRef}>
-        <Hidden mdDown>
-          <DesktopHeader />
-        </Hidden>
-
         <Grid container direction="row">
           <Grid
             container
@@ -196,7 +192,7 @@ class Event extends React.Component<IProps, IState> {
                   : 'calc(100vh - 95px)',
               }}
             >
-              <Grid item xs={12} container justify="center">
+              <Grid item xs={11} container justify="center">
                 <FilteredStalls />
               </Grid>
             </Grid>
@@ -225,7 +221,5 @@ const mapStateToProps = (state: RootState) => ({
 
 export default connect(
   mapStateToProps,
-  // @ts-ignore
   mapDispatchToProps
-  // @ts-ignore
-)(withWidth()(withStyles(styles)(WithNavigation(Event))));
+)(withWidth()(withStyles(styles)(WithNavigation(DesktopHeaderHOC(Event)))));

@@ -1,5 +1,8 @@
 import React from 'react';
-import { IStall } from './types';
+import NumberFormat from 'react-number-format';
+import getSymbolFromCurrency from 'currency-symbol-map';
+import { IMenu, IPrice, ICartItem, IStall } from './types';
+import { appConfig, invoice, stall as StallData } from './data/testData';
 
 const greyedDollar = () => (
   <span
@@ -42,6 +45,43 @@ export const GenerateExpenseLevel = (expenseLevel: number) => {
   return retVal;
 };
 
+export const FindMenuItem = (menu: IMenu, id: string) => {
+  if (menu && menu.menuItems) {
+    return menu.menuItems.find((item) => item._id === id);
+  }
+  return null;
+};
+
+export const GenerateEpochDate = (date: Date) => {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDate();
+  // @ts-ignore
+  const newDate = Date.parse(new Date(year, month, day, 0, 0, 0, 0));
+  return newDate;
+};
+
+export function CalculateLineItemTotal(cartItem: ICartItem) {
+  let subTotal = cartItem.selectedVariation.price.amount;
+  if (cartItem.modifiers && cartItem.modifiers.length !== 0) {
+    cartItem.modifiers.forEach((modGroup) => {
+      // @ts-ignore
+      modGroup.chosenValue.forEach((modValue) => {
+        subTotal += modValue.price.amount;
+      });
+    });
+  }
+  return {
+    amount: subTotal,
+    currency: cartItem.selectedVariation.price.currency,
+  };
+}
+
+export const GenerateWaitTime = (time: number) =>
+  Math.round(time / (1000 * 60));
+
+export const createStallState = () => StallData;
+export const createAppConfigState = () => appConfig;
 export const isDesktop = () => window.innerWidth > 1280;
 
 const FilterbyTagOrName = (stalls: IStall[], tag: string) =>

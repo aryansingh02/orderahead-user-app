@@ -12,7 +12,6 @@ import {
 import React from 'react';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
-import OrderImage from '../../assets/OrderConfirm.png';
 import { BackButton } from '../../components/BackButton';
 import Typography from '../../Typography';
 import '../style/style.css';
@@ -142,7 +141,7 @@ export const OrderConfirmation = () => {
             style={{
               height: '100%',
               width: '100%',
-              backgroundImage: `url(${OrderImage})`,
+              backgroundImage: `url(/img/OrderConfirm.png)`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
