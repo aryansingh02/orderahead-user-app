@@ -42,8 +42,8 @@ export const Marker = ({
       <div
         style={markerStyle}
         aria-label="marker"
-        onClick={() => { }}
-        onKeyDown={() => { }}
+        onClick={() => {}}
+        onKeyDown={() => {}}
         role="button"
         tabIndex={0}
       />

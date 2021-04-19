@@ -80,7 +80,7 @@ class EventMap extends React.Component<IProps, IState> {
           }}
           defaultZoom={14}
           onChildMouseEnter={this.onChildClickCallback}
-        // onChildClick={this.onChildClickCallback}
+          // onChildClick={this.onChildClickCallback}
         >
           {this.state.mapStalls.map((stall) => (
             // @ts-ignore
