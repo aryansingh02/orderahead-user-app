@@ -42,3 +42,10 @@ export const getQuery = (state: RootState) => state.event.searchQuery;
 export const getLocation = (state: RootState) => state.event.location;
 export const getFilteredStalls = (state: RootState) =>
   FilterStalls(Event.stalls, state.event.searchQuery);
+export const getFilteredMapStalls = (state: RootState) => {
+  const newStalls = FilterStalls(
+    Event.stalls,
+    state.event.searchQuery
+  ).map((item) => ({ ...item, active: false }));
+  return newStalls;
+};

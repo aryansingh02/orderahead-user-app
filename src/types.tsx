@@ -13,6 +13,9 @@ export type RootState = ReturnType<typeof RootReducer>;
 export type HistoryType = ReturnType<typeof Object>;
 
 export type IStall = typeof stall;
+export interface IMapStall extends IStall {
+  active: boolean;
+}
 export type ICart = typeof cart;
 export type ILineItems = typeof lineItems;
 export type ILineItem = typeof lineItems[0];

@@ -13,7 +13,7 @@ import { IoFlashSharp } from 'react-icons/all';
 import { GenerateExpenseLevel } from '../../utils';
 
 import { theme as Theme } from '../../theme';
-import { IStall } from '../../types';
+import { IMapStall, IStall } from '../../types';
 import Typography from '../../Typography';
 
 const styles = (theme: typeof Theme) =>
@@ -104,7 +104,7 @@ const styles = (theme: typeof Theme) =>
   });
 
 interface IProps extends WithStyles<typeof styles> {
-  stall: IStall;
+  stall: IMapStall;
 }
 
 interface IState {}

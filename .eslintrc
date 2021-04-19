@@ -21,6 +21,7 @@
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
     "object-curly-spacing": ["warn", "always"],
+    "react/no-access-state-in-setstate": "off",
     "no-unused-vars": [
       "warn",
       {
@@ -80,6 +81,8 @@
     "react/destructuring-assignment": "off",
     "react/require-default-props": "off",
     "no-underscore-dangle": "off",
+    // too strict has to be switched off in every slice and few components as well
+    "no-param-reassign": "off",
     "@typescript-eslint/comma-dangle": [
       "error",
       {
