@@ -1,7 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { WithStyles, withStyles, createStyles } from '@material-ui/core';
-import InputLabel from '@material-ui/core/InputLabel';
+import { createStyles, withStyles, WithStyles } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';

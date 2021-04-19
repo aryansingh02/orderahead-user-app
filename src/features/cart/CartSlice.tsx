@@ -1,9 +1,9 @@
 /* eslint no-param-reassign: 0 */ // --> OFF
 
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import { cart } from '../../data/testData';
-import { ICart, ILineItem, IPrice, RootState } from '../../types';
+import { ICart, RootState } from '../../types';
 
 const initialState: ICart = cart;
 

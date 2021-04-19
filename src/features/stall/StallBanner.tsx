@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unused-prop-types */
-import { makeStyles, Theme, createStyles } from '@material-ui/core';
+import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import React from 'react';
 import { StallSummary } from './StallSummary';
 import { ItemName } from './ItemName';

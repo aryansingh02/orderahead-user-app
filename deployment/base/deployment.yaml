@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sleek-orderahead-user-app-deployment
+  namespace: sleek-apps
+  labels:
+    app: sleek-orderahead-user-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sleek-orderahead-user-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: sleek-orderahead-user-app
+    spec:
+      containers:
+        - name: sleek-orderahead-user-app
+          image: teamsleek/sleek-orderahead-user-app:main
+          imagePullPolicy: "Always"
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: sleek-orderahead-user-app-config-volume
+              mountPath: /usr/share/nginx/html/runtime.js
+              subPath: runtime.js
+              readOnly: true
+      volumes:
+        - name: sleek-orderahead-user-app-config-volume
+          configMap:
+            name: sleek-orderahead-user-app-config
+      imagePullSecrets:
+        - name: sleekdockersecret

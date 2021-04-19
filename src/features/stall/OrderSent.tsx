@@ -9,6 +9,7 @@ import {
   useTheme,
 } from '@material-ui/core/styles';
 import { Grid, Paper, Typography } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -66,6 +67,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function OrderSent() {
   const classes = useStyles();
+  const history = useHistory();
   const [open, setOpen] = React.useState(true);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -192,6 +194,7 @@ export default function OrderSent() {
               fullWidth
               variant="contained"
               color="primary"
+              onClick={() => history.push('/order')}
             >
               Track Order
             </Button>
@@ -202,6 +205,7 @@ export default function OrderSent() {
               variant="outlined"
               disableElevation={true}
               color="primary"
+              onClick={() => history.push('/stall/:id')}
             >
               New Order
             </Button>

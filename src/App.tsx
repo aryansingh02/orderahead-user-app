@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import config from 'react-global-configuration';
 import { SnackbarProvider } from 'notistack';
-import { WithStyles, withStyles, createStyles } from '@material-ui/core';
+import { createStyles, withStyles, WithStyles } from '@material-ui/core';
 import { theme as Theme } from './theme';
 import Cart from './features/cart/Cart';
 import configuration from './config';
@@ -16,6 +16,7 @@ import MapView from './features/event/MapView';
 import { OrderStatus } from './features/stall/OrderStatus';
 import { OrderConfirmation } from './features/stall/OrderConfirmation';
 import { MenuItem } from './features/stall/MenuItem';
+import { Payment } from './features/stall/Payment';
 
 config.set(configuration, { assign: false, freeze: false });
 
@@ -46,6 +47,7 @@ const styles = (theme: typeof Theme) =>
 interface IState {
   width: number;
 }
+
 interface IProps extends WithStyles<typeof styles> {}
 
 class App extends Component<IProps, IState> {
@@ -90,18 +92,19 @@ class App extends Component<IProps, IState> {
             <Switch>
               <Route exact path="/event" component={Event} />
               <Route exact path="/search_view" component={SearchView} />
-              <Route exact path="/stall/menu" component={StallMenu} />
+              <Route exact path="/stall/:id" component={StallMenu} />
+              <Route exact path="/stall/menu/item/:id" component={MenuItem} />
               <Route exact path="/stall/cart/added" component={AddedToCart} />
-              <Route exact path="/stall/order/sent" component={OrderSent} />
               <Route exact path="/cart" component={Cart} />
-              <Route exact path="/stall/order/status" component={OrderStatus} />
               <Route
                 exact
                 path="/stall/order/confirmation"
                 component={OrderConfirmation}
               />
+              <Route exact path="/payment" component={Payment} />
+              <Route exact path="/stall/order/sent" component={OrderSent} />
+              <Route exact path="/order/:orderId?" component={OrderStatus} />
               <Route exact path="/map" component={MapView} />
-              <Route exact path="/stall/menu/item" component={MenuItem} />
               <Route path="/" component={Event} />
             </Switch>
           </Router>

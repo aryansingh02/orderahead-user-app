@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useReducer } from 'react';
-import { fade, makeStyles, createStyles } from '@material-ui/core/styles';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useReducer, useRef } from 'react';
+import { createStyles, fade, makeStyles } from '@material-ui/core/styles';
+import { useDispatch, useSelector } from 'react-redux';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import AppBar from '@material-ui/core/AppBar';
 import { Box } from '@material-ui/core';
@@ -12,6 +12,7 @@ import InputBase from '@material-ui/core/InputBase';
 import { theme as Theme } from '../../theme';
 import RecentSearches from './RecentSearches';
 import { getQuery, setQuery } from './EventSlice';
+import SleekLink from '../../components/SleekLink';
 
 const useStyles = makeStyles((theme: typeof Theme) =>
   createStyles({
@@ -162,9 +163,11 @@ export default function DesktopHeader() {
               value={searchQuery}
               onChange={(evt) => dispatch(setQuery(evt.target.value))}
             />
-            <IconButton color="inherit">
-              <img src="/img/cart.svg" className={classes.cartImg} />
-            </IconButton>
+            <SleekLink to="/cart">
+              <IconButton color="inherit">
+                <img src="/img/cart.svg" className={classes.cartImg} />
+              </IconButton>
+            </SleekLink>
             <IconButton color="inherit">
               <DehazeIcon style={{ color: '#979797' }} />
             </IconButton>

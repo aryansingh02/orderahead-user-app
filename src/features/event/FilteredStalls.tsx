@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, createStyles } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
 import { theme as Theme } from '../../theme';
 import { getQuery } from './EventSlice';

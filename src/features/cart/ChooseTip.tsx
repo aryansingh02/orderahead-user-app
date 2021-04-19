@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { Button, Grid, Box } from '@material-ui/core';
+import React from 'react';
+import { Box, Grid } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { ICart, IInvoice } from '../../types';
 import Typography from '../../Typography';

@@ -6,12 +6,15 @@
   border-radius: 10px;
   outline: none !important;
 }
+
 .orderAheadPhoneInput .PhoneInputCountrySelectArrow {
   display: none;
 }
+
 .orderAheadPhoneInput .PhoneInputCountry {
   margin: 10px;
 }
+
 .orderAheadPhoneInput .PhoneInput--focus {
   border-color: rgba(109, 92, 255, 1) !important;
   border-width: 2px !important;

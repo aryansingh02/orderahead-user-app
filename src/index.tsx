@@ -4,16 +4,14 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './index.css';
 import ReactGA from 'react-ga';
-import { BrowserRouter } from 'react-router-dom';
-import { History, createBrowserHistory } from 'history';
+import { createBrowserHistory, History } from 'history';
 import * as Sentry from '@sentry/react';
-import { SnackbarProvider } from 'notistack';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import config from './config';
 import { theme } from './theme';
-import { store, persistor } from './store';
+import { persistor, store } from './store';
 
 const trackingId = 'G-E46B6LJLSZ'; // Replace with your Google Analytics tracking ID
 Sentry.init({ dsn: config.SENTRY_URL });

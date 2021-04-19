@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { CardActionArea, Grid } from '@material-ui/core';
 
 import { IItemDetail } from '../../types';
+import SleekLink from '../../components/SleekLink';
 
 interface IProps {
   itemDetails: IItemDetail;
@@ -85,52 +86,54 @@ export default function ItemCard(props: IProps) {
       justify="space-around"
     >
       <CardActionArea>
-        <Card className={classes.cardElement}>
-          <div
-            style={{
-              minWidth: '100px',
-              maxWidth: '160px',
-              padding: '10px',
-              height: '100px',
-            }}
-          >
-            <CardMedia
-              className={classes.cover}
-              image={
-                props && props.itemDetails && props.itemDetails.imagePaths
-                  ? props.itemDetails.imagePaths[0]
-                  : ''
-              }
-              title="Breakfast cover"
-            />
-          </div>
-          <div className={classes.details}>
-            <CardContent className={classes.content}>
-              <Typography
-                variant="h4"
-                component="div"
-                className={classes.itemName}
-              >
-                {props.itemDetails.name}
-              </Typography>
-              <Typography
-                variant="body2"
-                component="div"
-                color="textSecondary"
-                className={classes.itemDescription}
-              >
-                {props.itemDetails.description}
-              </Typography>
-              <Typography
-                variant="body1"
-                component="div"
-                style={{ fontWeight: 700, marginTop: 'auto' }}
-              >
-                $6
-              </Typography>
-            </CardContent>
-          </div>
-        </Card>
+        <SleekLink to={`/stall/menu/item/${props.itemDetails._id}`}>
+          <Card className={classes.cardElement}>
+            <div
+              style={{
+                minWidth: '100px',
+                maxWidth: '160px',
+                padding: '10px',
+                height: '100px',
+              }}
+            >
+              <CardMedia
+                className={classes.cover}
+                image={
+                  props && props.itemDetails && props.itemDetails.imagePaths
+                    ? props.itemDetails.imagePaths[0]
+                    : ''
+                }
+                title="Breakfast cover"
+              />
+            </div>
+            <div className={classes.details}>
+              <CardContent className={classes.content}>
+                <Typography
+                  variant="h4"
+                  component="div"
+                  className={classes.itemName}
+                >
+                  {props.itemDetails.name}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  component="div"
+                  color="textSecondary"
+                  className={classes.itemDescription}
+                >
+                  {props.itemDetails.description}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  component="div"
+                  style={{ fontWeight: 700, marginTop: 'auto' }}
+                >
+                  $6
+                </Typography>
+              </CardContent>
+            </div>
+          </Card>
+        </SleekLink>
       </CardActionArea>
     </Grid>
   );

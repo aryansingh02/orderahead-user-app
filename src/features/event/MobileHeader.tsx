@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import DehazeIcon from '@material-ui/icons/Dehaze';
 import { RouteComponentProps } from 'react-router-dom';
-import { WithStyles, withStyles, createStyles, Box } from '@material-ui/core';
+import { Box, createStyles, WithStyles, withStyles } from '@material-ui/core';
 import { theme as Theme } from '../../theme';
 
 const styles = (theme: typeof Theme) =>

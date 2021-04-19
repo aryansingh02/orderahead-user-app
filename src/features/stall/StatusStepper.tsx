@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
@@ -8,6 +8,7 @@ import DoneIcon from '@material-ui/icons/Done';
 import clsx from 'clsx';
 import { StepIconProps } from '@material-ui/core/StepIcon';
 import Typography from '../../Typography';
+import { IOrderStatus, IUpdate } from '../../types';
 
 const useColorlibStepIconStyles = makeStyles({
   root: {
@@ -42,6 +43,7 @@ const getIcon = (props: StepIconProps) => {
   }
   return <FiberManualRecordIcon style={{ color: '#6D5CFF' }} />;
 };
+
 function ColorlibStepIcon(props: StepIconProps) {
   const classes = useColorlibStepIconStyles();
   const { active, completed } = props;
@@ -58,6 +60,7 @@ function ColorlibStepIcon(props: StepIconProps) {
     </div>
   );
 }
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -68,47 +71,74 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
-function getSteps() {
-  return [
-    'Order Scheduled',
-    'Order Received',
-    'Preparing Order',
-    'Order Completed',
-    'Order Cancelled',
-  ];
+
+interface IOrderRenderStatus {
+  major: string;
+  minor: string;
 }
-function getStepContent(step: number) {
-  switch (step) {
-    case 0:
-      return 'Your order is scheduled';
-    case 1:
-      return 'Your order has been received';
-    case 2:
-      return 'Your order is prepared';
-    case 3:
-      return 'Your order was completed with a partial refund';
-    case 4:
-      return 'Your order was cancelled';
-    default:
-      return 'Unknown step';
+
+function renderOrderStatus(status: IOrderStatus): IOrderRenderStatus | null {
+  if (status === 'RECEIVED') {
+    return {
+      major: 'Order Received',
+      minor: 'Your order has been received',
+    };
   }
+  if (status === 'PREPARING') {
+    return {
+      major: 'Order Preparation',
+      minor: 'Your order is being prepared',
+    };
+  }
+  if (status === 'READY') {
+    return {
+      major: 'Ready to pickup',
+      minor: 'Your order is ready for pickup',
+    };
+  }
+  if (status === 'SCHEDULED') {
+    return {
+      major: 'Order Scheduled',
+      minor: 'Your order is scheduled',
+    };
+  }
+  if (status === 'CANCELLED') {
+    return {
+      major: 'Order Cancelled',
+      minor: 'Your order was cancelled',
+    };
+  }
+  if (status === 'COMPLETED_PR') {
+    return {
+      major: 'Order Completed With Changes',
+      minor: 'Your order was completed with a partial refund',
+    };
+  }
+  if (status === 'COMPLETED') {
+    return {
+      major: 'Order Completed',
+      minor: 'Your order was completed',
+    };
+  }
+  console.error(`Unknown status type ${status}`);
+  return null;
 }
 
-const statusToIndexObject = {
-  SCHEDULED: 0,
-  RECEIVED: 1,
-  PREPARING: 2,
-  COMPLETED_PR: 3,
-  CANCELLED: 4,
-};
+interface IProps {
+  updates: Array<IUpdate>;
+  activeStatus: IOrderStatus;
+}
 
-export default function StatusStepper() {
+export default function StatusStepper(props: IProps) {
   const classes = useStyles();
-  // TODO: ActiveStep will be set from API response.
-  const [activeStep, setActiveStep] = React.useState(
-    statusToIndexObject.PREPARING
+  const activeStep = props.updates.findIndex(
+    (update) => update.newStatus === props.activeStatus
   );
-  const steps = getSteps();
+  const steps = props.updates
+    .filter(
+      (update, index) => update.type === 'STATUS_CHANGE' && index <= activeStep
+    )
+    .map((update, index) => renderOrderStatus(update.newStatus));
 
   return (
     <div className={classes.root}>
@@ -120,26 +150,29 @@ export default function StatusStepper() {
           padding: '20px 0px 0px 0px',
         }}
       >
-        {steps.map((label, index) => (
-          <Step key={label}>
-            <StepLabel StepIconComponent={ColorlibStepIcon}>
-              <Typography
-                roboto
-                variant="body1"
-                className={classes.stepperLable}
-              >
-                {label}
-              </Typography>
-            </StepLabel>
-            <Typography
-              roboto
-              variant="caption"
-              style={{ marginLeft: '40px', display: 'flex' }}
-            >
-              {getStepContent(index)}
-            </Typography>
-          </Step>
-        ))}
+        {steps.map(
+          (label, index) =>
+            label && (
+              <Step key={label.major}>
+                <StepLabel StepIconComponent={ColorlibStepIcon}>
+                  <Typography
+                    roboto
+                    variant="body1"
+                    className={classes.stepperLable}
+                  >
+                    {label.major}
+                  </Typography>
+                </StepLabel>
+                <Typography
+                  roboto
+                  variant="caption"
+                  style={{ marginLeft: '40px', display: 'flex' }}
+                >
+                  {label.minor}
+                </Typography>
+              </Step>
+            )
+        )}
       </Stepper>
     </div>
   );

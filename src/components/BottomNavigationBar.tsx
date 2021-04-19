@@ -28,8 +28,12 @@ export default function BottomNavigationBar(props: IProps) {
       value={value}
       onChange={(event, newValue) => {
         setValue(newValue);
-        if (newValue === 1) {
+        if (newValue === 0) {
+          props.history.push('/');
+        } else if (newValue === 1) {
           props.history.push('/map');
+        } else if (newValue === 2) {
+          props.history.push('/cart');
         }
       }}
       showLabels

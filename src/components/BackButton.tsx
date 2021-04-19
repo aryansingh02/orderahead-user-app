@@ -1,7 +1,8 @@
 import React from 'react';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 interface IProps {
   header?: string;
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       marginTop: theme.spacing(5),
       marginBottom: theme.spacing(5),
+      cursor: `pointer`,
     },
     backButton: {
       width: '1.2em',
@@ -28,9 +30,12 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export const BackButton = (props: IProps) => {
   const classes = useStyles();
+  const history = useHistory();
+
   const handleOnClick = () => {
-    console.log('Hey');
+    history.goBack();
   };
+
   return (
     <div className={classes.root}>
       <ChevronLeftIcon

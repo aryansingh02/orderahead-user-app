@@ -7,12 +7,17 @@
       "variations": [
         {
           "name": "Parmesan Bread Twists",
-          "price": { "amount": 649, "currency": "USD" },
+          "price": {
+            "amount": 649,
+            "currency": "USD"
+          },
           "_id": "5f7c883784f0ca28be6f179d",
           "status": "IN_STOCK",
           "pointOfSaleInfo": {
             "type": "SQUARE",
-            "squareInfo": { "inventoryItemId": "L3VM2XOUHW5FX3IXDL2KUJHG" }
+            "squareInfo": {
+              "inventoryItemId": "L3VM2XOUHW5FX3IXDL2KUJHG"
+            }
           }
         }
       ],
@@ -26,7 +31,9 @@
       ],
       "pointOfSaleInfo": {
         "type": "SQUARE",
-        "squareInfo": { "inventoryItemId": "KRIASHUGDDYTP4IUJUU5K77V" }
+        "squareInfo": {
+          "inventoryItemId": "KRIASHUGDDYTP4IUJUU5K77V"
+        }
       },
       "imagePaths": ["/img/Photo0.png"]
     },
@@ -36,12 +43,17 @@
       "variations": [
         {
           "name": "Garlic Bread Twists",
-          "price": { "amount": 649, "currency": "USD" },
+          "price": {
+            "amount": 649,
+            "currency": "USD"
+          },
           "_id": "5f7c883784f0ca6ee36f179e",
           "status": "IN_STOCK",
           "pointOfSaleInfo": {
             "type": "SQUARE",
-            "squareInfo": { "inventoryItemId": "CRRLH33PASZEWDTQLI2KPACA" }
+            "squareInfo": {
+              "inventoryItemId": "CRRLH33PASZEWDTQLI2KPACA"
+            }
           }
         }
       ],
@@ -55,7 +67,9 @@
       ],
       "pointOfSaleInfo": {
         "type": "SQUARE",
-        "squareInfo": { "inventoryItemId": "3VXGBHB3TCMB5LFJGHKE2MC4" }
+        "squareInfo": {
+          "inventoryItemId": "3VXGBHB3TCMB5LFJGHKE2MC4"
+        }
       },
       "imagePaths": ["/img/Photo1.png"]
     },
@@ -65,12 +79,17 @@
       "variations": [
         {
           "name": "Stuffed Cheesy Bread",
-          "price": { "amount": 649, "currency": "USD" },
+          "price": {
+            "amount": 649,
+            "currency": "USD"
+          },
           "_id": "5f7c883784f0ca19516f179f",
           "status": "IN_STOCK",
           "pointOfSaleInfo": {
             "type": "SQUARE",
-            "squareInfo": { "inventoryItemId": "3Y52GMKWZSUAVQXCT53GOC7S" }
+            "squareInfo": {
+              "inventoryItemId": "3Y52GMKWZSUAVQXCT53GOC7S"
+            }
           }
         }
       ],
@@ -84,7 +103,9 @@
       ],
       "pointOfSaleInfo": {
         "type": "SQUARE",
-        "squareInfo": { "inventoryItemId": "G4NFXDVY4V7LC3E4D53O4K7Y" }
+        "squareInfo": {
+          "inventoryItemId": "G4NFXDVY4V7LC3E4D53O4K7Y"
+        }
       },
       "imagePaths": ["/img/Photo3.png"]
     },
@@ -94,12 +115,17 @@
       "variations": [
         {
           "name": "Stuffed Cheesy Bread with Spinach & Feta",
-          "price": { "amount": 649, "currency": "USD" },
+          "price": {
+            "amount": 649,
+            "currency": "USD"
+          },
           "_id": "5f7c883784f0ca4fdd6f17a0",
           "status": "IN_STOCK",
           "pointOfSaleInfo": {
             "type": "SQUARE",
-            "squareInfo": { "inventoryItemId": "H4J2RFBSVBEQWKXA4DZ73IMI" }
+            "squareInfo": {
+              "inventoryItemId": "H4J2RFBSVBEQWKXA4DZ73IMI"
+            }
           }
         }
       ],
@@ -113,7 +139,9 @@
       ],
       "pointOfSaleInfo": {
         "type": "SQUARE",
-        "squareInfo": { "inventoryItemId": "3TUZQJQBE5LNENDTMRBSE4PD" }
+        "squareInfo": {
+          "inventoryItemId": "3TUZQJQBE5LNENDTMRBSE4PD"
+        }
       },
       "imagePaths": ["/img/Photo3.png"]
     }

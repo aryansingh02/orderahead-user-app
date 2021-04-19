@@ -38,6 +38,7 @@
     "notistack": "^1.0.5",
     "react": "^17.0.2",
     "react-currency-formatter": "^1.1.0",
+    "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
     "react-global-configuration": "^1.4.1",
@@ -85,9 +86,16 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run isready",
+      "pre-commit": "lint-staged",
       "pre-push": "npm run isready"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "npm run lint",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@types/googlemaps": "^3.43.3",

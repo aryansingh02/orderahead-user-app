@@ -1,14 +1,10 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import { createStyles, withStyles, WithStyles } from '@material-ui/core';
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import { isDesktop } from '../../utils';
 import { theme as Theme } from '../../theme';
-import WithNavigation from '../../components/BottomNavigationHoc';
-import config from '../../config';
 
 const styles = (theme: typeof Theme) =>
   createStyles({

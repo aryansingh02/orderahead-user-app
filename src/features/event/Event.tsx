@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { RouteComponentProps } from 'react-router-dom';
-import { WithStyles, withStyles, createStyles } from '@material-ui/core';
+import { createStyles, withStyles, WithStyles } from '@material-ui/core';
 import { connect } from 'react-redux';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import Paper from '@material-ui/core/Paper';

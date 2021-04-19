@@ -1,15 +1,14 @@
 /* eslint no-param-reassign: 0 */ // --> OFF
-import React, { LegacyRef, RefObject } from 'react';
+import React, { RefObject } from 'react';
 import { connect } from 'react-redux';
 import config from 'react-global-configuration';
-import { Redirect, RouteComponentProps } from 'react-router-dom';
-import get from 'lodash/get';
+import { Redirect, RouteComponentProps, withRouter } from 'react-router-dom';
 import {
+  Button,
   createStyles,
-  WithStyles,
   Grid,
   withStyles,
-  Button,
+  WithStyles,
 } from '@material-ui/core';
 import { createShoppingCart } from './CartSlice';
 import { createAppConfigState, createStallState, isDesktop } from '../../utils';
@@ -18,14 +17,7 @@ import { PickupOptions } from './PickupOptions';
 import { Invoice } from './Invoice';
 import { DateModal } from './DateModal';
 import { CutleryCoupon } from './CutleryCoupon';
-import {
-  ICart,
-  IDynamicSettings,
-  IInvoice,
-  IPrice,
-  IStall,
-  RootState,
-} from '../../types';
+import { ICart, IInvoice, IPrice, IStall, RootState } from '../../types';
 import { AppDispatch } from '../../store';
 import { theme as Theme } from '../../theme';
 import CartHeader from './CartHeader';
@@ -86,8 +78,7 @@ const styles = (theme: typeof Theme) =>
       bottom: '35px',
     },
     leftPane: {
-      overflow: 'scroll',
-      paddingBottom: '100px',
+      paddingBottom: '23vh',
     },
     rightPane: {},
     cartRoot: {},
@@ -104,6 +95,7 @@ interface IProps extends WithStyles<typeof styles>, RouteComponentProps {
   stall: IStall;
   rhState: () => {};
 }
+
 interface IState {
   mode?: string;
   showModal: boolean;
@@ -268,6 +260,7 @@ class Cart extends React.Component<IProps, IState> {
                 style={{
                   width: this.bodyWrapper!.current!.offsetWidth,
                 }}
+                onClick={() => this.props.history.push('/payment')}
               >
                 <Typography variant="button" roboto={true}>
                   Proceed to Checkout
@@ -319,4 +312,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
   // @ts-ignore
-)(withStyles(styles)(DesktopHeaderHOC(Cart)));
+)(withRouter(withStyles(styles)(DesktopHeaderHOC(Cart))));

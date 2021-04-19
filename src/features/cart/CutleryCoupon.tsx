@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { IconContext } from 'react-icons';
-import { Box, Grid, Input, InputBase } from '@material-ui/core';
+import { Box, Grid, InputBase } from '@material-ui/core';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/all';
 import Checkbox from '@material-ui/core/Checkbox';

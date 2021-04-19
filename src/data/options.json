@@ -4,42 +4,62 @@
   "variations": [
     {
       "name": "Extravaganza Small",
-      "price": { "amount": 1399, "currency": "USD" },
+      "price": {
+        "amount": 1399,
+        "currency": "USD"
+      },
       "_id": "5f7c883784f0cadb9c6f1789",
       "status": "IN_STOCK",
       "pointOfSaleInfo": {
         "type": "SQUARE",
-        "squareInfo": { "inventoryItemId": "N7M7XZ2BP37YZJUDEPMSWWD5" }
+        "squareInfo": {
+          "inventoryItemId": "N7M7XZ2BP37YZJUDEPMSWWD5"
+        }
       }
     },
     {
       "name": "Extravaganza Medium",
-      "price": { "amount": 1699, "currency": "USD" },
+      "price": {
+        "amount": 1699,
+        "currency": "USD"
+      },
       "_id": "5f7c883784f0ca1d2e6f178a",
       "status": "IN_STOCK",
       "pointOfSaleInfo": {
         "type": "SQUARE",
-        "squareInfo": { "inventoryItemId": "H4F3KV2W4RD5DLYTBJSM5GZW" }
+        "squareInfo": {
+          "inventoryItemId": "H4F3KV2W4RD5DLYTBJSM5GZW"
+        }
       }
     },
     {
       "name": "Extravaganza Large",
-      "price": { "amount": 2099, "currency": "USD" },
+      "price": {
+        "amount": 2099,
+        "currency": "USD"
+      },
       "_id": "5f7c883784f0caed3c6f178b",
       "status": "IN_STOCK",
       "pointOfSaleInfo": {
         "type": "SQUARE",
-        "squareInfo": { "inventoryItemId": "FBZ5JZ35HQ5AXRBUCCSG7CSH" }
+        "squareInfo": {
+          "inventoryItemId": "FBZ5JZ35HQ5AXRBUCCSG7CSH"
+        }
       }
     },
     {
       "name": "Extravaganza X-Large",
-      "price": { "amount": 2399, "currency": "USD" },
+      "price": {
+        "amount": 2399,
+        "currency": "USD"
+      },
       "_id": "5f7c883784f0ca18516f178c",
       "status": "IN_STOCK",
       "pointOfSaleInfo": {
         "type": "SQUARE",
-        "squareInfo": { "inventoryItemId": "AQAUXYON7PMZ3XIFNUYJTJXO" }
+        "squareInfo": {
+          "inventoryItemId": "AQAUXYON7PMZ3XIFNUYJTJXO"
+        }
       }
     }
   ],
@@ -48,13 +68,34 @@
     {
       "name": "Cheese",
       "options": [
-        { "name": "None", "price": { "amount": 0, "currency": "USD" } },
-        { "name": "Thin", "price": { "amount": 100, "currency": "USD" } },
+        {
+          "name": "None",
+          "price": {
+            "amount": 0,
+            "currency": "USD"
+          }
+        },
+        {
+          "name": "Thin",
+          "price": {
+            "amount": 100,
+            "currency": "USD"
+          }
+        },
         {
           "name": "Normal",
-          "price": { "amount": 200, "currency": "USD" }
+          "price": {
+            "amount": 200,
+            "currency": "USD"
+          }
         },
-        { "name": "Extra", "price": { "amount": 300, "currency": "USD" } }
+        {
+          "name": "Extra",
+          "price": {
+            "amount": 300,
+            "currency": "USD"
+          }
+        }
       ],
       "minimum": 0,
       "maximum": 999
@@ -64,15 +105,24 @@
       "options": [
         {
           "name": "Pineapple",
-          "price": { "amount": 200, "currency": "USD" }
+          "price": {
+            "amount": 200,
+            "currency": "USD"
+          }
         },
         {
           "name": "Garlic",
-          "price": { "amount": 100, "currency": "USD" }
+          "price": {
+            "amount": 100,
+            "currency": "USD"
+          }
         },
         {
           "name": "Olives",
-          "price": { "amount": 300, "currency": "USD" }
+          "price": {
+            "amount": 300,
+            "currency": "USD"
+          }
         }
       ],
       "minimum": 0,
@@ -81,9 +131,27 @@
     {
       "name": "Cheese portion",
       "options": [
-        { "name": "Left", "price": { "amount": 0, "currency": "USD" } },
-        { "name": "Right", "price": { "amount": 0, "currency": "USD" } },
-        { "name": "All", "price": { "amount": 0, "currency": "USD" } }
+        {
+          "name": "Left",
+          "price": {
+            "amount": 0,
+            "currency": "USD"
+          }
+        },
+        {
+          "name": "Right",
+          "price": {
+            "amount": 0,
+            "currency": "USD"
+          }
+        },
+        {
+          "name": "All",
+          "price": {
+            "amount": 0,
+            "currency": "USD"
+          }
+        }
       ],
       "minimum": 0,
       "maximum": 999
@@ -93,11 +161,17 @@
       "options": [
         {
           "name": "Hand Tossed",
-          "price": { "amount": 100, "currency": "USD" }
+          "price": {
+            "amount": 100,
+            "currency": "USD"
+          }
         },
         {
           "name": "Brooklyn style",
-          "price": { "amount": 200, "currency": "USD" }
+          "price": {
+            "amount": 200,
+            "currency": "USD"
+          }
         }
       ],
       "minimum": 0,
@@ -108,15 +182,24 @@
       "options": [
         {
           "name": "Tomato Sauce",
-          "price": { "amount": 100, "currency": "USD" }
+          "price": {
+            "amount": 100,
+            "currency": "USD"
+          }
         },
         {
           "name": "Marinara Sauce",
-          "price": { "amount": 200, "currency": "USD" }
+          "price": {
+            "amount": 200,
+            "currency": "USD"
+          }
         },
         {
           "name": "BBQ Sauce",
-          "price": { "amount": 300, "currency": "USD" }
+          "price": {
+            "amount": 300,
+            "currency": "USD"
+          }
         }
       ],
       "minimum": 0,
@@ -128,7 +211,9 @@
   "applicableTaxKeys": ["2T3SOH5TRFWQTR5FBPH233P4"],
   "pointOfSaleInfo": {
     "type": "SQUARE",
-    "squareInfo": { "inventoryItemId": "46PHTDR3MQQNDYPRASJJ3Y5V" }
+    "squareInfo": {
+      "inventoryItemId": "46PHTDR3MQQNDYPRASJJ3Y5V"
+    }
   },
   "imagePaths": [
     "https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/hxgdbv1rcmtcwt9yzuov"

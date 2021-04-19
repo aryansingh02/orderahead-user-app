@@ -1,5 +1,5 @@
 import React from 'react';
-import { WithStyles, withStyles, createStyles } from '@material-ui/core';
+import { createStyles, WithStyles } from '@material-ui/core';
 import { RouteComponentProps } from 'react-router-dom';
 // @ts-ignore
 // eslint-disable-next-line import/extensions
@@ -13,6 +13,7 @@ const styles = (theme: typeof Theme) =>
 interface IProps extends WithStyles<typeof styles>, RouteComponentProps {}
 
 interface IState {}
+
 class StallView extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);

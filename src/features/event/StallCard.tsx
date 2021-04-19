@@ -1,12 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import {
-  WithStyles,
-  withStyles,
-  createStyles,
-  Box,
-  Icon,
-} from '@material-ui/core';
+import { Box, createStyles, WithStyles, withStyles } from '@material-ui/core';
 import RestoreIcon from '@material-ui/icons/Restore';
 import { IconContext } from 'react-icons';
 import { IoFlashSharp } from 'react-icons/all';
@@ -15,6 +9,7 @@ import { GenerateExpenseLevel } from '../../utils';
 import { theme as Theme } from '../../theme';
 import { IStall } from '../../types';
 import Typography from '../../Typography';
+import SleekLink from '../../components/SleekLink';
 
 const styles = (theme: typeof Theme) =>
   createStyles({
@@ -125,75 +120,93 @@ class StallCard extends React.Component<IProps, IState> {
   render() {
     const { classes, stall } = this.props;
     return (
-      <div className={classes.root}>
-        <Grid container direction="row" className={classes.paneRow}>
-          <Grid item className={classes.leftPane}>
-            <img src={stall.logoImagePath} className={classes.stallImage} />
+      <SleekLink to={`/stall/${stall._id}`}>
+        <div className={classes.root}>
+          <Grid container direction="row" className={classes.paneRow}>
+            <Grid item className={classes.leftPane}>
+              <img src={stall.logoImagePath} className={classes.stallImage} />
+            </Grid>
+            <Grid
+              item
+              className={classes.rightPane}
+              container
+              direction="column"
+            >
+              <Box className={classes.nameRow}>
+                <Box>
+                  <Typography
+                    variant="h4"
+                    display="inline"
+                    className={classes.stallName}
+                  >
+                    {stall.name}
+                  </Typography>
+                </Box>
+                <Box>
+                  <img src="/img/star_icon.png" className={classes.starIcon} />
+                  <Typography
+                    roboto={true}
+                    variant="subtitle1"
+                    display="inline"
+                  >
+                    {stall.rating}
+                  </Typography>
+                </Box>
+              </Box>
+              <Box className={classes.nameRow}>
+                <Box className="startJustifiedFlex">
+                  {GenerateExpenseLevel(stall.expenseLevel)}
+                  <img src="/img/coffee.png" className={classes.coffeeIcon} />
+                  <img src="/img/cookie.png" className={classes.coffeeIcon} />
+                </Box>
+                <Box>
+                  <img
+                    src="/img/distance.svg"
+                    className={classes.distanceIcon}
+                  />
+                  <Typography
+                    roboto={true}
+                    variant="subtitle1"
+                    display="inline"
+                  >
+                    30ft
+                  </Typography>
+                </Box>
+              </Box>
+              <Box className={classes.waitRow}>
+                <Box className="startJustifiedFlex">
+                  <IconContext.Provider
+                    value={{
+                      color: Theme.palette.primary.main,
+                      className: 'global-class-name',
+                      size: '14px',
+                    }}
+                  >
+                    <IoFlashSharp />
+                  </IconContext.Provider>
+                  <Typography
+                    variant="subtitle1"
+                    display="inline"
+                    roboto={true}
+                    style={{ color: Theme.palette.primary.main }}
+                  >
+                    2 min
+                  </Typography>
+                  <RestoreIcon color="error" className={classes.restoreIcon} />
+                  <Typography
+                    variant="subtitle1"
+                    display="inline"
+                    roboto={true}
+                    style={{ color: Theme.palette.error.main }}
+                  >
+                    54 min
+                  </Typography>
+                </Box>
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item className={classes.rightPane} container direction="column">
-            <Box className={classes.nameRow}>
-              <Box>
-                <Typography
-                  variant="h4"
-                  display="inline"
-                  className={classes.stallName}
-                >
-                  {stall.name}
-                </Typography>
-              </Box>
-              <Box>
-                <img src="/img/star_icon.png" className={classes.starIcon} />
-                <Typography roboto={true} variant="subtitle1" display="inline">
-                  {stall.rating}
-                </Typography>
-              </Box>
-            </Box>
-            <Box className={classes.nameRow}>
-              <Box className="startJustifiedFlex">
-                {GenerateExpenseLevel(stall.expenseLevel)}
-                <img src="/img/coffee.png" className={classes.coffeeIcon} />
-                <img src="/img/cookie.png" className={classes.coffeeIcon} />
-              </Box>
-              <Box>
-                <img src="/img/distance.svg" className={classes.distanceIcon} />
-                <Typography roboto={true} variant="subtitle1" display="inline">
-                  30ft
-                </Typography>
-              </Box>
-            </Box>
-            <Box className={classes.waitRow}>
-              <Box className="startJustifiedFlex">
-                <IconContext.Provider
-                  value={{
-                    color: Theme.palette.primary.main,
-                    className: 'global-class-name',
-                    size: '14px',
-                  }}
-                >
-                  <IoFlashSharp />
-                </IconContext.Provider>
-                <Typography
-                  variant="subtitle1"
-                  display="inline"
-                  roboto={true}
-                  style={{ color: Theme.palette.primary.main }}
-                >
-                  2 min
-                </Typography>
-                <RestoreIcon color="error" className={classes.restoreIcon} />
-                <Typography
-                  variant="subtitle1"
-                  display="inline"
-                  roboto={true}
-                  style={{ color: Theme.palette.error.main }}
-                >
-                  54 min
-                </Typography>
-              </Box>
-            </Box>
-          </Grid>
-        </Grid>
-      </div>
+        </div>
+      </SleekLink>
     );
   }
 }

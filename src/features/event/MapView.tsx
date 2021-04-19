@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { WithStyles, withStyles, createStyles, Box } from '@material-ui/core';
+import { Box, createStyles, WithStyles, withStyles } from '@material-ui/core';
 import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import { RouteComponentProps } from 'react-router-dom';
 import EventMap from './EventMap';
@@ -39,6 +39,7 @@ const styles = (theme: typeof Theme) =>
   });
 
 interface IProps extends WithStyles<typeof styles>, RouteComponentProps {}
+
 interface IState {
   place: string;
 }

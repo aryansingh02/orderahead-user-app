@@ -9,6 +9,7 @@ import {
   useTheme,
 } from '@material-ui/core/styles';
 import { Grid, Paper, Typography } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -60,6 +61,7 @@ export default function AddedToCart() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   const theme = useTheme();
+  const history = useHistory();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const handleClose = () => {
@@ -127,6 +129,7 @@ export default function AddedToCart() {
                 fullWidth
                 variant="contained"
                 color="primary"
+                onClick={() => history.push('/cart')}
               >
                 Checkout and Skip The Line for $1.05
               </Button>
@@ -137,8 +140,9 @@ export default function AddedToCart() {
                 variant="outlined"
                 disableElevation={true}
                 className={classes.plainCheckout}
+                onClick={() => history.push('/stall/:id')}
               >
-                Checkout
+                Continue Shopping
               </Button>
             </Grid>
           </Grid>

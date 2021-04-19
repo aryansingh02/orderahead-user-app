@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
 import {
+  Box,
   createStyles,
+  Grid,
+  Input,
+  InputAdornment,
   withStyles,
   WithStyles,
-  Grid,
-  InputAdornment,
-  Input,
-  Box,
 } from '@material-ui/core';
 import { theme as Theme } from '../../theme';
 import { isDesktop } from '../../utils';

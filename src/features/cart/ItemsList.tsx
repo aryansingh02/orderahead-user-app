@@ -2,13 +2,13 @@
 import React from 'react';
 import { Box, Grid } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import RemoveIcon from '@material-ui/icons/Remove';
 import DeleteIcon from '@material-ui/icons/Delete';
 import get from 'lodash/get';
 import GenerateCurrencyNumber from '../../components/GenerateCurrencyNumber';
 
-import { FindMenuItem, CalculateLineItemTotal, isDesktop } from '../../utils';
+import { CalculateLineItemTotal, FindMenuItem, isDesktop } from '../../utils';
 import { ILineItems, IStall } from '../../types';
 import Typography from '../../Typography';
 

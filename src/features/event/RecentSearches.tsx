@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { WithStyles, withStyles, createStyles, Box } from '@material-ui/core';
+import { Box, createStyles, WithStyles, withStyles } from '@material-ui/core';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import SearchIcon from '@material-ui/icons/Search';
 import CloseIcon from '@material-ui/icons/Close';

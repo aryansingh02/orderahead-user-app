@@ -2,8 +2,8 @@ import React from 'react';
 import {
   createStyles,
   Grid,
-  Paper,
   makeStyles,
+  Paper,
   Theme,
 } from '@material-ui/core';
 import { StallBanner } from './StallBanner';

@@ -1,9 +1,8 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import DehazeIcon from '@material-ui/icons/Dehaze';
 import { RouteComponentProps } from 'react-router-dom';
 import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft';
-import { WithStyles, withStyles, createStyles } from '@material-ui/core';
+import { createStyles, withStyles, WithStyles } from '@material-ui/core';
 import { theme as Theme } from '../../theme';
 import Typography from '../../Typography';
 
