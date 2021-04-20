@@ -1,0 +1,27 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  env: prod
+
+configMapGenerator:
+- files:
+  - runtime.js=app.properties
+  name: sleek-orderahead-user-app-config
+  namespace: sleek-apps
+
+images:
+- name: teamsleek/sleek-orderahead-user-app
+  newName: teamsleek/sleek-orderahead-user-app
+  newTag: sha-d295985
+
+patchesJson6902:
+- path: ingress-host-setup.yaml
+  target:
+    group: extensions
+    kind: Ingress
+    name: sleek-orderahead-user-app-ingress
+    namespace: sleek-apps
+    version: v1beta1
+resources:
+- ../base

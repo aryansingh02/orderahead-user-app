@@ -1,0 +1,45 @@
+body,
+html {
+  background-color: #f7f8fb;
+}
+
+.App {
+}
+
+.startJustifiedFlex {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.centerJustifiedFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.endJustifiedFlex {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.boldFont {
+  font-weight: bold;
+}
+
+.centreAligned {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pointer {
+  cursor: pointer;
+}

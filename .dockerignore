@@ -1,6 +1,9 @@
-ockerfile
+Dockerfile
 .dockerignore
 .eslintrc
 .gitignore
 README.md
 node_modules
+deployment
+.github
+build
